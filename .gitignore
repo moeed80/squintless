@@ -1,0 +1,12 @@
+.DS_Store
+.lock-waf_*
+build/
+*.zip
+*.pbw
+
+# Local prompt/attachment artifacts
+*.rtf
+
+# Keep curated renderer comparisons, ignore older one-off captures.
+screenshots/emery-*.png
+screenshots/preview-*.png
