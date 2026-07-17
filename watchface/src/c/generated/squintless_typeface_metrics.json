@@ -1,0 +1,748 @@
+{
+  "glyph_height": 100,
+  "default_pair_spacing": 2,
+  "pair_spacing": {
+    "01": 5,
+    "05": 3,
+    "06": 2,
+    "08": 2,
+    "09": 1,
+    "10": 5,
+    "11": 14,
+    "12": 4,
+    "18": 5,
+    "20": 2,
+    "22": 2,
+    "34": 3,
+    "36": 4,
+    "49": 1,
+    "58": 5,
+    "69": 1,
+    "88": 2,
+    "90": 1
+  },
+  "singles": {
+    "0": {
+      "file": "resources/images/singles/squintless_single_0.png",
+      "width": 97,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-0-canonical/squintless-0.svg",
+      "visible_bounds": [
+        70,
+        55,
+        930,
+        945
+      ]
+    },
+    "1": {
+      "file": "resources/images/singles/squintless_single_1.png",
+      "width": 85,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-1-canonical/squintless-1.svg",
+      "visible_bounds": [
+        120,
+        55,
+        880,
+        945
+      ]
+    },
+    "2": {
+      "file": "resources/images/singles/squintless_single_2.png",
+      "width": 97,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-2-canonical/squintless-2.svg",
+      "visible_bounds": [
+        70,
+        55,
+        930,
+        945
+      ]
+    },
+    "3": {
+      "file": "resources/images/singles/squintless_single_3.png",
+      "width": 93,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-3-canonical/squintless-3.svg",
+      "visible_bounds": [
+        105,
+        55,
+        930,
+        945
+      ]
+    },
+    "4": {
+      "file": "resources/images/singles/squintless_single_4.png",
+      "width": 97,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-4-canonical/squintless-4.svg",
+      "visible_bounds": [
+        85,
+        55,
+        945,
+        945
+      ]
+    },
+    "5": {
+      "file": "resources/images/singles/squintless_single_5.png",
+      "width": 93,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-5-canonical/squintless-5.svg",
+      "visible_bounds": [
+        105,
+        55,
+        930,
+        945
+      ]
+    },
+    "6": {
+      "file": "resources/images/singles/squintless_single_6.png",
+      "width": 97,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-6-canonical/squintless-6.svg",
+      "visible_bounds": [
+        70,
+        55,
+        930,
+        945
+      ]
+    },
+    "7": {
+      "file": "resources/images/singles/squintless_single_7.png",
+      "width": 97,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-7-canonical/squintless-7.svg",
+      "visible_bounds": [
+        70,
+        55,
+        930,
+        945
+      ]
+    },
+    "8": {
+      "file": "resources/images/singles/squintless_single_8.png",
+      "width": 97,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-8-canonical/squintless-8.svg",
+      "visible_bounds": [
+        70,
+        55,
+        930,
+        945
+      ]
+    },
+    "9": {
+      "file": "resources/images/singles/squintless_single_9.png",
+      "width": 97,
+      "height": 100,
+      "source_svg": "typeface/artifacts/squintless-9-canonical/squintless-9.svg",
+      "visible_bounds": [
+        70,
+        55,
+        930,
+        945
+      ]
+    }
+  },
+  "pairs": {
+    "00": {
+      "file": "resources/images/pairs/squintless_pair_00.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "01": {
+      "file": "resources/images/pairs/squintless_pair_01.png",
+      "width": 187,
+      "height": 100,
+      "spacing": 5
+    },
+    "02": {
+      "file": "resources/images/pairs/squintless_pair_02.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "03": {
+      "file": "resources/images/pairs/squintless_pair_03.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "04": {
+      "file": "resources/images/pairs/squintless_pair_04.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "05": {
+      "file": "resources/images/pairs/squintless_pair_05.png",
+      "width": 193,
+      "height": 100,
+      "spacing": 3
+    },
+    "06": {
+      "file": "resources/images/pairs/squintless_pair_06.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "07": {
+      "file": "resources/images/pairs/squintless_pair_07.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "08": {
+      "file": "resources/images/pairs/squintless_pair_08.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "09": {
+      "file": "resources/images/pairs/squintless_pair_09.png",
+      "width": 195,
+      "height": 100,
+      "spacing": 1
+    },
+    "10": {
+      "file": "resources/images/pairs/squintless_pair_10.png",
+      "width": 187,
+      "height": 100,
+      "spacing": 5
+    },
+    "11": {
+      "file": "resources/images/pairs/squintless_pair_11.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 14
+    },
+    "12": {
+      "file": "resources/images/pairs/squintless_pair_12.png",
+      "width": 186,
+      "height": 100,
+      "spacing": 4
+    },
+    "13": {
+      "file": "resources/images/pairs/squintless_pair_13.png",
+      "width": 180,
+      "height": 100,
+      "spacing": 2
+    },
+    "14": {
+      "file": "resources/images/pairs/squintless_pair_14.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "15": {
+      "file": "resources/images/pairs/squintless_pair_15.png",
+      "width": 180,
+      "height": 100,
+      "spacing": 2
+    },
+    "16": {
+      "file": "resources/images/pairs/squintless_pair_16.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "17": {
+      "file": "resources/images/pairs/squintless_pair_17.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "18": {
+      "file": "resources/images/pairs/squintless_pair_18.png",
+      "width": 187,
+      "height": 100,
+      "spacing": 5
+    },
+    "19": {
+      "file": "resources/images/pairs/squintless_pair_19.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "20": {
+      "file": "resources/images/pairs/squintless_pair_20.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "21": {
+      "file": "resources/images/pairs/squintless_pair_21.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "22": {
+      "file": "resources/images/pairs/squintless_pair_22.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "23": {
+      "file": "resources/images/pairs/squintless_pair_23.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "24": {
+      "file": "resources/images/pairs/squintless_pair_24.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "25": {
+      "file": "resources/images/pairs/squintless_pair_25.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "26": {
+      "file": "resources/images/pairs/squintless_pair_26.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "27": {
+      "file": "resources/images/pairs/squintless_pair_27.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "28": {
+      "file": "resources/images/pairs/squintless_pair_28.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "29": {
+      "file": "resources/images/pairs/squintless_pair_29.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "30": {
+      "file": "resources/images/pairs/squintless_pair_30.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "31": {
+      "file": "resources/images/pairs/squintless_pair_31.png",
+      "width": 180,
+      "height": 100,
+      "spacing": 2
+    },
+    "32": {
+      "file": "resources/images/pairs/squintless_pair_32.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "33": {
+      "file": "resources/images/pairs/squintless_pair_33.png",
+      "width": 188,
+      "height": 100,
+      "spacing": 2
+    },
+    "34": {
+      "file": "resources/images/pairs/squintless_pair_34.png",
+      "width": 193,
+      "height": 100,
+      "spacing": 3
+    },
+    "35": {
+      "file": "resources/images/pairs/squintless_pair_35.png",
+      "width": 188,
+      "height": 100,
+      "spacing": 2
+    },
+    "36": {
+      "file": "resources/images/pairs/squintless_pair_36.png",
+      "width": 194,
+      "height": 100,
+      "spacing": 4
+    },
+    "37": {
+      "file": "resources/images/pairs/squintless_pair_37.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "38": {
+      "file": "resources/images/pairs/squintless_pair_38.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "39": {
+      "file": "resources/images/pairs/squintless_pair_39.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "40": {
+      "file": "resources/images/pairs/squintless_pair_40.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "41": {
+      "file": "resources/images/pairs/squintless_pair_41.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "42": {
+      "file": "resources/images/pairs/squintless_pair_42.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "43": {
+      "file": "resources/images/pairs/squintless_pair_43.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "44": {
+      "file": "resources/images/pairs/squintless_pair_44.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "45": {
+      "file": "resources/images/pairs/squintless_pair_45.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "46": {
+      "file": "resources/images/pairs/squintless_pair_46.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "47": {
+      "file": "resources/images/pairs/squintless_pair_47.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "48": {
+      "file": "resources/images/pairs/squintless_pair_48.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "49": {
+      "file": "resources/images/pairs/squintless_pair_49.png",
+      "width": 195,
+      "height": 100,
+      "spacing": 1
+    },
+    "50": {
+      "file": "resources/images/pairs/squintless_pair_50.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "51": {
+      "file": "resources/images/pairs/squintless_pair_51.png",
+      "width": 180,
+      "height": 100,
+      "spacing": 2
+    },
+    "52": {
+      "file": "resources/images/pairs/squintless_pair_52.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "53": {
+      "file": "resources/images/pairs/squintless_pair_53.png",
+      "width": 188,
+      "height": 100,
+      "spacing": 2
+    },
+    "54": {
+      "file": "resources/images/pairs/squintless_pair_54.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "55": {
+      "file": "resources/images/pairs/squintless_pair_55.png",
+      "width": 188,
+      "height": 100,
+      "spacing": 2
+    },
+    "56": {
+      "file": "resources/images/pairs/squintless_pair_56.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "57": {
+      "file": "resources/images/pairs/squintless_pair_57.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "58": {
+      "file": "resources/images/pairs/squintless_pair_58.png",
+      "width": 195,
+      "height": 100,
+      "spacing": 5
+    },
+    "59": {
+      "file": "resources/images/pairs/squintless_pair_59.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "60": {
+      "file": "resources/images/pairs/squintless_pair_60.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "61": {
+      "file": "resources/images/pairs/squintless_pair_61.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "62": {
+      "file": "resources/images/pairs/squintless_pair_62.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "63": {
+      "file": "resources/images/pairs/squintless_pair_63.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "64": {
+      "file": "resources/images/pairs/squintless_pair_64.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "65": {
+      "file": "resources/images/pairs/squintless_pair_65.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "66": {
+      "file": "resources/images/pairs/squintless_pair_66.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "67": {
+      "file": "resources/images/pairs/squintless_pair_67.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "68": {
+      "file": "resources/images/pairs/squintless_pair_68.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "69": {
+      "file": "resources/images/pairs/squintless_pair_69.png",
+      "width": 195,
+      "height": 100,
+      "spacing": 1
+    },
+    "70": {
+      "file": "resources/images/pairs/squintless_pair_70.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "71": {
+      "file": "resources/images/pairs/squintless_pair_71.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "72": {
+      "file": "resources/images/pairs/squintless_pair_72.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "73": {
+      "file": "resources/images/pairs/squintless_pair_73.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "74": {
+      "file": "resources/images/pairs/squintless_pair_74.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "75": {
+      "file": "resources/images/pairs/squintless_pair_75.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "76": {
+      "file": "resources/images/pairs/squintless_pair_76.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "77": {
+      "file": "resources/images/pairs/squintless_pair_77.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "78": {
+      "file": "resources/images/pairs/squintless_pair_78.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "79": {
+      "file": "resources/images/pairs/squintless_pair_79.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "80": {
+      "file": "resources/images/pairs/squintless_pair_80.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "81": {
+      "file": "resources/images/pairs/squintless_pair_81.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "82": {
+      "file": "resources/images/pairs/squintless_pair_82.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "83": {
+      "file": "resources/images/pairs/squintless_pair_83.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "84": {
+      "file": "resources/images/pairs/squintless_pair_84.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "85": {
+      "file": "resources/images/pairs/squintless_pair_85.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "86": {
+      "file": "resources/images/pairs/squintless_pair_86.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "87": {
+      "file": "resources/images/pairs/squintless_pair_87.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "88": {
+      "file": "resources/images/pairs/squintless_pair_88.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "89": {
+      "file": "resources/images/pairs/squintless_pair_89.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "90": {
+      "file": "resources/images/pairs/squintless_pair_90.png",
+      "width": 195,
+      "height": 100,
+      "spacing": 1
+    },
+    "91": {
+      "file": "resources/images/pairs/squintless_pair_91.png",
+      "width": 184,
+      "height": 100,
+      "spacing": 2
+    },
+    "92": {
+      "file": "resources/images/pairs/squintless_pair_92.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "93": {
+      "file": "resources/images/pairs/squintless_pair_93.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "94": {
+      "file": "resources/images/pairs/squintless_pair_94.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "95": {
+      "file": "resources/images/pairs/squintless_pair_95.png",
+      "width": 192,
+      "height": 100,
+      "spacing": 2
+    },
+    "96": {
+      "file": "resources/images/pairs/squintless_pair_96.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "97": {
+      "file": "resources/images/pairs/squintless_pair_97.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "98": {
+      "file": "resources/images/pairs/squintless_pair_98.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    },
+    "99": {
+      "file": "resources/images/pairs/squintless_pair_99.png",
+      "width": 196,
+      "height": 100,
+      "spacing": 2
+    }
+  }
+}

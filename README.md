@@ -1,187 +1,203 @@
 # Squintless
 
-Squintless is an accessibility-first Pebble watchface for Pebble Time 2. It shows only:
+Squintless is split into two separate systems:
 
-- Hours in the upper half
-- A proportional battery line in the central gap
-- Minutes in the lower half
+```text
+Squintless/
+  typeface/
+    artifacts/
+      squintless-0-canonical/
+      ...
+      squintless-9-canonical/
+    font-edition/
+      fonts/
+      tools/
+    tools/
+      generate_watchface_assets.py
 
-It intentionally does not show date, weather, steps, battery percent, icons, seconds, Bluetooth status, AM/PM, menus, or button interactions.
+  watchface/
+    package.json
+    src/c/
+    resources/images/
+    tools/
 
-## Target
+  watchface-font/
+    package.json
+    src/c/
+    resources/images/
+    tools/
 
-- Watch: Pebble Time 2
+  comparison/
+    screenshots/
+```
+
+The typeface owns numeral design. The watchface renders time and battery state.
+
+## Editions
+
+This branch keeps two complete implementations side by side:
+
+- `watchface/`: Squintless SVG Edition, generated from the canonical Squintless SVG numerals.
+- `watchface-font/`: Squintless Font Edition, generated from Red Hat Display at `wght=900`.
+
+Both projects use the same Pebble Time 2 layout, battery bar, colors, margins, update cadence, and bitmap rendering architecture. Only the numeral bitmap source differs.
+
+## Typeface
+
+`typeface/artifacts/` contains the canonical Squintless numerals. Each digit folder includes the SVG source and supporting specification/preview files. The SVG is the source of truth; the watchface does not redraw, reinterpret, or substitute the numerals.
+
+The generator converts those SVGs into Pebble bitmap resources:
+
+```sh
+/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python typeface/tools/generate_watchface_assets.py
+```
+
+It writes:
+
+- `watchface/resources/images/singles/*.png`
+- `watchface/resources/images/pairs/*.png`
+- `watchface/src/c/generated/squintless_typeface_assets.h`
+- `watchface/src/c/generated/squintless_typeface_metrics.json`
+- the `watchface/package.json` resource manifest entries
+
+Future numeral design changes should happen in `typeface/artifacts/`, then this generator should be rerun.
+
+`typeface/font-edition/` contains the experimental Red Hat Display Black source and generator. The font was obtained from the official Google Fonts repository:
+
+- Repository: `https://github.com/google/fonts`
+- Path: `ofl/redhatdisplay/RedHatDisplay[wght].ttf`
+- Local file: `typeface/font-edition/fonts/RedHatDisplay-wght.ttf`
+- Instance: `wght=900`, the Black weight
+
+Generate the Font Edition assets with:
+
+```sh
+/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python typeface/font-edition/tools/generate_watchface_font_assets.py
+```
+
+## Watchface
+
+Both Pebble projects target Pebble Time 2:
+
 - Platform: `emery`
-- Display: 200 x 228 rectangular
-- Version 1 target platforms: `emery` only
+- Resolution: `200 x 228`
+- Display: rectangular
 
-This version does not compromise the layout for older 144 x 168 Pebbles.
+Each watchface uses generated bitmap resources only. It loads the current hour and minute bitmap assets, draws them at native size, and never stretches or distorts them.
 
-## Readability Design
-
-The numerals are drawn directly with Pebble graphics primitives instead of using a system font. The default renderer is `SQUINTLESS_STYLE_SOLID`: each digit is a continuous filled geometric glyph with white counters/openings carved back out. The original segmented renderer is retained behind `SQUINTLESS_STYLE_SEGMENTED` for comparison.
-
-The design favors:
-
-- maximum size on the 200 x 228 display
-- high black-white contrast
-- heavy continuous silhouettes
-- large rectangular internal openings
-- a visibly wide `1`
-- differentiated `0`, `6`, `8`, and `9`
-- no seven-segment gaps
-- no antialiasing, gray edges, iconography, or fine detail
-
-The face uses one `Window` and one custom `Layer`. The update procedure draws background, hours, battery line, and minutes in that order.
+The battery bar always spans the full available width. The charged part is black; the remaining part is `GColorLightGray`, giving a visible drain track while preserving the existing thickness and low-battery minimum-fill behavior.
 
 ## Build
 
-Install the current supported Pebble tooling on macOS:
+Install the current supported Pebble tooling:
 
 ```sh
-brew install python node uv python@3.13 libpng
+brew install python node uv python@3.13 libpng cairo
 uv tool install pebble-tool --python 3.13
+uv pip install --python /Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python cairosvg
 pebble sdk install latest
 ```
 
-Build:
+Generate and build the SVG Edition:
 
 ```sh
+/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python typeface/tools/generate_watchface_assets.py
+cd watchface
 pebble build
 ```
 
-The generated package is:
+The built package is:
+
+```text
+watchface/build/watchface.pbw
+```
+
+Generate and build the Font Edition:
 
 ```sh
-build/Squintless.pbw
+/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python typeface/font-edition/tools/generate_watchface_font_assets.py
+cd watchface-font
+pebble build
+```
+
+The built package is:
+
+```text
+watchface-font/build/watchface-font.pbw
 ```
 
 ## Emulator
 
-Install and run on the Pebble Time 2 emulator:
+SVG Edition:
 
 ```sh
+cd watchface
 pebble install --emulator emery
 ```
 
-Useful validation commands:
+Font Edition:
 
 ```sh
-pebble emu-time-format --format 24h
-pebble emu-set-time 08:36:00
-pebble emu-battery --percent 75
-pebble screenshot screenshots/emery-08-36-battery-75.png --no-open
+cd watchface-font
+pebble install --emulator emery
 ```
+
+Physical install:
 
 ```sh
-pebble emu-set-time 11:11:00
-pebble emu-battery --percent 50
-pebble screenshot screenshots/emery-11-11-battery-50.png --no-open
+cd watchface
+pebble install --phone <PHONE_IP> build/watchface.pbw
 ```
+
+## Validation Previews
+
+Generate the validation screenshots from the same bitmap resources used by the watchface:
 
 ```sh
-pebble emu-time-format --format 12h
-pebble emu-set-time 13:05:00
-pebble emu-battery --percent 15
-pebble screenshot screenshots/emery-1-05-12h-battery-15.png --no-open
+/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python watchface/tools/render_previews.py
 ```
 
-If the emulator continues to report 24-hour style to `clock_is_24h_style()`, use the preview renderer for the exact 12-hour visual validation:
+Generate Font Edition screenshots:
 
 ```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python tools/render_previews.py
+/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python watchface-font/tools/render_previews.py
 ```
 
-## Physical Watch Install
-
-Enable Developer Connection in the Pebble mobile app, note the phone IP address, then run:
+Generate side-by-side comparisons:
 
 ```sh
-pebble install --phone <PHONE_IP> build/Squintless.pbw
+/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python tools/render_edition_comparison.py
 ```
 
-## Cloud IDE Import
-
-The current Rebble cloud flow is at:
-
-```text
-https://cloud.repebble.com
-```
-
-Import steps:
-
-1. Launch the cloud environment.
-2. In the terminal, run:
-
-```sh
-code /workspaces/codespaces-pebble
-```
-
-3. Upload this project folder, excluding `build` if present.
-4. Click the Pebble icon in the left sidebar.
-5. Choose `Open Project` and select `Squintless`.
-6. Build or run on the `emery` emulator from the Pebble sidebar.
-
-## Layout Tuning
-
-Most layout values are centralized near the top of `src/c/squintless.c`:
-
-- `outer_margin`
-- `central_gap_h`
-- `battery_line_h`
-- `battery_line_inset`
-- `default_digit_spacing_units`
-- `digit_corner_radius`
-- `low_battery_min_w`
-- `DIGIT_UNITS_W`
-- `DIGIT_UNITS_H`
-
-The digit geometry is in `prv_draw_solid_digit` and `prv_draw_segmented_digit`.
-
-## Refining Numerals
-
-To replace or refine the solid numeral design, edit `prv_draw_solid_digit` in `src/c/squintless.c`. Each digit uses a 13 x 15 unit coordinate grid, except `1`, which uses an 11-unit width for better spacing. Keep strokes joined and thick, then run:
-
-```sh
-pebble build
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python tools/render_previews.py
-```
-
-To build with the older segmented style temporarily, change:
-
-```c
-#define SQUINTLESS_NUMERAL_STYLE SQUINTLESS_STYLE_SOLID
-```
-
-to:
-
-```c
-#define SQUINTLESS_NUMERAL_STYLE SQUINTLESS_STYLE_SEGMENTED
-```
-
-The preview renderer mirrors the C layout and writes `solid-*`, `segmented-*`, and `compare-*` images for:
+Screenshots are written to `watchface/screenshots/` for:
 
 - `08:36`
 - `11:11`
 - `12:34`
 - `20:58`
-- `1:05` in 12-hour mode
-- `6:49` in 12-hour mode
-- `9:06` in 12-hour mode
+- `01:05`
+- `06:49`
+- `09:06`
+- `18:18`
+- `22:22`
+
+Font Edition screenshots are written to `watchface-font/screenshots/`. Side-by-side comparisons are written to `comparison/screenshots/`.
+
+The experimental visual critique is documented in `comparison/SELF_REVIEW.md`.
 
 ## Validation Notes
 
 Completed locally:
 
-- Installed `pebble-tool` 5.0.39 with SDK 4.17.
-- Confirmed `emery` is supported by the installed SDK.
-- Built `build/Squintless.pbw` for `emery`.
-- Ran the `emery` emulator and installed the watchface.
-- Captured live emulator screenshots for 08:36 at 75% and 11:11 at 50%.
-- Generated solid, segmented, and side-by-side comparison previews for the revised numeral set.
+- Moved canonical numeral artifacts into `typeface/artifacts/`.
+- Moved the Pebble app into `watchface/`.
+- Removed the procedural C numeral renderer.
+- Generated native-size bitmap resources from the canonical SVG assets.
+- Generated pair-specific bitmap resources for `00` through `99`.
+- Validated required spacing pairs: `11`, `10`, `18`, `08`, `88`, `20`, `22`, `36`, `49`, `58`, `69`, `90`.
+- Built successfully for `emery` with SDK `4.17`.
+- Added the Red Hat Display Black Font Edition as a separate project without changing the canonical SVG implementation.
 
-Known limitations:
+Known limitation:
 
-- The local `emery` emulator accepted `pebble emu-time-format --format 12h`, but `clock_is_24h_style()` still behaved as 24-hour during the live screenshot session. The 12-hour rendering path is implemented in C and validated with `tools/render_previews.py`; it still needs confirmation on the physical Pebble Time 2.
-- The SDK linker emitted an RWX LOAD segment warning from the toolchain while producing a successful build. No C compiler warnings remained in Squintless.
-- Version 1 is deliberately `emery` only.
+- The SDK linker still emits its existing RWX LOAD segment warning. The Squintless C source builds cleanly.
