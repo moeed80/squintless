@@ -1,23 +1,39 @@
 # Squintless Watchface
 
-This is the Pebble Time 2 watchface project. It renders time and battery state using bitmap assets generated from the canonical typeface layer.
+This is the production Pebble Time 2 watchface project for Squintless.
 
-Build:
+The watchface renders only:
+
+- Hours
+- Battery drain line
+- Minutes
+
+All numeral artwork is generated from `../typeface/artifacts/`. Do not edit `resources/images/` or `src/c/generated/` by hand.
+
+## Build
 
 ```sh
 pebble build
 ```
 
-Run on the Pebble Time 2 emulator:
+The built package is:
+
+```text
+build/watchface.pbw
+```
+
+## Emulator
 
 ```sh
 pebble install --emulator emery
 ```
 
-Generate validation previews from the bitmap resources:
+## Resources
 
-```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python tools/render_previews.py
-```
+The package includes:
 
-The numeral assets are generated. Do not edit `resources/images/` or `src/c/generated/` by hand; update `../typeface/artifacts/` and rerun the generator instead.
+- `IMAGE_MENU_ICON`: Pebble menu icon
+- `IMAGE_SINGLE_0` through `IMAGE_SINGLE_9`: single-digit fallback resources
+- `IMAGE_PAIR_00` through `IMAGE_PAIR_99`: pair-specific time resources with optical spacing
+
+The product metadata and promotional artwork live in `../store/`.

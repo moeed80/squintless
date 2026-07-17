@@ -21,6 +21,21 @@ HEADER_PATH = WATCHFACE_DIR / "src" / "c" / "generated" / "squintless_typeface_a
 METRICS_PATH = WATCHFACE_DIR / "src" / "c" / "generated" / "squintless_typeface_metrics.json"
 PACKAGE_PATH = WATCHFACE_DIR / "package.json"
 
+PACKAGE_DESCRIPTION = (
+    "Designed for your aging eyes, not your ego. "
+    "Squintless is an accessibility-first Pebble Time 2 watch face built for instant readability."
+)
+PACKAGE_KEYWORDS = [
+    "pebble-watchface",
+    "accessibility",
+    "large-digits",
+    "readability",
+    "low-vision",
+    "emery",
+    "pebble-time-2",
+]
+MENU_ICON_FILE = "images/menu_icon.png"
+
 CANONICAL_TOP = 55
 CANONICAL_BASELINE = 945
 CANONICAL_VISIBLE_HEIGHT = CANONICAL_BASELINE - CANONICAL_TOP
@@ -222,7 +237,29 @@ def write_header(metrics: dict) -> None:
 
 def update_package_json(metrics: dict) -> None:
     package = json.loads(PACKAGE_PATH.read_text())
+    package["name"] = "squintless"
+    package["author"] = "Moeed Ahmad"
+    package["version"] = "1.0.0"
+    package["description"] = PACKAGE_DESCRIPTION
+    package["keywords"] = PACKAGE_KEYWORDS
+    package["private"] = True
+
+    package["pebble"]["displayName"] = "Squintless"
+    package["pebble"]["uuid"] = "c68b0184-aad6-4bdc-9c72-d18a13fc1f06"
+    package["pebble"]["sdkVersion"] = "3"
+    package["pebble"]["enableMultiJS"] = True
+    package["pebble"]["targetPlatforms"] = ["emery"]
+    package["pebble"]["watchapp"] = {"watchface": True}
+    package["pebble"]["messageKeys"] = []
+
     media = []
+    if (WATCHFACE_DIR / "resources" / MENU_ICON_FILE).exists():
+        media.append({
+            "type": "bitmap",
+            "name": "IMAGE_MENU_ICON",
+            "file": MENU_ICON_FILE,
+            "menuIcon": True,
+        })
     for digit in range(10):
         resource_file = str(Path(metrics["singles"][str(digit)]["file"]).relative_to("resources"))
         media.append({

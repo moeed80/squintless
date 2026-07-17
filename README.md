@@ -1,93 +1,106 @@
 # Squintless
 
-Squintless is split into two separate systems:
+Designed for your aging eyes, not your ego.
 
-```text
-Squintless/
-  typeface/
-    artifacts/
-      squintless-0-canonical/
-      ...
-      squintless-9-canonical/
-    font-edition/
-      fonts/
-      tools/
-    tools/
-      generate_watchface_assets.py
+![Squintless feature graphic](store/feature/squintless-feature-1600x900.png)
 
-  watchface/
-    package.json
-    src/c/
-    resources/images/
-    tools/
+Squintless is an accessibility-first watch face for Pebble Time 2. It exists for one job: let you tell the time instantly.
 
-  watchface-font/
-    package.json
-    src/c/
-    resources/images/
-    tools/
+No date. No weather. No step count. No seconds. No icons. No decorative complications.
 
-  comparison/
-    screenshots/
-```
+Every pixel is there to improve readability.
 
-The typeface owns numeral design. The watchface renders time and battery state.
+## Philosophy
 
-## Editions
+Most watch faces try to prove how much information they can fit on a tiny screen. Squintless goes the other way.
 
-This branch keeps two complete implementations side by side:
+The top half is hours. The bottom half is minutes. The middle is a quiet battery indicator. The result is a watch face you can read with a quick glance, even when your near vision is not cooperating.
 
-- `watchface/`: Squintless SVG Edition, generated from the canonical Squintless SVG numerals.
-- `watchface-font/`: Squintless Font Edition, generated from Red Hat Display at `wght=900`.
+Squintless is built for people over 40, people whose close-up vision has changed, and anyone who values function over decoration.
 
-Both projects use the same Pebble Time 2 layout, battery bar, colors, margins, update cadence, and bitmap rendering architecture. Only the numeral bitmap source differs.
+It is not a retro watch face. It is not a minimalist art project. It is a purpose-built accessibility product.
 
-## Typeface
+## Screenshots
 
-`typeface/artifacts/` contains the canonical Squintless numerals. Each digit folder includes the SVG source and supporting specification/preview files. The SVG is the source of truth; the watchface does not redraw, reinterpret, or substitute the numerals.
+![Straight-on hero shot](store/screenshots/01-straight-on-hero.png)
+![Angled wrist readability shot](store/screenshots/02-angled-wrist-readability.png)
+![Large time close-up](store/screenshots/03-large-time-close-up.png)
+![Battery almost empty](store/screenshots/04-battery-almost-empty.png)
+![Pair spacing example](store/screenshots/05-pair-spacing.png)
 
-The generator converts those SVGs into Pebble bitmap resources:
+## Layout
 
-```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python typeface/tools/generate_watchface_assets.py
-```
+Squintless uses the full 200 x 228 Pebble Time 2 display:
 
-It writes:
+- Hours fill the upper half.
+- Minutes fill the lower half.
+- The battery indicator sits between them.
 
-- `watchface/resources/images/singles/*.png`
-- `watchface/resources/images/pairs/*.png`
-- `watchface/src/c/generated/squintless_typeface_assets.h`
-- `watchface/src/c/generated/squintless_typeface_metrics.json`
-- the `watchface/package.json` resource manifest entries
+The layout is deliberately stable. There are no animations, secondary modes, or information layers competing with the time.
 
-Future numeral design changes should happen in `typeface/artifacts/`, then this generator should be rerun.
+## Battery Indicator
 
-`typeface/font-edition/` contains the experimental Red Hat Display Black source and generator. The font was obtained from the official Google Fonts repository:
+The center line always spans the same width.
 
-- Repository: `https://github.com/google/fonts`
-- Path: `ofl/redhatdisplay/RedHatDisplay[wght].ttf`
-- Local file: `typeface/font-edition/fonts/RedHatDisplay-wght.ttf`
-- Instance: `wght=900`, the Black weight
+- Black shows charge remaining.
+- Light gray shows capacity already used.
+- Very low nonzero battery still gets a small visible black segment.
 
-Generate the Font Edition assets with:
+It reads as a drain line without pulling attention away from the numerals.
 
-```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python typeface/font-edition/tools/generate_watchface_font_assets.py
-```
+## Typography
 
-## Watchface
+The numerals are custom Squintless glyphs. They are not a system font and they are not drawn procedurally by the watch face.
 
-Both Pebble projects target Pebble Time 2:
+The reusable typeface layer owns the SVG source artwork for every digit. The build tools convert those SVGs into hard monochrome Pebble bitmap resources, including pair-specific bitmaps for optical spacing.
+
+That separation keeps the product clean:
+
+- `typeface/` defines how the numerals look.
+- `watchface/` renders time and battery state.
+
+Future numeral changes should happen in the typeface layer first.
+
+## Compatibility
+
+Squintless 1.0 is built specifically for Pebble Time 2.
 
 - Platform: `emery`
 - Resolution: `200 x 228`
 - Display: rectangular
 
-Each watchface uses generated bitmap resources only. It loads the current hour and minute bitmap assets, draws them at native size, and never stretches or distorts them.
+Version 1.0 does not compromise the layout for older 144 x 168 Pebble watches.
 
-The battery bar always spans the full available width. The charged part is black; the remaining part is `GColorLightGray`, giving a visible drain track while preserving the existing thickness and low-battery minimum-fill behavior.
+## Installation
 
-## Build
+Build the Pebble package:
+
+```sh
+cd watchface
+pebble build
+```
+
+The generated package is:
+
+```text
+watchface/build/watchface.pbw
+```
+
+Install on the Pebble Time 2 emulator:
+
+```sh
+cd watchface
+pebble install --emulator emery
+```
+
+Install on a physical watch through the Pebble mobile app Developer Connection:
+
+```sh
+cd watchface
+pebble install --phone <PHONE_IP> build/watchface.pbw
+```
+
+## Development
 
 Install the current supported Pebble tooling:
 
@@ -98,106 +111,53 @@ uv pip install --python /Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/
 pebble sdk install latest
 ```
 
-Generate and build the SVG Edition:
+Regenerate watchface assets after changing numeral SVGs:
 
 ```sh
 /Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python typeface/tools/generate_watchface_assets.py
-cd watchface
-pebble build
 ```
 
-The built package is:
-
-```text
-watchface/build/watchface.pbw
-```
-
-Generate and build the Font Edition:
+Generate store artwork and the Pebble menu icon:
 
 ```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python typeface/font-edition/tools/generate_watchface_font_assets.py
-cd watchface-font
-pebble build
+/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python tools/generate_store_assets.py
 ```
 
-The built package is:
-
-```text
-watchface-font/build/watchface-font.pbw
-```
-
-## Emulator
-
-SVG Edition:
-
-```sh
-cd watchface
-pebble install --emulator emery
-```
-
-Font Edition:
-
-```sh
-cd watchface-font
-pebble install --emulator emery
-```
-
-Physical install:
-
-```sh
-cd watchface
-pebble install --phone <PHONE_IP> build/watchface.pbw
-```
-
-## Validation Previews
-
-Generate the validation screenshots from the same bitmap resources used by the watchface:
+Generate developer previews:
 
 ```sh
 /Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python watchface/tools/render_previews.py
 ```
 
-Generate Font Edition screenshots:
+App Store metadata lives in `store/metadata.md` and `store/metadata.json`.
 
-```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python watchface-font/tools/render_previews.py
+## Project Structure
+
+```text
+Squintless/
+  typeface/
+    artifacts/
+    tools/
+
+  watchface/
+    package.json
+    resources/
+    src/c/
+    tools/
+
+  store/
+    feature/
+    icon/
+    screenshots/
+    metadata.md
+    metadata.json
 ```
 
-Generate side-by-side comparisons:
+## Release Checklist
 
-```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python tools/render_edition_comparison.py
-```
-
-Screenshots are written to `watchface/screenshots/` for:
-
-- `08:36`
-- `11:11`
-- `12:34`
-- `20:58`
-- `01:05`
-- `06:49`
-- `09:06`
-- `18:18`
-- `22:22`
-
-Font Edition screenshots are written to `watchface-font/screenshots/`. Side-by-side comparisons are written to `comparison/screenshots/`.
-
-The experimental visual critique is documented in `comparison/SELF_REVIEW.md`.
-
-## Validation Notes
-
-Completed locally:
-
-- Moved canonical numeral artifacts into `typeface/artifacts/`.
-- Moved the Pebble app into `watchface/`.
-- Removed the procedural C numeral renderer.
-- Generated native-size bitmap resources from the canonical SVG assets.
-- Generated pair-specific bitmap resources for `00` through `99`.
-- Validated required spacing pairs: `11`, `10`, `18`, `08`, `88`, `20`, `22`, `36`, `49`, `58`, `69`, `90`.
-- Built successfully for `emery` with SDK `4.17`.
-- Added the Red Hat Display Black Font Edition as a separate project without changing the canonical SVG implementation.
-
-Known limitation:
-
-- The SDK linker still emits its existing RWX LOAD segment warning. The Squintless C source builds cleanly.
+- Product name is `Squintless`.
+- App Store copy is in `store/metadata.md`.
+- App icon and feature graphic are in `store/`.
+- Pebble menu icon is bundled as a watchface resource.
+- The watchface targets only `emery`.
+- The build output is `watchface/build/watchface.pbw`.

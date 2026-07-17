@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw
 
 WATCHFACE_DIR = Path(__file__).resolve().parents[1]
 METRICS_PATH = WATCHFACE_DIR / "src" / "c" / "generated" / "squintless_typeface_metrics.json"
-OUT_DIR = WATCHFACE_DIR / "screenshots"
+OUT_DIR = WATCHFACE_DIR / "previews"
 
 WIDTH = 200
 HEIGHT = 228
@@ -94,7 +94,7 @@ def main():
     OUT_DIR.mkdir(exist_ok=True)
     for hour, minute, battery, slug in STATES:
         render(metrics, hour, minute, battery).save(
-            OUT_DIR / f"squintless-canonical-{slug}-battery-{battery}.png"
+            OUT_DIR / f"squintless-{slug}-battery-{battery}.png"
         )
 
 

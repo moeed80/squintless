@@ -14,3 +14,4 @@ __pycache__/
 # Ignore older one-off captures from pre-typeface restructuring.
 screenshots/emery-*.png
 screenshots/preview-*.png
+watchface/previews/

@@ -1,0 +1,36 @@
+{
+  "name": "Squintless",
+  "tagline": "Designed for your aging eyes, not your ego.",
+  "shortDescription": "An accessibility-first Pebble Time 2 watch face built to make the time readable at a glance.",
+  "category": "Watchfaces",
+  "keywords": [
+    "accessibility",
+    "readable",
+    "large digits",
+    "low vision",
+    "over 40",
+    "aging eyes",
+    "Pebble Time 2",
+    "emery",
+    "watch face",
+    "battery",
+    "high contrast",
+    "simple",
+    "glanceable"
+  ],
+  "version": "1.0.0",
+  "versionNotes": "Version 1.0.0 is the first App Store-ready Squintless release for Pebble Time 2.",
+  "releaseNotes": [
+    "Purpose-built Pebble Time 2 layout for instant time recognition.",
+    "Custom Squintless numeral set optimized for large, high-contrast readability.",
+    "Full-width battery drain indicator with black remaining charge and subtle gray used capacity.",
+    "No secondary complications, icons, seconds, or decorative information.",
+    "Built exclusively for emery, the Pebble Time 2 platform."
+  ],
+  "compatibility": {
+    "watch": "Pebble Time 2",
+    "platform": "emery",
+    "resolution": "200 x 228",
+    "display": "rectangular"
+  }
+}

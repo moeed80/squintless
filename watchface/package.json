@@ -5,7 +5,11 @@
   "keywords": [
     "pebble-watchface",
     "accessibility",
-    "emery"
+    "large-digits",
+    "readability",
+    "low-vision",
+    "emery",
+    "pebble-time-2"
   ],
   "private": true,
   "dependencies": {},
@@ -23,6 +27,12 @@
     "messageKeys": [],
     "resources": {
       "media": [
+        {
+          "type": "bitmap",
+          "name": "IMAGE_MENU_ICON",
+          "file": "images/menu_icon.png",
+          "menuIcon": true
+        },
         {
           "type": "bitmap",
           "name": "IMAGE_SINGLE_0",
@@ -575,5 +585,6 @@
         }
       ]
     }
-  }
+  },
+  "description": "Designed for your aging eyes, not your ego. Squintless is an accessibility-first Pebble Time 2 watch face built for instant readability."
 }
