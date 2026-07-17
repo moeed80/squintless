@@ -238,8 +238,9 @@ def write_header(metrics: dict) -> None:
 def update_package_json(metrics: dict) -> None:
     package = json.loads(PACKAGE_PATH.read_text())
     package["name"] = "squintless"
-    package["author"] = "Moeed Ahmad"
+    package["author"] = "Mangla & Co LLC"
     package["version"] = "1.0.0"
+    package["license"] = "MIT"
     package["description"] = PACKAGE_DESCRIPTION
     package["keywords"] = PACKAGE_KEYWORDS
     package["private"] = True

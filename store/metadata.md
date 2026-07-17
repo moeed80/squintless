@@ -54,6 +54,12 @@ accessibility, readable, large digits, low vision, over 40, aging eyes, Pebble T
 - Platform: `emery`
 - Display: 200 x 228 rectangular
 
+## Copyright
+
+Copyright (c) 2026 Mangla & Co LLC.
+
+Red Hat Display remains copyright of its original authors and is licensed under the SIL Open Font License.
+
 ## Artwork
 
 - App icons: `store/icon/`

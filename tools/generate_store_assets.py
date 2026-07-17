@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import math
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -28,13 +27,18 @@ BATTERY_REMAINDER_GRAY = 218
 
 TAGLINE = "Designed for your aging eyes, not your ego."
 
-FONT_BLACK = Path("/System/Library/Fonts/Supplemental/Arial Black.ttf")
-FONT_BOLD = Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf")
-FONT_REGULAR = Path("/System/Library/Fonts/Supplemental/Arial.ttf")
+FONT_RED_HAT_DISPLAY = ROOT / "typeface" / "fonts" / "red-hat-display" / "RedHatDisplay-wght.ttf"
 
 
-def font(path: Path, size: int) -> ImageFont.FreeTypeFont:
-    return ImageFont.truetype(str(path), size)
+def font(path: Path, size: int, weight: int | None = None) -> ImageFont.FreeTypeFont:
+    loaded = ImageFont.truetype(str(path), size)
+    if weight is not None:
+        loaded.set_variation_by_axes([weight])
+    return loaded
+
+
+def red_hat_font(size: int, weight: int) -> ImageFont.FreeTypeFont:
+    return font(FONT_RED_HAT_DISPLAY, size, weight)
 
 
 def ensure_dirs() -> None:
@@ -306,9 +310,9 @@ def write_screenshots(metrics: dict) -> None:
 def write_feature(metrics: dict) -> None:
     base = gradient((1600, 900), (248, 248, 245), (218, 218, 212)).convert("RGBA")
     draw = ImageDraw.Draw(base)
-    title = font(FONT_BLACK, 132)
-    tagline_font = font(FONT_REGULAR, 36)
-    small = font(FONT_REGULAR, 30)
+    title = red_hat_font(132, 900)
+    tagline_font = red_hat_font(36, 500)
+    small = red_hat_font(30, 400)
     draw.text((120, 230), "Squintless", fill=(0, 0, 0), font=title)
     draw.text((124, 388), TAGLINE, fill=(24, 24, 24), font=tagline_font)
     draw.text((126, 470), "A Pebble Time 2 watch face for instant readability.", fill=(70, 70, 70), font=small)

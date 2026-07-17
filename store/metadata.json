@@ -19,6 +19,7 @@
     "glanceable"
   ],
   "version": "1.0.0",
+  "copyright": "Copyright (c) 2026 Mangla & Co LLC",
   "versionNotes": "Version 1.0.0 is the first App Store-ready Squintless release for Pebble Time 2.",
   "releaseNotes": [
     "Purpose-built Pebble Time 2 layout for instant time recognition.",

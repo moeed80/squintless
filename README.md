@@ -54,6 +54,8 @@ The numerals are custom Squintless glyphs. They are not a system font and they a
 
 The reusable typeface layer owns the SVG source artwork for every digit. The build tools convert those SVGs into hard monochrome Pebble bitmap resources, including pair-specific bitmaps for optical spacing.
 
+Store artwork typography is generated with Red Hat Display. The font file is kept in `typeface/fonts/red-hat-display/` under its original SIL Open Font License.
+
 That separation keeps the product clean:
 
 - `typeface/` defines how the numerals look.
@@ -107,36 +109,55 @@ Install the current supported Pebble tooling:
 ```sh
 brew install python node uv python@3.13 libpng cairo
 uv tool install pebble-tool --python 3.13
-uv pip install --python /Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python cairosvg
+python3 -m pip install cairosvg pillow
 pebble sdk install latest
 ```
 
 Regenerate watchface assets after changing numeral SVGs:
 
 ```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python typeface/tools/generate_watchface_assets.py
+python3 typeface/tools/generate_watchface_assets.py
 ```
 
 Generate store artwork and the Pebble menu icon:
 
 ```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python tools/generate_store_assets.py
+python3 tools/generate_store_assets.py
 ```
 
 Generate developer previews:
 
 ```sh
-/Users/moeedahmad/.local/share/uv/tools/pebble-tool/bin/python watchface/tools/render_previews.py
+python3 watchface/tools/render_previews.py
 ```
 
 App Store metadata lives in `store/metadata.md` and `store/metadata.json`.
+
+## Licensing
+
+Squintless source code, watchface code, custom Squintless numeral artwork, generated Pebble bitmap resources, documentation, and store artwork are licensed under the [MIT License](LICENSE).
+
+Copyright for Squintless belongs to Mangla & Co LLC:
+
+```text
+Copyright (c) 2026 Mangla & Co LLC
+```
+
+Red Hat Display is licensed separately under the [SIL Open Font License 1.1](LICENSES/OFL.txt). Copyright for Red Hat Display remains with its original authors, The Red Hat Project Authors.
+
+The two licenses coexist because the Squintless project code and original assets are not font software, while the Red Hat Display font file remains third-party font software under OFL. If you redistribute the font file or modified versions of it, keep the OFL notice and license with it. If you redistribute Squintless source code or substantial portions of it, keep the MIT copyright and license notice.
 
 ## Project Structure
 
 ```text
 Squintless/
+  LICENSE
+  LICENSES/
+    OFL.txt
+
   typeface/
     artifacts/
+    fonts/
     tools/
 
   watchface/
@@ -159,5 +180,6 @@ Squintless/
 - App Store copy is in `store/metadata.md`.
 - App icon and feature graphic are in `store/`.
 - Pebble menu icon is bundled as a watchface resource.
+- MIT and OFL license files are included.
 - The watchface targets only `emery`.
 - The build output is `watchface/build/watchface.pbw`.

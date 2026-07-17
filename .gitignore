@@ -5,8 +5,12 @@ build/
 **/.lock-waf_*
 __pycache__/
 *.pyc
+*.log
 *.zip
 *.pbw
+node_modules/
+.venv/
+dist/
 
 # Local prompt/attachment artifacts
 *.rtf
