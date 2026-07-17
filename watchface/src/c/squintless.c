@@ -5,9 +5,10 @@
 typedef struct {
   int outer_margin;
   int central_gap_h;
-  int battery_line_h;
-  int battery_line_inset;
-  int low_battery_min_w;
+  int battery_bar_h;
+  int battery_bar_inset;
+  int battery_bar_radius;
+  int battery_bar_border;
   GRect hour_bounds;
   GRect minute_bounds;
   GRect battery_bounds;
@@ -24,18 +25,21 @@ static int s_battery_percent = 100;
 static SquintlessLayout prv_layout_for_bounds(GRect bounds) {
   const int outer_margin = 2;
   const int central_gap_h = 16;
-  const int battery_line_h = 7;
-  const int battery_line_inset = 5;
+  const int battery_bar_h = 7;
+  const int battery_bar_inset = 5;
+  const int battery_bar_radius = 2;
+  const int battery_bar_border = 1;
   const int half_h = (bounds.size.h - central_gap_h) / 2;
   const int gap_y = bounds.origin.y + half_h;
-  const int line_y = gap_y + (central_gap_h - battery_line_h) / 2;
+  const int bar_y = gap_y + (central_gap_h - battery_bar_h) / 2;
 
   return (SquintlessLayout) {
     .outer_margin = outer_margin,
     .central_gap_h = central_gap_h,
-    .battery_line_h = battery_line_h,
-    .battery_line_inset = battery_line_inset,
-    .low_battery_min_w = 8,
+    .battery_bar_h = battery_bar_h,
+    .battery_bar_inset = battery_bar_inset,
+    .battery_bar_radius = battery_bar_radius,
+    .battery_bar_border = battery_bar_border,
     .hour_bounds = GRect(bounds.origin.x + outer_margin,
                          bounds.origin.y,
                          bounds.size.w - (outer_margin * 2),
@@ -44,10 +48,10 @@ static SquintlessLayout prv_layout_for_bounds(GRect bounds) {
                            gap_y + central_gap_h,
                            bounds.size.w - (outer_margin * 2),
                            bounds.size.h - half_h - central_gap_h),
-    .battery_bounds = GRect(bounds.origin.x + battery_line_inset,
-                            line_y,
-                            bounds.size.w - (battery_line_inset * 2),
-                            battery_line_h),
+    .battery_bounds = GRect(bounds.origin.x + battery_bar_inset,
+                            bar_y,
+                            bounds.size.w - (battery_bar_inset * 2),
+                            battery_bar_h),
   };
 }
 
@@ -116,21 +120,34 @@ static void prv_draw_bitmap_centered(GContext *ctx, GBitmap *bitmap, GRect bound
 }
 
 static void prv_draw_battery(GContext *ctx, const SquintlessLayout *layout) {
-  int fill_w = (layout->battery_bounds.size.w * s_battery_percent) / 100;
-  if (s_battery_percent > 0 && fill_w < layout->low_battery_min_w) {
-    fill_w = layout->low_battery_min_w;
+  const GRect outer = layout->battery_bounds;
+  const int border = layout->battery_bar_border;
+  const int inner_radius = layout->battery_bar_radius > border ?
+                           layout->battery_bar_radius - border : 0;
+  const GRect inner = GRect(outer.origin.x + border,
+                            outer.origin.y + border,
+                            outer.size.w - (border * 2),
+                            outer.size.h - (border * 2));
+  int fill_w = (inner.size.w * s_battery_percent + 50) / 100;
+  if (fill_w > inner.size.w) {
+    fill_w = inner.size.w;
   }
 
-  graphics_context_set_fill_color(ctx, GColorLightGray);
-  graphics_fill_rect(ctx, layout->battery_bounds, 0, GCornersAll);
+  graphics_context_set_fill_color(ctx, GColorBlack);
+  graphics_fill_rect(ctx, outer, layout->battery_bar_radius, GCornersAll);
+
+  graphics_context_set_fill_color(ctx, GColorWhite);
+  graphics_fill_rect(ctx, inner, inner_radius, GCornersAll);
 
   if (fill_w > 0) {
     graphics_context_set_fill_color(ctx, GColorBlack);
-    graphics_fill_rect(ctx, GRect(layout->battery_bounds.origin.x,
-                                  layout->battery_bounds.origin.y,
+    graphics_fill_rect(ctx, GRect(inner.origin.x,
+                                  inner.origin.y,
                                   fill_w,
-                                  layout->battery_bounds.size.h),
-                       0, GCornersAll);
+                                  inner.size.h),
+                       inner_radius,
+                       fill_w >= inner.size.w ? GCornersAll :
+                                                (GCornerTopLeft | GCornerBottomLeft));
   }
 }
 

@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 WATCHFACE_DIR = ROOT / "watchface"
@@ -20,10 +20,10 @@ WIDTH = 200
 HEIGHT = 228
 OUTER_MARGIN = 2
 CENTRAL_GAP_H = 16
-BATTERY_LINE_H = 7
-BATTERY_LINE_INSET = 5
-LOW_BATTERY_MIN_W = 8
-BATTERY_REMAINDER_GRAY = 218
+BATTERY_BAR_H = 7
+BATTERY_BAR_INSET = 5
+BATTERY_BAR_RADIUS = 2
+BATTERY_BAR_BORDER = 1
 
 TAGLINE = "Designed for your aging eyes, not your ego."
 
@@ -49,7 +49,7 @@ def ensure_dirs() -> None:
 def layout() -> dict[str, tuple[int, int, int, int]]:
     half_h = (HEIGHT - CENTRAL_GAP_H) // 2
     gap_y = half_h
-    line_y = gap_y + (CENTRAL_GAP_H - BATTERY_LINE_H) // 2
+    bar_y = gap_y + (CENTRAL_GAP_H - BATTERY_BAR_H) // 2
     return {
         "hour": (OUTER_MARGIN, 0, WIDTH - OUTER_MARGIN * 2, half_h),
         "minute": (
@@ -59,10 +59,10 @@ def layout() -> dict[str, tuple[int, int, int, int]]:
             HEIGHT - half_h - CENTRAL_GAP_H,
         ),
         "battery": (
-            BATTERY_LINE_INSET,
-            line_y,
-            WIDTH - BATTERY_LINE_INSET * 2,
-            BATTERY_LINE_H,
+            BATTERY_BAR_INSET,
+            bar_y,
+            WIDTH - BATTERY_BAR_INSET * 2,
+            BATTERY_BAR_H,
         ),
     }
 
@@ -87,21 +87,49 @@ def draw_centered_asset(canvas: Image.Image, asset: Image.Image, bounds: tuple[i
 def render_face(metrics: dict, hour: str, minute: str, battery: int) -> Image.Image:
     bounds = layout()
     canvas = Image.new("L", (WIDTH, HEIGHT), 255)
-    draw = ImageDraw.Draw(canvas)
     draw_centered_asset(canvas, load_face_asset(metrics, hour), bounds["hour"])
-    draw_battery(draw, bounds["battery"], battery)
+    draw_battery(canvas, bounds["battery"], battery)
     draw_centered_asset(canvas, load_face_asset(metrics, minute), bounds["minute"])
     return canvas
 
 
-def draw_battery(draw: ImageDraw.ImageDraw, bounds: tuple[int, int, int, int], percent: int) -> None:
+def draw_battery(canvas: Image.Image, bounds: tuple[int, int, int, int], percent: int) -> None:
     x, y, w, h = bounds
-    fill_w = w * percent // 100
-    if percent > 0 and fill_w < LOW_BATTERY_MIN_W:
-        fill_w = LOW_BATTERY_MIN_W
-    draw.rectangle((x, y, x + w - 1, y + h - 1), fill=BATTERY_REMAINDER_GRAY)
-    if fill_w > 0:
-        draw.rectangle((x, y, x + fill_w - 1, y + h - 1), fill=0)
+    draw = ImageDraw.Draw(canvas)
+    draw.rounded_rectangle(
+        (x, y, x + w - 1, y + h - 1),
+        radius=BATTERY_BAR_RADIUS,
+        fill=0,
+    )
+
+    border = BATTERY_BAR_BORDER
+    inner_x = x + border
+    inner_y = y + border
+    inner_w = w - border * 2
+    inner_h = h - border * 2
+    inner_radius = max(0, BATTERY_BAR_RADIUS - border)
+    draw.rounded_rectangle(
+        (inner_x, inner_y, inner_x + inner_w - 1, inner_y + inner_h - 1),
+        radius=inner_radius,
+        fill=255,
+    )
+
+    percent = max(0, min(100, percent))
+    fill_w = (inner_w * percent + 50) // 100
+    if fill_w <= 0:
+        return
+
+    inner_mask = Image.new("L", (inner_w, inner_h), 0)
+    mask_draw = ImageDraw.Draw(inner_mask)
+    mask_draw.rounded_rectangle(
+        (0, 0, inner_w - 1, inner_h - 1),
+        radius=inner_radius,
+        fill=255,
+    )
+    fill_mask = Image.new("L", (inner_w, inner_h), 0)
+    fill_draw = ImageDraw.Draw(fill_mask)
+    fill_draw.rectangle((0, 0, fill_w - 1, inner_h - 1), fill=255)
+    canvas.paste(0, (inner_x, inner_y), ImageChops.multiply(inner_mask, fill_mask))
 
 
 def gradient(size: tuple[int, int], top: tuple[int, int, int], bottom: tuple[int, int, int]) -> Image.Image:

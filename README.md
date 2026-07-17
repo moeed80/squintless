@@ -40,13 +40,13 @@ The layout is deliberately stable. There are no animations, secondary modes, or 
 
 ## Battery Indicator
 
-The center line always spans the same width.
+The center progress bar always spans the same width.
 
 - Black shows charge remaining.
-- Light gray shows capacity already used.
-- Very low nonzero battery still gets a small visible black segment.
+- The thin outline remains visible at every charge level.
+- The interior is white where charge has been used.
 
-It reads as a drain line without pulling attention away from the numerals.
+It reads as a quiet progress indicator without pulling attention away from the numerals.
 
 ## Typography
 

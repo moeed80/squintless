@@ -22,7 +22,7 @@ The layout is intentionally simple: hours on top, a full-width battery indicator
 
 The numerals are custom Squintless glyphs, generated from canonical SVG source artwork into hard monochrome Pebble bitmap resources. They are oversized, high-contrast, and tuned for the 200 x 228 Pebble Time 2 display.
 
-The battery indicator reads like a quiet drain line: black for charge remaining, light gray for charge used. It is visible without competing with the time.
+The battery indicator reads like a quiet outlined progress bar: black for charge remaining and white for charge used. It is visible without competing with the time.
 
 Squintless is for people over 40, anyone whose near vision is not what it used to be, and anyone who values function over decoration.
 
@@ -32,7 +32,7 @@ Initial production release.
 
 - Purpose-built Pebble Time 2 layout for instant time recognition.
 - Custom Squintless numeral set optimized for large, high-contrast readability.
-- Full-width battery drain indicator with black remaining charge and subtle gray used capacity.
+- Full-width outlined battery progress indicator with proportional black fill.
 - No secondary complications, icons, seconds, or decorative information.
 - Built exclusively for `emery`, the Pebble Time 2 platform.
 

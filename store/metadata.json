@@ -24,7 +24,7 @@
   "releaseNotes": [
     "Purpose-built Pebble Time 2 layout for instant time recognition.",
     "Custom Squintless numeral set optimized for large, high-contrast readability.",
-    "Full-width battery drain indicator with black remaining charge and subtle gray used capacity.",
+    "Full-width outlined battery progress indicator with proportional black fill.",
     "No secondary complications, icons, seconds, or decorative information.",
     "Built exclusively for emery, the Pebble Time 2 platform."
   ],

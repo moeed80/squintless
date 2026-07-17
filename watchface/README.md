@@ -5,7 +5,7 @@ This is the production Pebble Time 2 watchface project for Squintless.
 The watchface renders only:
 
 - Hours
-- Battery drain line
+- Outlined battery progress indicator
 - Minutes
 
 All numeral artwork is generated from `../typeface/artifacts/`. Do not edit `resources/images/` or `src/c/generated/` by hand.
