@@ -63,6 +63,15 @@ That separation keeps the product clean:
 
 Future numeral changes should happen in the typeface layer first.
 
+## Experimental Editions
+
+The repository also keeps installable experimental variants for readability testing:
+
+- `watchface-redhat/`: Squintless Red Hat Edition, using Red Hat Display Black numerals.
+- `watchface-russo/`: Squintless Russo Edition, using official Russo One numerals.
+
+Both experimental editions use separate UUIDs so they can be installed alongside the production Squintless watchface.
+
 ## Compatibility
 
 Squintless 1.0 is built specifically for Pebble Time 2.
@@ -145,7 +154,9 @@ Copyright (c) 2026 Mangla & Co LLC
 
 Red Hat Display is licensed separately under the [SIL Open Font License 1.1](LICENSES/OFL.txt). Copyright for Red Hat Display remains with its original authors, The Red Hat Project Authors.
 
-The two licenses coexist because the Squintless project code and original assets are not font software, while the Red Hat Display font file remains third-party font software under OFL. If you redistribute the font file or modified versions of it, keep the OFL notice and license with it. If you redistribute Squintless source code or substantial portions of it, keep the MIT copyright and license notice.
+Russo One is licensed separately under the [SIL Open Font License 1.1](typeface/fonts/russo-one/OFL.txt). Copyright for Russo One remains with Jovanny Lemonad.
+
+The licenses coexist because the Squintless project code and original assets are not font software, while the Red Hat Display and Russo One font files remain third-party font software under OFL. If you redistribute the font files or modified versions of them, keep the OFL notices and licenses with them. If you redistribute Squintless source code or substantial portions of it, keep the MIT copyright and license notice.
 
 ## Project Structure
 
@@ -165,6 +176,11 @@ Squintless/
     resources/
     src/c/
     tools/
+
+  watchface-redhat/
+  watchface-russo/
+
+  comparison/
 
   store/
     feature/

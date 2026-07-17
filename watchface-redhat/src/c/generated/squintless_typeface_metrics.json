@@ -1,0 +1,1457 @@
+{
+  "edition": "Squintless Red Hat Edition",
+  "source_font": "typeface/fonts/red-hat-display/RedHatDisplay-wght.ttf",
+  "font_weight_axis": 900,
+  "asset_height": 100,
+  "row_width": 196,
+  "default_pair_spacing": 2,
+  "pair_spacing": {
+    "00": 2,
+    "01": 4,
+    "05": 2,
+    "06": 1,
+    "08": 1,
+    "09": 1,
+    "10": 5,
+    "11": 12,
+    "12": 3,
+    "18": 4,
+    "20": 1,
+    "22": 0,
+    "27": 1,
+    "34": 2,
+    "36": 2,
+    "47": 1,
+    "49": 1,
+    "58": 2,
+    "69": 1,
+    "77": 0,
+    "88": 1,
+    "90": 1,
+    "99": 1
+  },
+  "singles": {
+    "0": {
+      "file": "resources/images/singles/squintless_redhat_single_0.png",
+      "width": 88,
+      "height": 100,
+      "font_size_px": 139,
+      "ink_bbox": [
+        8,
+        5,
+        96,
+        105
+      ]
+    },
+    "1": {
+      "file": "resources/images/singles/squintless_redhat_single_1.png",
+      "width": 44,
+      "height": 100,
+      "font_size_px": 143,
+      "ink_bbox": [
+        6,
+        4,
+        50,
+        104
+      ]
+    },
+    "2": {
+      "file": "resources/images/singles/squintless_redhat_single_2.png",
+      "width": 74,
+      "height": 100,
+      "font_size_px": 141,
+      "ink_bbox": [
+        8,
+        4,
+        82,
+        104
+      ]
+    },
+    "3": {
+      "file": "resources/images/singles/squintless_redhat_single_3.png",
+      "width": 77,
+      "height": 100,
+      "font_size_px": 139,
+      "ink_bbox": [
+        6,
+        5,
+        83,
+        105
+      ]
+    },
+    "4": {
+      "file": "resources/images/singles/squintless_redhat_single_4.png",
+      "width": 92,
+      "height": 100,
+      "font_size_px": 143,
+      "ink_bbox": [
+        8,
+        4,
+        100,
+        104
+      ]
+    },
+    "5": {
+      "file": "resources/images/singles/squintless_redhat_single_5.png",
+      "width": 76,
+      "height": 100,
+      "font_size_px": 141,
+      "ink_bbox": [
+        8,
+        4,
+        84,
+        104
+      ]
+    },
+    "6": {
+      "file": "resources/images/singles/squintless_redhat_single_6.png",
+      "width": 79,
+      "height": 100,
+      "font_size_px": 139,
+      "ink_bbox": [
+        6,
+        5,
+        85,
+        105
+      ]
+    },
+    "7": {
+      "file": "resources/images/singles/squintless_redhat_single_7.png",
+      "width": 77,
+      "height": 100,
+      "font_size_px": 141,
+      "ink_bbox": [
+        8,
+        4,
+        85,
+        104
+      ]
+    },
+    "8": {
+      "file": "resources/images/singles/squintless_redhat_single_8.png",
+      "width": 75,
+      "height": 100,
+      "font_size_px": 137,
+      "ink_bbox": [
+        8,
+        4,
+        83,
+        103
+      ]
+    },
+    "9": {
+      "file": "resources/images/singles/squintless_redhat_single_9.png",
+      "width": 79,
+      "height": 100,
+      "font_size_px": 139,
+      "ink_bbox": [
+        10,
+        4,
+        89,
+        104
+      ]
+    }
+  },
+  "pairs": {
+    "00": {
+      "file": "resources/images/pairs/squintless_redhat_pair_00.png",
+      "width": 186,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        194,
+        105
+      ]
+    },
+    "01": {
+      "file": "resources/images/pairs/squintless_redhat_pair_01.png",
+      "width": 140,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 4,
+      "ink_bbox": [
+        8,
+        5,
+        148,
+        105
+      ]
+    },
+    "02": {
+      "file": "resources/images/pairs/squintless_redhat_pair_02.png",
+      "width": 169,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        177,
+        104
+      ]
+    },
+    "03": {
+      "file": "resources/images/pairs/squintless_redhat_pair_03.png",
+      "width": 173,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        181,
+        105
+      ]
+    },
+    "04": {
+      "file": "resources/images/pairs/squintless_redhat_pair_04.png",
+      "width": 187,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        195,
+        105
+      ]
+    },
+    "05": {
+      "file": "resources/images/pairs/squintless_redhat_pair_05.png",
+      "width": 173,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        181,
+        105
+      ]
+    },
+    "06": {
+      "file": "resources/images/pairs/squintless_redhat_pair_06.png",
+      "width": 174,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 1,
+      "ink_bbox": [
+        8,
+        5,
+        182,
+        105
+      ]
+    },
+    "07": {
+      "file": "resources/images/pairs/squintless_redhat_pair_07.png",
+      "width": 174,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        182,
+        105
+      ]
+    },
+    "08": {
+      "file": "resources/images/pairs/squintless_redhat_pair_08.png",
+      "width": 171,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 1,
+      "ink_bbox": [
+        8,
+        5,
+        179,
+        104
+      ]
+    },
+    "09": {
+      "file": "resources/images/pairs/squintless_redhat_pair_09.png",
+      "width": 178,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 1,
+      "ink_bbox": [
+        8,
+        5,
+        186,
+        105
+      ]
+    },
+    "10": {
+      "file": "resources/images/pairs/squintless_redhat_pair_10.png",
+      "width": 146,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 5,
+      "ink_bbox": [
+        6,
+        5,
+        152,
+        105
+      ]
+    },
+    "11": {
+      "file": "resources/images/pairs/squintless_redhat_pair_11.png",
+      "width": 108,
+      "height": 100,
+      "font_size_px": 143,
+      "spacing": 12,
+      "ink_bbox": [
+        6,
+        4,
+        114,
+        104
+      ]
+    },
+    "12": {
+      "file": "resources/images/pairs/squintless_redhat_pair_12.png",
+      "width": 131,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 3,
+      "ink_bbox": [
+        6,
+        4,
+        137,
+        104
+      ]
+    },
+    "13": {
+      "file": "resources/images/pairs/squintless_redhat_pair_13.png",
+      "width": 130,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        136,
+        105
+      ]
+    },
+    "14": {
+      "file": "resources/images/pairs/squintless_redhat_pair_14.png",
+      "width": 148,
+      "height": 100,
+      "font_size_px": 143,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        4,
+        154,
+        104
+      ]
+    },
+    "15": {
+      "file": "resources/images/pairs/squintless_redhat_pair_15.png",
+      "width": 130,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        4,
+        136,
+        103
+      ]
+    },
+    "16": {
+      "file": "resources/images/pairs/squintless_redhat_pair_16.png",
+      "width": 132,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        138,
+        105
+      ]
+    },
+    "17": {
+      "file": "resources/images/pairs/squintless_redhat_pair_17.png",
+      "width": 133,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        4,
+        139,
+        104
+      ]
+    },
+    "18": {
+      "file": "resources/images/pairs/squintless_redhat_pair_18.png",
+      "width": 131,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 4,
+      "ink_bbox": [
+        6,
+        4,
+        137,
+        103
+      ]
+    },
+    "19": {
+      "file": "resources/images/pairs/squintless_redhat_pair_19.png",
+      "width": 136,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        4,
+        142,
+        104
+      ]
+    },
+    "20": {
+      "file": "resources/images/pairs/squintless_redhat_pair_20.png",
+      "width": 171,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 1,
+      "ink_bbox": [
+        8,
+        5,
+        179,
+        104
+      ]
+    },
+    "21": {
+      "file": "resources/images/pairs/squintless_redhat_pair_21.png",
+      "width": 128,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        136,
+        104
+      ]
+    },
+    "22": {
+      "file": "resources/images/pairs/squintless_redhat_pair_22.png",
+      "width": 159,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 0,
+      "ink_bbox": [
+        8,
+        4,
+        167,
+        104
+      ]
+    },
+    "23": {
+      "file": "resources/images/pairs/squintless_redhat_pair_23.png",
+      "width": 159,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        167,
+        104
+      ]
+    },
+    "24": {
+      "file": "resources/images/pairs/squintless_redhat_pair_24.png",
+      "width": 178,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        186,
+        104
+      ]
+    },
+    "25": {
+      "file": "resources/images/pairs/squintless_redhat_pair_25.png",
+      "width": 159,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        167,
+        103
+      ]
+    },
+    "26": {
+      "file": "resources/images/pairs/squintless_redhat_pair_26.png",
+      "width": 161,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        169,
+        104
+      ]
+    },
+    "27": {
+      "file": "resources/images/pairs/squintless_redhat_pair_27.png",
+      "width": 163,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 1,
+      "ink_bbox": [
+        8,
+        4,
+        171,
+        104
+      ]
+    },
+    "28": {
+      "file": "resources/images/pairs/squintless_redhat_pair_28.png",
+      "width": 160,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        168,
+        103
+      ]
+    },
+    "29": {
+      "file": "resources/images/pairs/squintless_redhat_pair_29.png",
+      "width": 165,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        173,
+        103
+      ]
+    },
+    "30": {
+      "file": "resources/images/pairs/squintless_redhat_pair_30.png",
+      "width": 175,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        181,
+        105
+      ]
+    },
+    "31": {
+      "file": "resources/images/pairs/squintless_redhat_pair_31.png",
+      "width": 127,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        133,
+        105
+      ]
+    },
+    "32": {
+      "file": "resources/images/pairs/squintless_redhat_pair_32.png",
+      "width": 158,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        164,
+        104
+      ]
+    },
+    "33": {
+      "file": "resources/images/pairs/squintless_redhat_pair_33.png",
+      "width": 162,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        168,
+        105
+      ]
+    },
+    "34": {
+      "file": "resources/images/pairs/squintless_redhat_pair_34.png",
+      "width": 176,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        182,
+        105
+      ]
+    },
+    "35": {
+      "file": "resources/images/pairs/squintless_redhat_pair_35.png",
+      "width": 162,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        168,
+        105
+      ]
+    },
+    "36": {
+      "file": "resources/images/pairs/squintless_redhat_pair_36.png",
+      "width": 164,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        170,
+        105
+      ]
+    },
+    "37": {
+      "file": "resources/images/pairs/squintless_redhat_pair_37.png",
+      "width": 163,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        169,
+        105
+      ]
+    },
+    "38": {
+      "file": "resources/images/pairs/squintless_redhat_pair_38.png",
+      "width": 161,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        167,
+        104
+      ]
+    },
+    "39": {
+      "file": "resources/images/pairs/squintless_redhat_pair_39.png",
+      "width": 168,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        174,
+        105
+      ]
+    },
+    "40": {
+      "file": "resources/images/pairs/squintless_redhat_pair_40.png",
+      "width": 186,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        194,
+        105
+      ]
+    },
+    "41": {
+      "file": "resources/images/pairs/squintless_redhat_pair_41.png",
+      "width": 143,
+      "height": 100,
+      "font_size_px": 143,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        151,
+        104
+      ]
+    },
+    "42": {
+      "file": "resources/images/pairs/squintless_redhat_pair_42.png",
+      "width": 174,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        182,
+        104
+      ]
+    },
+    "43": {
+      "file": "resources/images/pairs/squintless_redhat_pair_43.png",
+      "width": 173,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        181,
+        105
+      ]
+    },
+    "44": {
+      "file": "resources/images/pairs/squintless_redhat_pair_44.png",
+      "width": 193,
+      "height": 100,
+      "font_size_px": 143,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        201,
+        104
+      ]
+    },
+    "45": {
+      "file": "resources/images/pairs/squintless_redhat_pair_45.png",
+      "width": 173,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        181,
+        104
+      ]
+    },
+    "46": {
+      "file": "resources/images/pairs/squintless_redhat_pair_46.png",
+      "width": 175,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        183,
+        105
+      ]
+    },
+    "47": {
+      "file": "resources/images/pairs/squintless_redhat_pair_47.png",
+      "width": 176,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 1,
+      "ink_bbox": [
+        8,
+        4,
+        184,
+        104
+      ]
+    },
+    "48": {
+      "file": "resources/images/pairs/squintless_redhat_pair_48.png",
+      "width": 172,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        180,
+        103
+      ]
+    },
+    "49": {
+      "file": "resources/images/pairs/squintless_redhat_pair_49.png",
+      "width": 178,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 1,
+      "ink_bbox": [
+        8,
+        4,
+        186,
+        104
+      ]
+    },
+    "50": {
+      "file": "resources/images/pairs/squintless_redhat_pair_50.png",
+      "width": 174,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        182,
+        105
+      ]
+    },
+    "51": {
+      "file": "resources/images/pairs/squintless_redhat_pair_51.png",
+      "width": 126,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        134,
+        103
+      ]
+    },
+    "52": {
+      "file": "resources/images/pairs/squintless_redhat_pair_52.png",
+      "width": 156,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        164,
+        103
+      ]
+    },
+    "53": {
+      "file": "resources/images/pairs/squintless_redhat_pair_53.png",
+      "width": 161,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        169,
+        105
+      ]
+    },
+    "54": {
+      "file": "resources/images/pairs/squintless_redhat_pair_54.png",
+      "width": 175,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        183,
+        104
+      ]
+    },
+    "55": {
+      "file": "resources/images/pairs/squintless_redhat_pair_55.png",
+      "width": 163,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        171,
+        104
+      ]
+    },
+    "56": {
+      "file": "resources/images/pairs/squintless_redhat_pair_56.png",
+      "width": 163,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        171,
+        105
+      ]
+    },
+    "57": {
+      "file": "resources/images/pairs/squintless_redhat_pair_57.png",
+      "width": 162,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        170,
+        104
+      ]
+    },
+    "58": {
+      "file": "resources/images/pairs/squintless_redhat_pair_58.png",
+      "width": 159,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        167,
+        103
+      ]
+    },
+    "59": {
+      "file": "resources/images/pairs/squintless_redhat_pair_59.png",
+      "width": 167,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        175,
+        104
+      ]
+    },
+    "60": {
+      "file": "resources/images/pairs/squintless_redhat_pair_60.png",
+      "width": 175,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        181,
+        105
+      ]
+    },
+    "61": {
+      "file": "resources/images/pairs/squintless_redhat_pair_61.png",
+      "width": 127,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        133,
+        105
+      ]
+    },
+    "62": {
+      "file": "resources/images/pairs/squintless_redhat_pair_62.png",
+      "width": 158,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        164,
+        104
+      ]
+    },
+    "63": {
+      "file": "resources/images/pairs/squintless_redhat_pair_63.png",
+      "width": 162,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        168,
+        105
+      ]
+    },
+    "64": {
+      "file": "resources/images/pairs/squintless_redhat_pair_64.png",
+      "width": 176,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        182,
+        105
+      ]
+    },
+    "65": {
+      "file": "resources/images/pairs/squintless_redhat_pair_65.png",
+      "width": 162,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        168,
+        105
+      ]
+    },
+    "66": {
+      "file": "resources/images/pairs/squintless_redhat_pair_66.png",
+      "width": 164,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        170,
+        105
+      ]
+    },
+    "67": {
+      "file": "resources/images/pairs/squintless_redhat_pair_67.png",
+      "width": 163,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        169,
+        105
+      ]
+    },
+    "68": {
+      "file": "resources/images/pairs/squintless_redhat_pair_68.png",
+      "width": 161,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        6,
+        5,
+        167,
+        104
+      ]
+    },
+    "69": {
+      "file": "resources/images/pairs/squintless_redhat_pair_69.png",
+      "width": 167,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 1,
+      "ink_bbox": [
+        6,
+        5,
+        173,
+        105
+      ]
+    },
+    "70": {
+      "file": "resources/images/pairs/squintless_redhat_pair_70.png",
+      "width": 174,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        182,
+        105
+      ]
+    },
+    "71": {
+      "file": "resources/images/pairs/squintless_redhat_pair_71.png",
+      "width": 128,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        136,
+        104
+      ]
+    },
+    "72": {
+      "file": "resources/images/pairs/squintless_redhat_pair_72.png",
+      "width": 161,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        169,
+        104
+      ]
+    },
+    "73": {
+      "file": "resources/images/pairs/squintless_redhat_pair_73.png",
+      "width": 161,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        169,
+        105
+      ]
+    },
+    "74": {
+      "file": "resources/images/pairs/squintless_redhat_pair_74.png",
+      "width": 178,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        186,
+        104
+      ]
+    },
+    "75": {
+      "file": "resources/images/pairs/squintless_redhat_pair_75.png",
+      "width": 161,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        169,
+        104
+      ]
+    },
+    "76": {
+      "file": "resources/images/pairs/squintless_redhat_pair_76.png",
+      "width": 163,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        171,
+        105
+      ]
+    },
+    "77": {
+      "file": "resources/images/pairs/squintless_redhat_pair_77.png",
+      "width": 162,
+      "height": 100,
+      "font_size_px": 141,
+      "spacing": 0,
+      "ink_bbox": [
+        8,
+        4,
+        170,
+        104
+      ]
+    },
+    "78": {
+      "file": "resources/images/pairs/squintless_redhat_pair_78.png",
+      "width": 160,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        168,
+        103
+      ]
+    },
+    "79": {
+      "file": "resources/images/pairs/squintless_redhat_pair_79.png",
+      "width": 167,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        175,
+        104
+      ]
+    },
+    "80": {
+      "file": "resources/images/pairs/squintless_redhat_pair_80.png",
+      "width": 172,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        180,
+        104
+      ]
+    },
+    "81": {
+      "file": "resources/images/pairs/squintless_redhat_pair_81.png",
+      "width": 125,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        133,
+        103
+      ]
+    },
+    "82": {
+      "file": "resources/images/pairs/squintless_redhat_pair_82.png",
+      "width": 157,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        165,
+        103
+      ]
+    },
+    "83": {
+      "file": "resources/images/pairs/squintless_redhat_pair_83.png",
+      "width": 159,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        167,
+        104
+      ]
+    },
+    "84": {
+      "file": "resources/images/pairs/squintless_redhat_pair_84.png",
+      "width": 173,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        181,
+        103
+      ]
+    },
+    "85": {
+      "file": "resources/images/pairs/squintless_redhat_pair_85.png",
+      "width": 159,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        167,
+        103
+      ]
+    },
+    "86": {
+      "file": "resources/images/pairs/squintless_redhat_pair_86.png",
+      "width": 161,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        5,
+        169,
+        104
+      ]
+    },
+    "87": {
+      "file": "resources/images/pairs/squintless_redhat_pair_87.png",
+      "width": 160,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        168,
+        103
+      ]
+    },
+    "88": {
+      "file": "resources/images/pairs/squintless_redhat_pair_88.png",
+      "width": 159,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 1,
+      "ink_bbox": [
+        8,
+        4,
+        167,
+        103
+      ]
+    },
+    "89": {
+      "file": "resources/images/pairs/squintless_redhat_pair_89.png",
+      "width": 165,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        8,
+        4,
+        173,
+        103
+      ]
+    },
+    "90": {
+      "file": "resources/images/pairs/squintless_redhat_pair_90.png",
+      "width": 177,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 1,
+      "ink_bbox": [
+        10,
+        5,
+        187,
+        105
+      ]
+    },
+    "91": {
+      "file": "resources/images/pairs/squintless_redhat_pair_91.png",
+      "width": 130,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        10,
+        4,
+        140,
+        104
+      ]
+    },
+    "92": {
+      "file": "resources/images/pairs/squintless_redhat_pair_92.png",
+      "width": 161,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        10,
+        4,
+        171,
+        103
+      ]
+    },
+    "93": {
+      "file": "resources/images/pairs/squintless_redhat_pair_93.png",
+      "width": 165,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        10,
+        5,
+        175,
+        105
+      ]
+    },
+    "94": {
+      "file": "resources/images/pairs/squintless_redhat_pair_94.png",
+      "width": 179,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        10,
+        4,
+        189,
+        104
+      ]
+    },
+    "95": {
+      "file": "resources/images/pairs/squintless_redhat_pair_95.png",
+      "width": 165,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        10,
+        4,
+        175,
+        104
+      ]
+    },
+    "96": {
+      "file": "resources/images/pairs/squintless_redhat_pair_96.png",
+      "width": 167,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        10,
+        5,
+        177,
+        105
+      ]
+    },
+    "97": {
+      "file": "resources/images/pairs/squintless_redhat_pair_97.png",
+      "width": 166,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 2,
+      "ink_bbox": [
+        10,
+        4,
+        176,
+        104
+      ]
+    },
+    "98": {
+      "file": "resources/images/pairs/squintless_redhat_pair_98.png",
+      "width": 164,
+      "height": 100,
+      "font_size_px": 137,
+      "spacing": 2,
+      "ink_bbox": [
+        10,
+        4,
+        174,
+        103
+      ]
+    },
+    "99": {
+      "file": "resources/images/pairs/squintless_redhat_pair_99.png",
+      "width": 170,
+      "height": 100,
+      "font_size_px": 139,
+      "spacing": 1,
+      "ink_bbox": [
+        10,
+        4,
+        180,
+        104
+      ]
+    }
+  }
+}

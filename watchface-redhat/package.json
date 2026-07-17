@@ -1,0 +1,586 @@
+{
+  "name": "squintless-redhat",
+  "author": "Mangla & Co LLC",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "pebble-watchface",
+    "accessibility",
+    "large-digits",
+    "readability",
+    "low-vision",
+    "emery",
+    "pebble-time-2",
+    "experiment"
+  ],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "Squintless Red Hat",
+    "uuid": "fd3d9535-e58f-4d8f-b75c-750e8bbd0c10",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "emery"
+    ],
+    "watchapp": {
+      "watchface": true
+    },
+    "messageKeys": [],
+    "resources": {
+      "media": [
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_0",
+          "file": "images/singles/squintless_redhat_single_0.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_1",
+          "file": "images/singles/squintless_redhat_single_1.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_2",
+          "file": "images/singles/squintless_redhat_single_2.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_3",
+          "file": "images/singles/squintless_redhat_single_3.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_4",
+          "file": "images/singles/squintless_redhat_single_4.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_5",
+          "file": "images/singles/squintless_redhat_single_5.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_6",
+          "file": "images/singles/squintless_redhat_single_6.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_7",
+          "file": "images/singles/squintless_redhat_single_7.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_8",
+          "file": "images/singles/squintless_redhat_single_8.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_SINGLE_9",
+          "file": "images/singles/squintless_redhat_single_9.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_00",
+          "file": "images/pairs/squintless_redhat_pair_00.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_01",
+          "file": "images/pairs/squintless_redhat_pair_01.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_02",
+          "file": "images/pairs/squintless_redhat_pair_02.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_03",
+          "file": "images/pairs/squintless_redhat_pair_03.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_04",
+          "file": "images/pairs/squintless_redhat_pair_04.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_05",
+          "file": "images/pairs/squintless_redhat_pair_05.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_06",
+          "file": "images/pairs/squintless_redhat_pair_06.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_07",
+          "file": "images/pairs/squintless_redhat_pair_07.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_08",
+          "file": "images/pairs/squintless_redhat_pair_08.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_09",
+          "file": "images/pairs/squintless_redhat_pair_09.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_10",
+          "file": "images/pairs/squintless_redhat_pair_10.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_11",
+          "file": "images/pairs/squintless_redhat_pair_11.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_12",
+          "file": "images/pairs/squintless_redhat_pair_12.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_13",
+          "file": "images/pairs/squintless_redhat_pair_13.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_14",
+          "file": "images/pairs/squintless_redhat_pair_14.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_15",
+          "file": "images/pairs/squintless_redhat_pair_15.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_16",
+          "file": "images/pairs/squintless_redhat_pair_16.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_17",
+          "file": "images/pairs/squintless_redhat_pair_17.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_18",
+          "file": "images/pairs/squintless_redhat_pair_18.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_19",
+          "file": "images/pairs/squintless_redhat_pair_19.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_20",
+          "file": "images/pairs/squintless_redhat_pair_20.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_21",
+          "file": "images/pairs/squintless_redhat_pair_21.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_22",
+          "file": "images/pairs/squintless_redhat_pair_22.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_23",
+          "file": "images/pairs/squintless_redhat_pair_23.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_24",
+          "file": "images/pairs/squintless_redhat_pair_24.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_25",
+          "file": "images/pairs/squintless_redhat_pair_25.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_26",
+          "file": "images/pairs/squintless_redhat_pair_26.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_27",
+          "file": "images/pairs/squintless_redhat_pair_27.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_28",
+          "file": "images/pairs/squintless_redhat_pair_28.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_29",
+          "file": "images/pairs/squintless_redhat_pair_29.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_30",
+          "file": "images/pairs/squintless_redhat_pair_30.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_31",
+          "file": "images/pairs/squintless_redhat_pair_31.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_32",
+          "file": "images/pairs/squintless_redhat_pair_32.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_33",
+          "file": "images/pairs/squintless_redhat_pair_33.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_34",
+          "file": "images/pairs/squintless_redhat_pair_34.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_35",
+          "file": "images/pairs/squintless_redhat_pair_35.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_36",
+          "file": "images/pairs/squintless_redhat_pair_36.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_37",
+          "file": "images/pairs/squintless_redhat_pair_37.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_38",
+          "file": "images/pairs/squintless_redhat_pair_38.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_39",
+          "file": "images/pairs/squintless_redhat_pair_39.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_40",
+          "file": "images/pairs/squintless_redhat_pair_40.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_41",
+          "file": "images/pairs/squintless_redhat_pair_41.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_42",
+          "file": "images/pairs/squintless_redhat_pair_42.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_43",
+          "file": "images/pairs/squintless_redhat_pair_43.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_44",
+          "file": "images/pairs/squintless_redhat_pair_44.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_45",
+          "file": "images/pairs/squintless_redhat_pair_45.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_46",
+          "file": "images/pairs/squintless_redhat_pair_46.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_47",
+          "file": "images/pairs/squintless_redhat_pair_47.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_48",
+          "file": "images/pairs/squintless_redhat_pair_48.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_49",
+          "file": "images/pairs/squintless_redhat_pair_49.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_50",
+          "file": "images/pairs/squintless_redhat_pair_50.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_51",
+          "file": "images/pairs/squintless_redhat_pair_51.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_52",
+          "file": "images/pairs/squintless_redhat_pair_52.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_53",
+          "file": "images/pairs/squintless_redhat_pair_53.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_54",
+          "file": "images/pairs/squintless_redhat_pair_54.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_55",
+          "file": "images/pairs/squintless_redhat_pair_55.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_56",
+          "file": "images/pairs/squintless_redhat_pair_56.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_57",
+          "file": "images/pairs/squintless_redhat_pair_57.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_58",
+          "file": "images/pairs/squintless_redhat_pair_58.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_59",
+          "file": "images/pairs/squintless_redhat_pair_59.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_60",
+          "file": "images/pairs/squintless_redhat_pair_60.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_61",
+          "file": "images/pairs/squintless_redhat_pair_61.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_62",
+          "file": "images/pairs/squintless_redhat_pair_62.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_63",
+          "file": "images/pairs/squintless_redhat_pair_63.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_64",
+          "file": "images/pairs/squintless_redhat_pair_64.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_65",
+          "file": "images/pairs/squintless_redhat_pair_65.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_66",
+          "file": "images/pairs/squintless_redhat_pair_66.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_67",
+          "file": "images/pairs/squintless_redhat_pair_67.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_68",
+          "file": "images/pairs/squintless_redhat_pair_68.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_69",
+          "file": "images/pairs/squintless_redhat_pair_69.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_70",
+          "file": "images/pairs/squintless_redhat_pair_70.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_71",
+          "file": "images/pairs/squintless_redhat_pair_71.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_72",
+          "file": "images/pairs/squintless_redhat_pair_72.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_73",
+          "file": "images/pairs/squintless_redhat_pair_73.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_74",
+          "file": "images/pairs/squintless_redhat_pair_74.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_75",
+          "file": "images/pairs/squintless_redhat_pair_75.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_76",
+          "file": "images/pairs/squintless_redhat_pair_76.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_77",
+          "file": "images/pairs/squintless_redhat_pair_77.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_78",
+          "file": "images/pairs/squintless_redhat_pair_78.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_79",
+          "file": "images/pairs/squintless_redhat_pair_79.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_80",
+          "file": "images/pairs/squintless_redhat_pair_80.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_81",
+          "file": "images/pairs/squintless_redhat_pair_81.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_82",
+          "file": "images/pairs/squintless_redhat_pair_82.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_83",
+          "file": "images/pairs/squintless_redhat_pair_83.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_84",
+          "file": "images/pairs/squintless_redhat_pair_84.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_85",
+          "file": "images/pairs/squintless_redhat_pair_85.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_86",
+          "file": "images/pairs/squintless_redhat_pair_86.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_87",
+          "file": "images/pairs/squintless_redhat_pair_87.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_88",
+          "file": "images/pairs/squintless_redhat_pair_88.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_89",
+          "file": "images/pairs/squintless_redhat_pair_89.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_90",
+          "file": "images/pairs/squintless_redhat_pair_90.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_91",
+          "file": "images/pairs/squintless_redhat_pair_91.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_92",
+          "file": "images/pairs/squintless_redhat_pair_92.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_93",
+          "file": "images/pairs/squintless_redhat_pair_93.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_94",
+          "file": "images/pairs/squintless_redhat_pair_94.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_95",
+          "file": "images/pairs/squintless_redhat_pair_95.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_96",
+          "file": "images/pairs/squintless_redhat_pair_96.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_97",
+          "file": "images/pairs/squintless_redhat_pair_97.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_98",
+          "file": "images/pairs/squintless_redhat_pair_98.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_PAIR_99",
+          "file": "images/pairs/squintless_redhat_pair_99.png"
+        }
+      ]
+    }
+  },
+  "description": "Experimental Squintless variant for Pebble Time 2 readability testing."
+}

@@ -2,6 +2,12 @@
 
 All notable changes to Squintless will be documented here.
 
+## Unreleased
+
+- Added the experimental Squintless Russo Edition using official Russo One numerals.
+- Restored the experimental Squintless Red Hat Edition for three-way comparison.
+- Refined the outlined battery progress bar to use a taller white interior.
+
 ## 1.0.0 - 2026-07-17
 
 - Prepared the first public open-source release.
