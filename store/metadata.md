@@ -24,7 +24,7 @@ The numerals are custom Squintless glyphs, generated from canonical SVG source a
 
 The battery indicator reads like a quiet outlined progress bar: black for charge remaining and white for charge used. It is visible without competing with the time.
 
-When the date matters, press the middle button. Squintless shows a large numeric date for three seconds, then returns automatically to the default time face.
+When the date matters, press the middle button. Squintless shows a large Russo One month/day date for three seconds, then returns automatically to the default time face.
 
 Squintless is for people over 40, anyone whose near vision is not what it used to be, and anyone who values function over decoration.
 
@@ -35,7 +35,7 @@ Initial production release.
 - Purpose-built Pebble Time 2 layout for instant time recognition.
 - Custom Squintless numeral set optimized for large, high-contrast readability.
 - Full-width outlined battery progress indicator with proportional black fill.
-- Middle-button date glance with automatic three-second return to the time.
+- Middle-button month/day date glance with automatic three-second return to the time.
 - No always-on secondary complications, icons, seconds, weather, or decorative information.
 - Built exclusively for `emery`, the Pebble Time 2 platform.
 

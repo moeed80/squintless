@@ -583,6 +583,221 @@
           "type": "bitmap",
           "name": "IMAGE_PAIR_99",
           "file": "images/pairs/squintless_pair_99.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_JAN",
+          "file": "images/date/months/squintless_date_month_jan.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_FEB",
+          "file": "images/date/months/squintless_date_month_feb.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_MAR",
+          "file": "images/date/months/squintless_date_month_mar.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_APR",
+          "file": "images/date/months/squintless_date_month_apr.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_MAY",
+          "file": "images/date/months/squintless_date_month_may.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_JUN",
+          "file": "images/date/months/squintless_date_month_jun.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_JUL",
+          "file": "images/date/months/squintless_date_month_jul.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_AUG",
+          "file": "images/date/months/squintless_date_month_aug.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_SEP",
+          "file": "images/date/months/squintless_date_month_sep.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_OCT",
+          "file": "images/date/months/squintless_date_month_oct.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_NOV",
+          "file": "images/date/months/squintless_date_month_nov.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_MONTH_DEC",
+          "file": "images/date/months/squintless_date_month_dec.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_01",
+          "file": "images/date/days/squintless_date_day_01.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_02",
+          "file": "images/date/days/squintless_date_day_02.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_03",
+          "file": "images/date/days/squintless_date_day_03.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_04",
+          "file": "images/date/days/squintless_date_day_04.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_05",
+          "file": "images/date/days/squintless_date_day_05.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_06",
+          "file": "images/date/days/squintless_date_day_06.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_07",
+          "file": "images/date/days/squintless_date_day_07.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_08",
+          "file": "images/date/days/squintless_date_day_08.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_09",
+          "file": "images/date/days/squintless_date_day_09.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_10",
+          "file": "images/date/days/squintless_date_day_10.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_11",
+          "file": "images/date/days/squintless_date_day_11.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_12",
+          "file": "images/date/days/squintless_date_day_12.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_13",
+          "file": "images/date/days/squintless_date_day_13.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_14",
+          "file": "images/date/days/squintless_date_day_14.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_15",
+          "file": "images/date/days/squintless_date_day_15.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_16",
+          "file": "images/date/days/squintless_date_day_16.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_17",
+          "file": "images/date/days/squintless_date_day_17.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_18",
+          "file": "images/date/days/squintless_date_day_18.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_19",
+          "file": "images/date/days/squintless_date_day_19.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_20",
+          "file": "images/date/days/squintless_date_day_20.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_21",
+          "file": "images/date/days/squintless_date_day_21.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_22",
+          "file": "images/date/days/squintless_date_day_22.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_23",
+          "file": "images/date/days/squintless_date_day_23.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_24",
+          "file": "images/date/days/squintless_date_day_24.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_25",
+          "file": "images/date/days/squintless_date_day_25.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_26",
+          "file": "images/date/days/squintless_date_day_26.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_27",
+          "file": "images/date/days/squintless_date_day_27.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_28",
+          "file": "images/date/days/squintless_date_day_28.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_29",
+          "file": "images/date/days/squintless_date_day_29.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_30",
+          "file": "images/date/days/squintless_date_day_30.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_DATE_DAY_31",
+          "file": "images/date/days/squintless_date_day_31.png"
         }
       ]
     }

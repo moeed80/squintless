@@ -1,5 +1,6 @@
 #include <pebble.h>
 
+#include "generated/squintless_date_assets.h"
 #include "generated/squintless_typeface_assets.h"
 
 #define DATE_GLANCE_MS 3000
@@ -25,8 +26,8 @@ static GBitmap *s_date_day_bitmap;
 static AppTimer *s_date_timer;
 static char s_hour_text[4];
 static char s_minute_text[4];
-static char s_date_month_text[4];
-static char s_date_day_text[4];
+static int s_date_month_index;
+static int s_date_day_index;
 static int s_battery_percent = 100;
 static bool s_showing_date;
 
@@ -81,8 +82,7 @@ static void prv_get_time_text(char *hour_text, size_t hour_text_size,
   snprintf(minute_text, minute_text_size, "%02d", tick_time->tm_min);
 }
 
-static void prv_get_date_text(char *month_text, size_t month_text_size,
-                              char *day_text, size_t day_text_size) {
+static void prv_get_date_indices(int *month_index, int *day_index) {
   time_t now = time(NULL);
   struct tm *tick_time = localtime(&now);
   int month = tick_time->tm_mon + 1;
@@ -100,8 +100,8 @@ static void prv_get_date_text(char *month_text, size_t month_text_size,
     day = 31;
   }
 
-  snprintf(month_text, month_text_size, "%02d", month);
-  snprintf(day_text, day_text_size, "%02d", day);
+  *month_index = month - 1;
+  *day_index = day - 1;
 }
 
 static uint32_t prv_resource_id_for_text(const char *text) {
@@ -129,6 +129,20 @@ static void prv_replace_bitmap_if_needed(GBitmap **bitmap, char *cached_text,
   cached_text[3] = '\0';
 }
 
+static void prv_replace_resource_bitmap_if_needed(GBitmap **bitmap, int *cached_index,
+                                                  int new_index, uint32_t resource_id) {
+  if (*cached_index == new_index && *bitmap) {
+    return;
+  }
+
+  if (*bitmap) {
+    gbitmap_destroy(*bitmap);
+  }
+
+  *bitmap = gbitmap_create_with_resource(resource_id);
+  *cached_index = new_index;
+}
+
 static void prv_update_time_assets(void) {
   char hour_text[4];
   char minute_text[4];
@@ -139,12 +153,20 @@ static void prv_update_time_assets(void) {
 }
 
 static void prv_update_date_assets(void) {
-  char month_text[4];
-  char day_text[4];
+  int month_index;
+  int day_index;
 
-  prv_get_date_text(month_text, sizeof(month_text), day_text, sizeof(day_text));
-  prv_replace_bitmap_if_needed(&s_date_month_bitmap, s_date_month_text, month_text);
-  prv_replace_bitmap_if_needed(&s_date_day_bitmap, s_date_day_text, day_text);
+  prv_get_date_indices(&month_index, &day_index);
+  prv_replace_resource_bitmap_if_needed(
+      &s_date_month_bitmap,
+      &s_date_month_index,
+      month_index,
+      SQUINTLESS_DATE_MONTH_RESOURCE_IDS[month_index]);
+  prv_replace_resource_bitmap_if_needed(
+      &s_date_day_bitmap,
+      &s_date_day_index,
+      day_index,
+      SQUINTLESS_DATE_DAY_RESOURCE_IDS[day_index]);
 }
 
 static void prv_draw_bitmap_centered(GContext *ctx, GBitmap *bitmap, GRect bounds) {

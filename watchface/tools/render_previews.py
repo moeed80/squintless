@@ -8,6 +8,7 @@ from PIL import Image, ImageChops, ImageDraw
 
 WATCHFACE_DIR = Path(__file__).resolve().parents[1]
 METRICS_PATH = WATCHFACE_DIR / "src" / "c" / "generated" / "squintless_typeface_metrics.json"
+DATE_METRICS_PATH = WATCHFACE_DIR / "src" / "c" / "generated" / "squintless_date_metrics.json"
 OUT_DIR = WATCHFACE_DIR / "previews"
 
 WIDTH = 200
@@ -37,8 +38,8 @@ STATES = [
 BATTERY_VALIDATION_LEVELS = [100, 75, 50, 25, 10, 0]
 
 DATE_GLANCE_STATES = [
-    ("07", "22", "07-22"),
-    ("12", "31", "12-31"),
+    ("JUL", "22", "jul-22"),
+    ("DEC", "31", "dec-31"),
 ]
 
 
@@ -69,6 +70,14 @@ def load_asset(metrics, text):
     else:
         path = WATCHFACE_DIR / metrics["pairs"][text]["file"]
     return Image.open(path).convert("L")
+
+
+def load_date_month_asset(metrics, month):
+    return Image.open(WATCHFACE_DIR / metrics["months"][month]["file"]).convert("L")
+
+
+def load_date_day_asset(metrics, day):
+    return Image.open(WATCHFACE_DIR / metrics["days"][day]["file"]).convert("L")
 
 
 def draw_centered_asset(canvas, asset, bounds):
@@ -138,18 +147,19 @@ def render(metrics, hour, minute, battery):
     return canvas
 
 
-def render_date_glance(metrics, month, day):
+def render_date_glance(date_metrics, month, day):
     bounds = layout()
     canvas = Image.new("L", (WIDTH, HEIGHT), 255)
 
-    draw_centered_asset(canvas, load_asset(metrics, month), bounds["hour"])
+    draw_centered_asset(canvas, load_date_month_asset(date_metrics, month), bounds["hour"])
     draw_date_separator(canvas, bounds["battery"])
-    draw_centered_asset(canvas, load_asset(metrics, day), bounds["minute"])
+    draw_centered_asset(canvas, load_date_day_asset(date_metrics, day), bounds["minute"])
     return canvas
 
 
 def main():
     metrics = json.loads(METRICS_PATH.read_text())
+    date_metrics = json.loads(DATE_METRICS_PATH.read_text())
     OUT_DIR.mkdir(exist_ok=True)
     BATTERY_VALIDATION_DIR.mkdir(exist_ok=True)
     DATE_GLANCE_DIR.mkdir(exist_ok=True)
@@ -159,7 +169,7 @@ def main():
         )
 
     for month, day, slug in DATE_GLANCE_STATES:
-        render_date_glance(metrics, month, day).save(
+        render_date_glance(date_metrics, month, day).save(
             DATE_GLANCE_DIR / f"squintless-date-{slug}.png"
         )
 
