@@ -4,6 +4,16 @@ All notable changes to Squintless will be documented here.
 
 ## Unreleased
 
+## 1.2.0 - 2026-07-22
+
+- Added rectangular Pebble compatibility for 144 x 168 watches.
+- Added platform-specific `~144w~168h` Russo One numeral and date-glance bitmap resources.
+- Kept the Pebble Time 2 `emery` numeral assets pixel-identical to the 1.1 release.
+- Added a compact 144 x 168 layout profile for the battery bar and date separator.
+- Added an `aplite` resource-saving path that composes time from single digit bitmaps to stay under the 128 KB resource limit.
+- Updated the release builder to emit a multi-platform rectangular App Store package.
+- Added 144 x 168 developer previews for time, date glance, and battery validation.
+
 ## 1.1.0 - 2026-07-22
 
 - Prepared the App Store 1.1 package from the real-device-tested Russo One readability treatment.

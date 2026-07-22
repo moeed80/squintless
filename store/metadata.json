@@ -1,7 +1,7 @@
 {
   "name": "Squintless",
   "tagline": "Designed for your aging eyes, not your ego.",
-  "shortDescription": "An accessibility-first Pebble Time 2 watch face built to make time and date readable at a glance.",
+  "shortDescription": "An accessibility-first Pebble watch face built to make time and date readable at a glance.",
   "category": "Watchfaces",
   "keywords": [
     "accessibility",
@@ -10,29 +10,45 @@
     "low vision",
     "over 40",
     "aging eyes",
+    "Pebble",
     "Pebble Time 2",
-    "emery",
+    "rectangular",
     "watch face",
     "battery",
     "high contrast",
     "simple",
     "glanceable"
   ],
-  "version": "1.1.0",
+  "version": "1.2.0",
   "copyright": "Copyright (c) 2026 Mangla & Co LLC",
-  "versionNotes": "Version 1.1.0 adds a tap-triggered date glance and uses the real-device-tested Russo One readability treatment.",
+  "versionNotes": "Version 1.2.0 expands Squintless from Pebble Time 2 to the rectangular Pebble lineup while preserving the clean time, battery, and tap-date behavior.",
   "releaseNotes": [
-    "Purpose-built Pebble Time 2 layout for instant time recognition.",
-    "Russo One numeral treatment selected after real-device readability testing.",
+    "Adds support for 144 x 168 rectangular Pebble watches.",
+    "Keeps the Pebble Time 2 layout and numeral assets unchanged from the tested 1.1 release.",
+    "Uses platform-specific bitmap numerals and date-glance assets for each rectangular display class.",
     "Full-width outlined battery progress indicator with proportional black fill.",
     "Tap-triggered month/day date glance with automatic three-second return to the time.",
-    "No always-on secondary complications, icons, seconds, weather, or decorative information.",
-    "Built exclusively for emery, the Pebble Time 2 platform."
+    "Pebble Time Round is intentionally not included in this release."
   ],
   "compatibility": {
-    "watch": "Pebble Time 2",
-    "platform": "emery",
-    "resolution": "200 x 228",
+    "watches": [
+      "Pebble Time 2",
+      "144 x 168 rectangular Pebble watches"
+    ],
+    "platforms": [
+      "aplite",
+      "basalt",
+      "diorite",
+      "emery",
+      "flint"
+    ],
+    "resolutions": [
+      "200 x 228",
+      "144 x 168"
+    ],
+    "excluded": [
+      "chalk"
+    ],
     "display": "rectangular"
   }
 }

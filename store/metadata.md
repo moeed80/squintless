@@ -10,7 +10,7 @@ Designed for your aging eyes, not your ego.
 
 ## Short Description
 
-An accessibility-first Pebble Time 2 watch face built to make the time readable at a glance.
+An accessibility-first Pebble watch face built to make the time readable at a glance.
 
 ## Full Description
 
@@ -20,7 +20,7 @@ Designed for your aging eyes, not your ego.
 
 The default layout is intentionally simple: hours on top, a full-width battery indicator in the middle, and minutes on the bottom. There is no always-on date, no weather, no step count, no seconds, no icons, and no status clutter. Every pixel is used to improve readability.
 
-The numerals use the Russo One readability treatment selected through real-device testing, generated into hard monochrome Pebble bitmap resources. They are oversized, high-contrast, and tuned for the 200 x 228 Pebble Time 2 display.
+The numerals use the Russo One readability treatment selected through real-device testing, generated into hard monochrome Pebble bitmap resources. They are oversized, high-contrast, and tuned separately for 200 x 228 and 144 x 168 rectangular Pebble displays.
 
 The battery indicator reads like a quiet outlined progress bar: black for charge remaining and white for charge used. It is visible without competing with the time.
 
@@ -30,18 +30,18 @@ Squintless is for people over 40, anyone whose near vision is not what it used t
 
 ## Release Notes
 
-Version 1.1.0.
+Version 1.2.0.
 
-- Purpose-built Pebble Time 2 layout for instant time recognition.
-- Russo One numeral treatment selected after real-device readability testing.
+- Adds support for 144 x 168 rectangular Pebble watches.
+- Keeps the Pebble Time 2 layout and numeral assets unchanged from the tested 1.1 release.
+- Uses platform-specific bitmap numerals and date-glance assets for each rectangular display class.
 - Full-width outlined battery progress indicator with proportional black fill.
 - Tap-triggered month/day date glance with automatic three-second return to the time.
-- No always-on secondary complications, icons, seconds, weather, or decorative information.
-- Built exclusively for `emery`, the Pebble Time 2 platform.
+- Pebble Time Round is intentionally not included in this release.
 
 ## Version Notes
 
-Version 1.1.0 adds a tap-triggered date glance and uses the real-device-tested Russo One readability treatment.
+Version 1.2.0 expands Squintless from Pebble Time 2 to the rectangular Pebble lineup while preserving the clean time, battery, and tap-date behavior.
 
 ## Category
 
@@ -49,13 +49,13 @@ Watchfaces
 
 ## Keywords
 
-accessibility, readable, large digits, low vision, over 40, aging eyes, Pebble Time 2, emery, watch face, battery, high contrast, simple, glanceable
+accessibility, readable, large digits, low vision, over 40, aging eyes, Pebble, Pebble Time 2, rectangular, watch face, battery, high contrast, simple, glanceable
 
 ## Compatibility
 
-- Pebble Time 2
-- Platform: `emery`
-- Display: 200 x 228 rectangular
+- Pebble Time 2 / `emery`
+- 144 x 168 rectangular Pebble watches: `aplite`, `basalt`, `diorite`, `flint`
+- Pebble Time Round / `chalk` is not included
 
 ## Copyright
 

@@ -11,8 +11,6 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[2]
 FONT_PATH = ROOT / "typeface" / "fonts" / "russo-one" / "RussoOne-Regular.ttf"
 
-ROW_WIDTH = 196
-RESOURCE_HEIGHT = 100
 MAX_FONT_SIZE = 180
 MONTH_TRACKING = -2
 DAY_TRACKING = -6
@@ -36,6 +34,37 @@ DAYS = [f"{day:02d}" for day in range(1, 32)]
 
 
 @dataclass(frozen=True)
+class DisplayProfile:
+    key: str
+    display_width: int
+    display_height: int
+    row_width: int
+    resource_height: int
+    file_suffix: str
+
+
+DISPLAY_PROFILES = [
+    DisplayProfile(
+        key="emery_200x228",
+        display_width=200,
+        display_height=228,
+        row_width=196,
+        resource_height=100,
+        file_suffix="",
+    ),
+    DisplayProfile(
+        key="rect_144x168",
+        display_width=144,
+        display_height=168,
+        row_width=140,
+        resource_height=74,
+        file_suffix="~144w~168h",
+    ),
+]
+DEFAULT_PROFILE_KEY = "emery_200x228"
+
+
+@dataclass(frozen=True)
 class RenderedAsset:
     text: str
     image: Image.Image
@@ -55,20 +84,22 @@ def text_bbox(font: ImageFont.FreeTypeFont, text: str, tracking: int) -> tuple[i
     return left, top, right, bottom
 
 
-def choose_font_size(labels: list[str], tracking: int) -> int:
+def choose_font_size(profile: DisplayProfile, labels: list[str], tracking: int) -> int:
     for size in range(MAX_FONT_SIZE, 1, -1):
         font = ImageFont.truetype(str(FONT_PATH), size=size)
-        if all(fits(font, label, tracking) for label in labels):
+        if all(fits(profile, font, label, tracking) for label in labels):
             return size
     raise ValueError("Could not fit date glance labels")
 
 
-def fits(font: ImageFont.FreeTypeFont, text: str, tracking: int) -> bool:
+def fits(profile: DisplayProfile, font: ImageFont.FreeTypeFont,
+         text: str, tracking: int) -> bool:
     left, top, right, bottom = text_bbox(font, text, tracking)
-    return right - left <= ROW_WIDTH and bottom - top <= RESOURCE_HEIGHT
+    return right - left <= profile.row_width and bottom - top <= profile.resource_height
 
 
-def render_label(font: ImageFont.FreeTypeFont, text: str, tracking: int) -> RenderedAsset:
+def render_label(profile: DisplayProfile, font: ImageFont.FreeTypeFont,
+                 text: str, tracking: int) -> RenderedAsset:
     draw = ImageDraw.Draw(Image.new("L", (1, 1)))
     boxes = [draw.textbbox((0, 0), char, font=font) for char in text]
     widths = [box[2] - box[0] for box in boxes]
@@ -91,8 +122,8 @@ def render_label(font: ImageFont.FreeTypeFont, text: str, tracking: int) -> Rend
         raise ValueError(f"Font render for {text} produced no pixels")
 
     cropped = thresholded.crop(ink_bbox)
-    output = Image.new("1", (cropped.width, RESOURCE_HEIGHT), 1)
-    y = (RESOURCE_HEIGHT - cropped.height) // 2
+    output = Image.new("1", (cropped.width, profile.resource_height), 1)
+    y = (profile.resource_height - cropped.height) // 2
     output.paste(cropped.point(lambda value: 0 if value < 128 else 255, mode="1"), (0, y))
     return RenderedAsset(
         text=text,
@@ -104,10 +135,10 @@ def render_label(font: ImageFont.FreeTypeFont, text: str, tracking: int) -> Rend
     )
 
 
-def render_label_at_max_size(text: str, tracking: int) -> RenderedAsset:
-    font_size = choose_font_size([text], tracking)
+def render_label_at_max_size(profile: DisplayProfile, text: str, tracking: int) -> RenderedAsset:
+    font_size = choose_font_size(profile, [text], tracking)
     font = ImageFont.truetype(str(FONT_PATH), size=font_size)
-    return render_label(font, text, tracking)
+    return render_label(profile, font, text, tracking)
 
 
 def month_resource_name(month: str) -> str:
@@ -118,18 +149,34 @@ def day_resource_name(day: str) -> str:
     return f"IMAGE_DATE_DAY_{day}"
 
 
-def month_file(month: str) -> Path:
-    return Path("resources") / "images" / "date" / "months" / f"squintless_date_month_{month.lower()}.png"
+def file_stem_with_suffix(stem: str, profile: DisplayProfile) -> str:
+    return f"{stem}{profile.file_suffix}.png"
 
 
-def day_file(day: str) -> Path:
-    return Path("resources") / "images" / "date" / "days" / f"squintless_date_day_{day}.png"
+def month_file(month: str, profile: DisplayProfile) -> Path:
+    return (
+        Path("resources")
+        / "images"
+        / "date"
+        / "months"
+        / file_stem_with_suffix(f"squintless_date_month_{month.lower()}", profile)
+    )
 
 
-def write_assets(watchface_dir: Path, month_assets: list[RenderedAsset],
-                 day_assets: list[RenderedAsset]) -> dict:
-    month_dir = watchface_dir / month_file("jan").parent
-    day_dir = watchface_dir / day_file("01").parent
+def day_file(day: str, profile: DisplayProfile) -> Path:
+    return (
+        Path("resources")
+        / "images"
+        / "date"
+        / "days"
+        / file_stem_with_suffix(f"squintless_date_day_{day}", profile)
+    )
+
+
+def write_assets(watchface_dir: Path,
+                 profile_assets: dict[str, tuple[list[RenderedAsset], list[RenderedAsset]]]) -> dict:
+    month_dir = watchface_dir / "resources" / "images" / "date" / "months"
+    day_dir = watchface_dir / "resources" / "images" / "date" / "days"
     generated_dir = watchface_dir / "src" / "c" / "generated"
 
     month_dir.mkdir(parents=True, exist_ok=True)
@@ -139,35 +186,52 @@ def write_assets(watchface_dir: Path, month_assets: list[RenderedAsset],
     metrics = {
         "source_font": str(FONT_PATH.relative_to(ROOT)),
         "license": "SIL Open Font License 1.1",
-        "asset_height": RESOURCE_HEIGHT,
-        "row_width": ROW_WIDTH,
         "month_tracking": MONTH_TRACKING,
         "day_tracking": DAY_TRACKING,
-        "months": {},
-        "days": {},
+        "profiles": {},
     }
 
-    for asset in month_assets:
-        path = watchface_dir / month_file(asset.text)
-        asset.image.save(path)
-        metrics["months"][asset.text] = {
-            "file": str(path.relative_to(watchface_dir)),
-            "width": asset.width,
-            "height": asset.height,
-            "font_size_px": asset.font_size,
-            "ink_bbox": asset.ink_bbox,
+    for profile in DISPLAY_PROFILES:
+        month_assets, day_assets = profile_assets[profile.key]
+        profile_metrics = {
+            "display_width": profile.display_width,
+            "display_height": profile.display_height,
+            "asset_height": profile.resource_height,
+            "row_width": profile.row_width,
+            "file_suffix": profile.file_suffix,
+            "months": {},
+            "days": {},
         }
 
-    for asset in day_assets:
-        path = watchface_dir / day_file(asset.text)
-        asset.image.save(path)
-        metrics["days"][asset.text] = {
-            "file": str(path.relative_to(watchface_dir)),
-            "width": asset.width,
-            "height": asset.height,
-            "font_size_px": asset.font_size,
-            "ink_bbox": asset.ink_bbox,
-        }
+        for asset in month_assets:
+            path = watchface_dir / month_file(asset.text, profile)
+            asset.image.save(path)
+            profile_metrics["months"][asset.text] = {
+                "file": str(path.relative_to(watchface_dir)),
+                "width": asset.width,
+                "height": asset.height,
+                "font_size_px": asset.font_size,
+                "ink_bbox": asset.ink_bbox,
+            }
+
+        for asset in day_assets:
+            path = watchface_dir / day_file(asset.text, profile)
+            asset.image.save(path)
+            profile_metrics["days"][asset.text] = {
+                "file": str(path.relative_to(watchface_dir)),
+                "width": asset.width,
+                "height": asset.height,
+                "font_size_px": asset.font_size,
+                "ink_bbox": asset.ink_bbox,
+            }
+
+        metrics["profiles"][profile.key] = profile_metrics
+
+    default_metrics = metrics["profiles"][DEFAULT_PROFILE_KEY]
+    metrics["asset_height"] = default_metrics["asset_height"]
+    metrics["row_width"] = default_metrics["row_width"]
+    metrics["months"] = default_metrics["months"]
+    metrics["days"] = default_metrics["days"]
 
     (generated_dir / "squintless_date_metrics.json").write_text(
         json.dumps(metrics, indent=2) + "\n"
@@ -235,9 +299,18 @@ def generate_for_watchface(watchface_dir: Path) -> None:
     if not FONT_PATH.exists():
         raise FileNotFoundError(f"Russo One font is missing: {FONT_PATH}")
 
-    month_assets = [render_label_at_max_size(month, MONTH_TRACKING) for month in MONTHS]
-    day_assets = [render_label_at_max_size(day, DAY_TRACKING) for day in DAYS]
-    metrics = write_assets(watchface_dir, month_assets, day_assets)
+    profile_assets = {}
+    for profile in DISPLAY_PROFILES:
+        month_assets = [
+            render_label_at_max_size(profile, month, MONTH_TRACKING)
+            for month in MONTHS
+        ]
+        day_assets = [
+            render_label_at_max_size(profile, day, DAY_TRACKING)
+            for day in DAYS
+        ]
+        profile_assets[profile.key] = (month_assets, day_assets)
+    metrics = write_assets(watchface_dir, profile_assets)
     write_header(watchface_dir)
     update_package_json(watchface_dir, metrics)
 

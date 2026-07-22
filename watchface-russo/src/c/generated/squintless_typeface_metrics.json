@@ -2,8 +2,6 @@
   "edition": "Squintless Russo Edition",
   "source_font": "typeface/fonts/russo-one/RussoOne-Regular.ttf",
   "font_weight_axis": null,
-  "asset_height": 100,
-  "row_width": 196,
   "default_pair_spacing": 0,
   "pair_spacing": {
     "00": 0,
@@ -30,6 +28,2872 @@
     "90": 0,
     "99": 0
   },
+  "profiles": {
+    "emery_200x228": {
+      "display_width": 200,
+      "display_height": 228,
+      "asset_height": 100,
+      "row_width": 196,
+      "file_suffix": "",
+      "singles": {
+        "0": {
+          "file": "resources/images/singles/squintless_russo_single_0.png",
+          "width": 81,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            91,
+            103
+          ]
+        },
+        "1": {
+          "file": "resources/images/singles/squintless_russo_single_1.png",
+          "width": 49,
+          "height": 100,
+          "font_size_px": 144,
+          "ink_bbox": [
+            5,
+            4,
+            54,
+            104
+          ]
+        },
+        "2": {
+          "file": "resources/images/singles/squintless_russo_single_2.png",
+          "width": 78,
+          "height": 100,
+          "font_size_px": 144,
+          "ink_bbox": [
+            7,
+            4,
+            85,
+            104
+          ]
+        },
+        "3": {
+          "file": "resources/images/singles/squintless_russo_single_3.png",
+          "width": 80,
+          "height": 100,
+          "font_size_px": 142,
+          "ink_bbox": [
+            7,
+            4,
+            87,
+            104
+          ]
+        },
+        "4": {
+          "file": "resources/images/singles/squintless_russo_single_4.png",
+          "width": 88,
+          "height": 100,
+          "font_size_px": 142,
+          "ink_bbox": [
+            7,
+            4,
+            95,
+            103
+          ]
+        },
+        "5": {
+          "file": "resources/images/singles/squintless_russo_single_5.png",
+          "width": 79,
+          "height": 100,
+          "font_size_px": 142,
+          "ink_bbox": [
+            7,
+            4,
+            86,
+            104
+          ]
+        },
+        "6": {
+          "file": "resources/images/singles/squintless_russo_single_6.png",
+          "width": 79,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            89,
+            103
+          ]
+        },
+        "7": {
+          "file": "resources/images/singles/squintless_russo_single_7.png",
+          "width": 77,
+          "height": 100,
+          "font_size_px": 142,
+          "ink_bbox": [
+            5,
+            4,
+            82,
+            103
+          ]
+        },
+        "8": {
+          "file": "resources/images/singles/squintless_russo_single_8.png",
+          "width": 84,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            8,
+            4,
+            92,
+            103
+          ]
+        },
+        "9": {
+          "file": "resources/images/singles/squintless_russo_single_9.png",
+          "width": 79,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            7,
+            4,
+            86,
+            103
+          ]
+        }
+      },
+      "pairs": {
+        "00": {
+          "file": "resources/images/pairs/squintless_russo_pair_00.png",
+          "width": 174,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            183,
+            103
+          ]
+        },
+        "01": {
+          "file": "resources/images/pairs/squintless_russo_pair_01.png",
+          "width": 138,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 3,
+          "ink_bbox": [
+            10,
+            4,
+            147,
+            103
+          ]
+        },
+        "02": {
+          "file": "resources/images/pairs/squintless_russo_pair_02.png",
+          "width": 165,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            174,
+            103
+          ]
+        },
+        "03": {
+          "file": "resources/images/pairs/squintless_russo_pair_03.png",
+          "width": 167,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            176,
+            103
+          ]
+        },
+        "04": {
+          "file": "resources/images/pairs/squintless_russo_pair_04.png",
+          "width": 176,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            185,
+            103
+          ]
+        },
+        "05": {
+          "file": "resources/images/pairs/squintless_russo_pair_05.png",
+          "width": 167,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            176,
+            103
+          ]
+        },
+        "06": {
+          "file": "resources/images/pairs/squintless_russo_pair_06.png",
+          "width": 171,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": -1,
+          "ink_bbox": [
+            10,
+            4,
+            180,
+            103
+          ]
+        },
+        "07": {
+          "file": "resources/images/pairs/squintless_russo_pair_07.png",
+          "width": 163,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            172,
+            103
+          ]
+        },
+        "08": {
+          "file": "resources/images/pairs/squintless_russo_pair_08.png",
+          "width": 174,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": -1,
+          "ink_bbox": [
+            10,
+            4,
+            183,
+            103
+          ]
+        },
+        "09": {
+          "file": "resources/images/pairs/squintless_russo_pair_09.png",
+          "width": 169,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            178,
+            103
+          ]
+        },
+        "10": {
+          "file": "resources/images/pairs/squintless_russo_pair_10.png",
+          "width": 146,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 3,
+          "ink_bbox": [
+            4,
+            4,
+            150,
+            103
+          ]
+        },
+        "11": {
+          "file": "resources/images/pairs/squintless_russo_pair_11.png",
+          "width": 121,
+          "height": 100,
+          "font_size_px": 144,
+          "spacing": 13,
+          "ink_bbox": [
+            5,
+            4,
+            125,
+            104
+          ]
+        },
+        "12": {
+          "file": "resources/images/pairs/squintless_russo_pair_12.png",
+          "width": 141,
+          "height": 100,
+          "font_size_px": 144,
+          "spacing": 2,
+          "ink_bbox": [
+            5,
+            4,
+            145,
+            104
+          ]
+        },
+        "13": {
+          "file": "resources/images/pairs/squintless_russo_pair_13.png",
+          "width": 141,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            146,
+            104
+          ]
+        },
+        "14": {
+          "file": "resources/images/pairs/squintless_russo_pair_14.png",
+          "width": 149,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            154,
+            103
+          ]
+        },
+        "15": {
+          "file": "resources/images/pairs/squintless_russo_pair_15.png",
+          "width": 140,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            145,
+            104
+          ]
+        },
+        "16": {
+          "file": "resources/images/pairs/squintless_russo_pair_16.png",
+          "width": 141,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            4,
+            4,
+            145,
+            103
+          ]
+        },
+        "17": {
+          "file": "resources/images/pairs/squintless_russo_pair_17.png",
+          "width": 136,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            141,
+            103
+          ]
+        },
+        "18": {
+          "file": "resources/images/pairs/squintless_russo_pair_18.png",
+          "width": 146,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 2,
+          "ink_bbox": [
+            4,
+            4,
+            150,
+            103
+          ]
+        },
+        "19": {
+          "file": "resources/images/pairs/squintless_russo_pair_19.png",
+          "width": 138,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            4,
+            4,
+            142,
+            103
+          ]
+        },
+        "20": {
+          "file": "resources/images/pairs/squintless_russo_pair_20.png",
+          "width": 166,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            172,
+            103
+          ]
+        },
+        "21": {
+          "file": "resources/images/pairs/squintless_russo_pair_21.png",
+          "width": 132,
+          "height": 100,
+          "font_size_px": 144,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            139,
+            104
+          ]
+        },
+        "22": {
+          "file": "resources/images/pairs/squintless_russo_pair_22.png",
+          "width": 162,
+          "height": 100,
+          "font_size_px": 144,
+          "spacing": -1,
+          "ink_bbox": [
+            7,
+            4,
+            169,
+            104
+          ]
+        },
+        "23": {
+          "file": "resources/images/pairs/squintless_russo_pair_23.png",
+          "width": 164,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            171,
+            104
+          ]
+        },
+        "24": {
+          "file": "resources/images/pairs/squintless_russo_pair_24.png",
+          "width": 172,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            179,
+            103
+          ]
+        },
+        "25": {
+          "file": "resources/images/pairs/squintless_russo_pair_25.png",
+          "width": 163,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            170,
+            104
+          ]
+        },
+        "26": {
+          "file": "resources/images/pairs/squintless_russo_pair_26.png",
+          "width": 164,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            170,
+            103
+          ]
+        },
+        "27": {
+          "file": "resources/images/pairs/squintless_russo_pair_27.png",
+          "width": 159,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            166,
+            103
+          ]
+        },
+        "28": {
+          "file": "resources/images/pairs/squintless_russo_pair_28.png",
+          "width": 167,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            173,
+            103
+          ]
+        },
+        "29": {
+          "file": "resources/images/pairs/squintless_russo_pair_29.png",
+          "width": 161,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            167,
+            103
+          ]
+        },
+        "30": {
+          "file": "resources/images/pairs/squintless_russo_pair_30.png",
+          "width": 169,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            175,
+            103
+          ]
+        },
+        "31": {
+          "file": "resources/images/pairs/squintless_russo_pair_31.png",
+          "width": 134,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            141,
+            104
+          ]
+        },
+        "32": {
+          "file": "resources/images/pairs/squintless_russo_pair_32.png",
+          "width": 164,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            171,
+            104
+          ]
+        },
+        "33": {
+          "file": "resources/images/pairs/squintless_russo_pair_33.png",
+          "width": 167,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            174,
+            104
+          ]
+        },
+        "34": {
+          "file": "resources/images/pairs/squintless_russo_pair_34.png",
+          "width": 174,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": -1,
+          "ink_bbox": [
+            7,
+            4,
+            181,
+            104
+          ]
+        },
+        "35": {
+          "file": "resources/images/pairs/squintless_russo_pair_35.png",
+          "width": 166,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            173,
+            104
+          ]
+        },
+        "36": {
+          "file": "resources/images/pairs/squintless_russo_pair_36.png",
+          "width": 166,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": -1,
+          "ink_bbox": [
+            6,
+            4,
+            172,
+            103
+          ]
+        },
+        "37": {
+          "file": "resources/images/pairs/squintless_russo_pair_37.png",
+          "width": 162,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            169,
+            104
+          ]
+        },
+        "38": {
+          "file": "resources/images/pairs/squintless_russo_pair_38.png",
+          "width": 170,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            176,
+            103
+          ]
+        },
+        "39": {
+          "file": "resources/images/pairs/squintless_russo_pair_39.png",
+          "width": 164,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            170,
+            103
+          ]
+        },
+        "40": {
+          "file": "resources/images/pairs/squintless_russo_pair_40.png",
+          "width": 174,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            181,
+            103
+          ]
+        },
+        "41": {
+          "file": "resources/images/pairs/squintless_russo_pair_41.png",
+          "width": 139,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            146,
+            103
+          ]
+        },
+        "42": {
+          "file": "resources/images/pairs/squintless_russo_pair_42.png",
+          "width": 169,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            176,
+            103
+          ]
+        },
+        "43": {
+          "file": "resources/images/pairs/squintless_russo_pair_43.png",
+          "width": 172,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            179,
+            104
+          ]
+        },
+        "44": {
+          "file": "resources/images/pairs/squintless_russo_pair_44.png",
+          "width": 180,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            187,
+            103
+          ]
+        },
+        "45": {
+          "file": "resources/images/pairs/squintless_russo_pair_45.png",
+          "width": 171,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            178,
+            104
+          ]
+        },
+        "46": {
+          "file": "resources/images/pairs/squintless_russo_pair_46.png",
+          "width": 172,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            179,
+            103
+          ]
+        },
+        "47": {
+          "file": "resources/images/pairs/squintless_russo_pair_47.png",
+          "width": 167,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            174,
+            103
+          ]
+        },
+        "48": {
+          "file": "resources/images/pairs/squintless_russo_pair_48.png",
+          "width": 175,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            182,
+            103
+          ]
+        },
+        "49": {
+          "file": "resources/images/pairs/squintless_russo_pair_49.png",
+          "width": 169,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            176,
+            103
+          ]
+        },
+        "50": {
+          "file": "resources/images/pairs/squintless_russo_pair_50.png",
+          "width": 167,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            174,
+            103
+          ]
+        },
+        "51": {
+          "file": "resources/images/pairs/squintless_russo_pair_51.png",
+          "width": 132,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            139,
+            104
+          ]
+        },
+        "52": {
+          "file": "resources/images/pairs/squintless_russo_pair_52.png",
+          "width": 162,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            169,
+            104
+          ]
+        },
+        "53": {
+          "file": "resources/images/pairs/squintless_russo_pair_53.png",
+          "width": 165,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            172,
+            104
+          ]
+        },
+        "54": {
+          "file": "resources/images/pairs/squintless_russo_pair_54.png",
+          "width": 173,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            180,
+            104
+          ]
+        },
+        "55": {
+          "file": "resources/images/pairs/squintless_russo_pair_55.png",
+          "width": 164,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            171,
+            104
+          ]
+        },
+        "56": {
+          "file": "resources/images/pairs/squintless_russo_pair_56.png",
+          "width": 165,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            172,
+            103
+          ]
+        },
+        "57": {
+          "file": "resources/images/pairs/squintless_russo_pair_57.png",
+          "width": 160,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            167,
+            104
+          ]
+        },
+        "58": {
+          "file": "resources/images/pairs/squintless_russo_pair_58.png",
+          "width": 167,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": -1,
+          "ink_bbox": [
+            7,
+            4,
+            174,
+            103
+          ]
+        },
+        "59": {
+          "file": "resources/images/pairs/squintless_russo_pair_59.png",
+          "width": 162,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            169,
+            103
+          ]
+        },
+        "60": {
+          "file": "resources/images/pairs/squintless_russo_pair_60.png",
+          "width": 169,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            178,
+            103
+          ]
+        },
+        "61": {
+          "file": "resources/images/pairs/squintless_russo_pair_61.png",
+          "width": 130,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            139,
+            103
+          ]
+        },
+        "62": {
+          "file": "resources/images/pairs/squintless_russo_pair_62.png",
+          "width": 160,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            169,
+            103
+          ]
+        },
+        "63": {
+          "file": "resources/images/pairs/squintless_russo_pair_63.png",
+          "width": 162,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            171,
+            103
+          ]
+        },
+        "64": {
+          "file": "resources/images/pairs/squintless_russo_pair_64.png",
+          "width": 171,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            180,
+            103
+          ]
+        },
+        "65": {
+          "file": "resources/images/pairs/squintless_russo_pair_65.png",
+          "width": 162,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            171,
+            103
+          ]
+        },
+        "66": {
+          "file": "resources/images/pairs/squintless_russo_pair_66.png",
+          "width": 167,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            176,
+            103
+          ]
+        },
+        "67": {
+          "file": "resources/images/pairs/squintless_russo_pair_67.png",
+          "width": 158,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            167,
+            103
+          ]
+        },
+        "68": {
+          "file": "resources/images/pairs/squintless_russo_pair_68.png",
+          "width": 170,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            10,
+            4,
+            179,
+            103
+          ]
+        },
+        "69": {
+          "file": "resources/images/pairs/squintless_russo_pair_69.png",
+          "width": 163,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": -1,
+          "ink_bbox": [
+            10,
+            4,
+            172,
+            103
+          ]
+        },
+        "70": {
+          "file": "resources/images/pairs/squintless_russo_pair_70.png",
+          "width": 163,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            168,
+            103
+          ]
+        },
+        "71": {
+          "file": "resources/images/pairs/squintless_russo_pair_71.png",
+          "width": 128,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            134,
+            103
+          ]
+        },
+        "72": {
+          "file": "resources/images/pairs/squintless_russo_pair_72.png",
+          "width": 158,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            164,
+            103
+          ]
+        },
+        "73": {
+          "file": "resources/images/pairs/squintless_russo_pair_73.png",
+          "width": 161,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            167,
+            104
+          ]
+        },
+        "74": {
+          "file": "resources/images/pairs/squintless_russo_pair_74.png",
+          "width": 169,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            175,
+            103
+          ]
+        },
+        "75": {
+          "file": "resources/images/pairs/squintless_russo_pair_75.png",
+          "width": 160,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            166,
+            104
+          ]
+        },
+        "76": {
+          "file": "resources/images/pairs/squintless_russo_pair_76.png",
+          "width": 161,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            166,
+            103
+          ]
+        },
+        "77": {
+          "file": "resources/images/pairs/squintless_russo_pair_77.png",
+          "width": 156,
+          "height": 100,
+          "font_size_px": 142,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            162,
+            103
+          ]
+        },
+        "78": {
+          "file": "resources/images/pairs/squintless_russo_pair_78.png",
+          "width": 164,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            169,
+            103
+          ]
+        },
+        "79": {
+          "file": "resources/images/pairs/squintless_russo_pair_79.png",
+          "width": 158,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            163,
+            103
+          ]
+        },
+        "80": {
+          "file": "resources/images/pairs/squintless_russo_pair_80.png",
+          "width": 175,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            4,
+            183,
+            103
+          ]
+        },
+        "81": {
+          "file": "resources/images/pairs/squintless_russo_pair_81.png",
+          "width": 136,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            4,
+            144,
+            103
+          ]
+        },
+        "82": {
+          "file": "resources/images/pairs/squintless_russo_pair_82.png",
+          "width": 166,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            4,
+            174,
+            103
+          ]
+        },
+        "83": {
+          "file": "resources/images/pairs/squintless_russo_pair_83.png",
+          "width": 168,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            4,
+            176,
+            103
+          ]
+        },
+        "84": {
+          "file": "resources/images/pairs/squintless_russo_pair_84.png",
+          "width": 177,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            4,
+            185,
+            103
+          ]
+        },
+        "85": {
+          "file": "resources/images/pairs/squintless_russo_pair_85.png",
+          "width": 168,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            4,
+            176,
+            103
+          ]
+        },
+        "86": {
+          "file": "resources/images/pairs/squintless_russo_pair_86.png",
+          "width": 173,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            4,
+            181,
+            103
+          ]
+        },
+        "87": {
+          "file": "resources/images/pairs/squintless_russo_pair_87.png",
+          "width": 164,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            4,
+            172,
+            103
+          ]
+        },
+        "88": {
+          "file": "resources/images/pairs/squintless_russo_pair_88.png",
+          "width": 175,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": -1,
+          "ink_bbox": [
+            8,
+            4,
+            183,
+            103
+          ]
+        },
+        "89": {
+          "file": "resources/images/pairs/squintless_russo_pair_89.png",
+          "width": 170,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            4,
+            178,
+            103
+          ]
+        },
+        "90": {
+          "file": "resources/images/pairs/squintless_russo_pair_90.png",
+          "width": 172,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            178,
+            103
+          ]
+        },
+        "91": {
+          "file": "resources/images/pairs/squintless_russo_pair_91.png",
+          "width": 133,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            139,
+            103
+          ]
+        },
+        "92": {
+          "file": "resources/images/pairs/squintless_russo_pair_92.png",
+          "width": 163,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            169,
+            103
+          ]
+        },
+        "93": {
+          "file": "resources/images/pairs/squintless_russo_pair_93.png",
+          "width": 165,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            171,
+            103
+          ]
+        },
+        "94": {
+          "file": "resources/images/pairs/squintless_russo_pair_94.png",
+          "width": 174,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            180,
+            103
+          ]
+        },
+        "95": {
+          "file": "resources/images/pairs/squintless_russo_pair_95.png",
+          "width": 165,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            171,
+            103
+          ]
+        },
+        "96": {
+          "file": "resources/images/pairs/squintless_russo_pair_96.png",
+          "width": 170,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            176,
+            103
+          ]
+        },
+        "97": {
+          "file": "resources/images/pairs/squintless_russo_pair_97.png",
+          "width": 161,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            167,
+            103
+          ]
+        },
+        "98": {
+          "file": "resources/images/pairs/squintless_russo_pair_98.png",
+          "width": 173,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            179,
+            103
+          ]
+        },
+        "99": {
+          "file": "resources/images/pairs/squintless_russo_pair_99.png",
+          "width": 167,
+          "height": 100,
+          "font_size_px": 138,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            4,
+            173,
+            103
+          ]
+        }
+      }
+    },
+    "rect_144x168": {
+      "display_width": 144,
+      "display_height": 168,
+      "asset_height": 74,
+      "row_width": 140,
+      "file_suffix": "~144w~168h",
+      "singles": {
+        "0": {
+          "file": "resources/images/singles/squintless_russo_single_0~144w~168h.png",
+          "width": 61,
+          "height": 74,
+          "font_size_px": 104,
+          "ink_bbox": [
+            8,
+            5,
+            69,
+            79
+          ]
+        },
+        "1": {
+          "file": "resources/images/singles/squintless_russo_single_1~144w~168h.png",
+          "width": 36,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            5,
+            4,
+            41,
+            78
+          ]
+        },
+        "2": {
+          "file": "resources/images/singles/squintless_russo_single_2~144w~168h.png",
+          "width": 57,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            6,
+            4,
+            63,
+            77
+          ]
+        },
+        "3": {
+          "file": "resources/images/singles/squintless_russo_single_3~144w~168h.png",
+          "width": 59,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            6,
+            4,
+            65,
+            78
+          ]
+        },
+        "4": {
+          "file": "resources/images/singles/squintless_russo_single_4~144w~168h.png",
+          "width": 66,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            6,
+            4,
+            72,
+            78
+          ]
+        },
+        "5": {
+          "file": "resources/images/singles/squintless_russo_single_5~144w~168h.png",
+          "width": 59,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            6,
+            4,
+            65,
+            78
+          ]
+        },
+        "6": {
+          "file": "resources/images/singles/squintless_russo_single_6~144w~168h.png",
+          "width": 59,
+          "height": 74,
+          "font_size_px": 104,
+          "ink_bbox": [
+            8,
+            5,
+            67,
+            79
+          ]
+        },
+        "7": {
+          "file": "resources/images/singles/squintless_russo_single_7~144w~168h.png",
+          "width": 57,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            5,
+            4,
+            62,
+            77
+          ]
+        },
+        "8": {
+          "file": "resources/images/singles/squintless_russo_single_8~144w~168h.png",
+          "width": 63,
+          "height": 74,
+          "font_size_px": 104,
+          "ink_bbox": [
+            7,
+            5,
+            70,
+            79
+          ]
+        },
+        "9": {
+          "file": "resources/images/singles/squintless_russo_single_9~144w~168h.png",
+          "width": 59,
+          "height": 74,
+          "font_size_px": 104,
+          "ink_bbox": [
+            6,
+            5,
+            65,
+            79
+          ]
+        }
+      },
+      "pairs": {
+        "00": {
+          "file": "resources/images/pairs/squintless_russo_pair_00~144w~168h.png",
+          "width": 131,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            139,
+            79
+          ]
+        },
+        "01": {
+          "file": "resources/images/pairs/squintless_russo_pair_01~144w~168h.png",
+          "width": 105,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 3,
+          "ink_bbox": [
+            8,
+            5,
+            113,
+            79
+          ]
+        },
+        "02": {
+          "file": "resources/images/pairs/squintless_russo_pair_02~144w~168h.png",
+          "width": 124,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            132,
+            79
+          ]
+        },
+        "03": {
+          "file": "resources/images/pairs/squintless_russo_pair_03~144w~168h.png",
+          "width": 126,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            134,
+            79
+          ]
+        },
+        "04": {
+          "file": "resources/images/pairs/squintless_russo_pair_04~144w~168h.png",
+          "width": 132,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            140,
+            79
+          ]
+        },
+        "05": {
+          "file": "resources/images/pairs/squintless_russo_pair_05~144w~168h.png",
+          "width": 126,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            134,
+            79
+          ]
+        },
+        "06": {
+          "file": "resources/images/pairs/squintless_russo_pair_06~144w~168h.png",
+          "width": 128,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": -1,
+          "ink_bbox": [
+            8,
+            5,
+            136,
+            79
+          ]
+        },
+        "07": {
+          "file": "resources/images/pairs/squintless_russo_pair_07~144w~168h.png",
+          "width": 123,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            131,
+            79
+          ]
+        },
+        "08": {
+          "file": "resources/images/pairs/squintless_russo_pair_08~144w~168h.png",
+          "width": 131,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": -1,
+          "ink_bbox": [
+            8,
+            5,
+            139,
+            79
+          ]
+        },
+        "09": {
+          "file": "resources/images/pairs/squintless_russo_pair_09~144w~168h.png",
+          "width": 127,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            135,
+            79
+          ]
+        },
+        "10": {
+          "file": "resources/images/pairs/squintless_russo_pair_10~144w~168h.png",
+          "width": 110,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 3,
+          "ink_bbox": [
+            5,
+            5,
+            115,
+            79
+          ]
+        },
+        "11": {
+          "file": "resources/images/pairs/squintless_russo_pair_11~144w~168h.png",
+          "width": 93,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 13,
+          "ink_bbox": [
+            5,
+            4,
+            98,
+            78
+          ]
+        },
+        "12": {
+          "file": "resources/images/pairs/squintless_russo_pair_12~144w~168h.png",
+          "width": 104,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 2,
+          "ink_bbox": [
+            5,
+            4,
+            109,
+            78
+          ]
+        },
+        "13": {
+          "file": "resources/images/pairs/squintless_russo_pair_13~144w~168h.png",
+          "width": 104,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            109,
+            78
+          ]
+        },
+        "14": {
+          "file": "resources/images/pairs/squintless_russo_pair_14~144w~168h.png",
+          "width": 111,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            116,
+            78
+          ]
+        },
+        "15": {
+          "file": "resources/images/pairs/squintless_russo_pair_15~144w~168h.png",
+          "width": 104,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            109,
+            78
+          ]
+        },
+        "16": {
+          "file": "resources/images/pairs/squintless_russo_pair_16~144w~168h.png",
+          "width": 105,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            5,
+            110,
+            79
+          ]
+        },
+        "17": {
+          "file": "resources/images/pairs/squintless_russo_pair_17~144w~168h.png",
+          "width": 101,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            106,
+            78
+          ]
+        },
+        "18": {
+          "file": "resources/images/pairs/squintless_russo_pair_18~144w~168h.png",
+          "width": 110,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 2,
+          "ink_bbox": [
+            5,
+            5,
+            115,
+            79
+          ]
+        },
+        "19": {
+          "file": "resources/images/pairs/squintless_russo_pair_19~144w~168h.png",
+          "width": 103,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            5,
+            108,
+            79
+          ]
+        },
+        "20": {
+          "file": "resources/images/pairs/squintless_russo_pair_20~144w~168h.png",
+          "width": 124,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            130,
+            79
+          ]
+        },
+        "21": {
+          "file": "resources/images/pairs/squintless_russo_pair_21~144w~168h.png",
+          "width": 98,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            104,
+            78
+          ]
+        },
+        "22": {
+          "file": "resources/images/pairs/squintless_russo_pair_22~144w~168h.png",
+          "width": 119,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": -1,
+          "ink_bbox": [
+            6,
+            4,
+            125,
+            77
+          ]
+        },
+        "23": {
+          "file": "resources/images/pairs/squintless_russo_pair_23~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            128,
+            78
+          ]
+        },
+        "24": {
+          "file": "resources/images/pairs/squintless_russo_pair_24~144w~168h.png",
+          "width": 129,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            135,
+            78
+          ]
+        },
+        "25": {
+          "file": "resources/images/pairs/squintless_russo_pair_25~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            128,
+            78
+          ]
+        },
+        "26": {
+          "file": "resources/images/pairs/squintless_russo_pair_26~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            128,
+            79
+          ]
+        },
+        "27": {
+          "file": "resources/images/pairs/squintless_russo_pair_27~144w~168h.png",
+          "width": 119,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            125,
+            77
+          ]
+        },
+        "28": {
+          "file": "resources/images/pairs/squintless_russo_pair_28~144w~168h.png",
+          "width": 125,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            131,
+            79
+          ]
+        },
+        "29": {
+          "file": "resources/images/pairs/squintless_russo_pair_29~144w~168h.png",
+          "width": 120,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            126,
+            79
+          ]
+        },
+        "30": {
+          "file": "resources/images/pairs/squintless_russo_pair_30~144w~168h.png",
+          "width": 126,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            132,
+            79
+          ]
+        },
+        "31": {
+          "file": "resources/images/pairs/squintless_russo_pair_31~144w~168h.png",
+          "width": 100,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            106,
+            78
+          ]
+        },
+        "32": {
+          "file": "resources/images/pairs/squintless_russo_pair_32~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            128,
+            78
+          ]
+        },
+        "33": {
+          "file": "resources/images/pairs/squintless_russo_pair_33~144w~168h.png",
+          "width": 124,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            130,
+            78
+          ]
+        },
+        "34": {
+          "file": "resources/images/pairs/squintless_russo_pair_34~144w~168h.png",
+          "width": 130,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": -1,
+          "ink_bbox": [
+            6,
+            4,
+            136,
+            78
+          ]
+        },
+        "35": {
+          "file": "resources/images/pairs/squintless_russo_pair_35~144w~168h.png",
+          "width": 124,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            130,
+            78
+          ]
+        },
+        "36": {
+          "file": "resources/images/pairs/squintless_russo_pair_36~144w~168h.png",
+          "width": 123,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": -1,
+          "ink_bbox": [
+            6,
+            5,
+            129,
+            79
+          ]
+        },
+        "37": {
+          "file": "resources/images/pairs/squintless_russo_pair_37~144w~168h.png",
+          "width": 121,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            127,
+            78
+          ]
+        },
+        "38": {
+          "file": "resources/images/pairs/squintless_russo_pair_38~144w~168h.png",
+          "width": 127,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            133,
+            79
+          ]
+        },
+        "39": {
+          "file": "resources/images/pairs/squintless_russo_pair_39~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            128,
+            79
+          ]
+        },
+        "40": {
+          "file": "resources/images/pairs/squintless_russo_pair_40~144w~168h.png",
+          "width": 131,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            137,
+            79
+          ]
+        },
+        "41": {
+          "file": "resources/images/pairs/squintless_russo_pair_41~144w~168h.png",
+          "width": 104,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            110,
+            78
+          ]
+        },
+        "42": {
+          "file": "resources/images/pairs/squintless_russo_pair_42~144w~168h.png",
+          "width": 126,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            132,
+            78
+          ]
+        },
+        "43": {
+          "file": "resources/images/pairs/squintless_russo_pair_43~144w~168h.png",
+          "width": 128,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            134,
+            78
+          ]
+        },
+        "44": {
+          "file": "resources/images/pairs/squintless_russo_pair_44~144w~168h.png",
+          "width": 135,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            141,
+            78
+          ]
+        },
+        "45": {
+          "file": "resources/images/pairs/squintless_russo_pair_45~144w~168h.png",
+          "width": 128,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            134,
+            78
+          ]
+        },
+        "46": {
+          "file": "resources/images/pairs/squintless_russo_pair_46~144w~168h.png",
+          "width": 129,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            135,
+            79
+          ]
+        },
+        "47": {
+          "file": "resources/images/pairs/squintless_russo_pair_47~144w~168h.png",
+          "width": 125,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            131,
+            78
+          ]
+        },
+        "48": {
+          "file": "resources/images/pairs/squintless_russo_pair_48~144w~168h.png",
+          "width": 132,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            138,
+            79
+          ]
+        },
+        "49": {
+          "file": "resources/images/pairs/squintless_russo_pair_49~144w~168h.png",
+          "width": 127,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            133,
+            79
+          ]
+        },
+        "50": {
+          "file": "resources/images/pairs/squintless_russo_pair_50~144w~168h.png",
+          "width": 125,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            131,
+            79
+          ]
+        },
+        "51": {
+          "file": "resources/images/pairs/squintless_russo_pair_51~144w~168h.png",
+          "width": 99,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            105,
+            78
+          ]
+        },
+        "52": {
+          "file": "resources/images/pairs/squintless_russo_pair_52~144w~168h.png",
+          "width": 121,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            127,
+            78
+          ]
+        },
+        "53": {
+          "file": "resources/images/pairs/squintless_russo_pair_53~144w~168h.png",
+          "width": 123,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            129,
+            78
+          ]
+        },
+        "54": {
+          "file": "resources/images/pairs/squintless_russo_pair_54~144w~168h.png",
+          "width": 130,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            136,
+            78
+          ]
+        },
+        "55": {
+          "file": "resources/images/pairs/squintless_russo_pair_55~144w~168h.png",
+          "width": 123,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            129,
+            78
+          ]
+        },
+        "56": {
+          "file": "resources/images/pairs/squintless_russo_pair_56~144w~168h.png",
+          "width": 123,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            129,
+            79
+          ]
+        },
+        "57": {
+          "file": "resources/images/pairs/squintless_russo_pair_57~144w~168h.png",
+          "width": 120,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            4,
+            126,
+            78
+          ]
+        },
+        "58": {
+          "file": "resources/images/pairs/squintless_russo_pair_58~144w~168h.png",
+          "width": 125,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": -1,
+          "ink_bbox": [
+            6,
+            5,
+            131,
+            79
+          ]
+        },
+        "59": {
+          "file": "resources/images/pairs/squintless_russo_pair_59~144w~168h.png",
+          "width": 121,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            127,
+            79
+          ]
+        },
+        "60": {
+          "file": "resources/images/pairs/squintless_russo_pair_60~144w~168h.png",
+          "width": 127,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            135,
+            79
+          ]
+        },
+        "61": {
+          "file": "resources/images/pairs/squintless_russo_pair_61~144w~168h.png",
+          "width": 98,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            106,
+            79
+          ]
+        },
+        "62": {
+          "file": "resources/images/pairs/squintless_russo_pair_62~144w~168h.png",
+          "width": 120,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            128,
+            79
+          ]
+        },
+        "63": {
+          "file": "resources/images/pairs/squintless_russo_pair_63~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            130,
+            79
+          ]
+        },
+        "64": {
+          "file": "resources/images/pairs/squintless_russo_pair_64~144w~168h.png",
+          "width": 128,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            136,
+            79
+          ]
+        },
+        "65": {
+          "file": "resources/images/pairs/squintless_russo_pair_65~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            130,
+            79
+          ]
+        },
+        "66": {
+          "file": "resources/images/pairs/squintless_russo_pair_66~144w~168h.png",
+          "width": 125,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            133,
+            79
+          ]
+        },
+        "67": {
+          "file": "resources/images/pairs/squintless_russo_pair_67~144w~168h.png",
+          "width": 119,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            127,
+            79
+          ]
+        },
+        "68": {
+          "file": "resources/images/pairs/squintless_russo_pair_68~144w~168h.png",
+          "width": 128,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            8,
+            5,
+            136,
+            79
+          ]
+        },
+        "69": {
+          "file": "resources/images/pairs/squintless_russo_pair_69~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": -1,
+          "ink_bbox": [
+            8,
+            5,
+            130,
+            79
+          ]
+        },
+        "70": {
+          "file": "resources/images/pairs/squintless_russo_pair_70~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            5,
+            127,
+            79
+          ]
+        },
+        "71": {
+          "file": "resources/images/pairs/squintless_russo_pair_71~144w~168h.png",
+          "width": 95,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            100,
+            78
+          ]
+        },
+        "72": {
+          "file": "resources/images/pairs/squintless_russo_pair_72~144w~168h.png",
+          "width": 117,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            122,
+            77
+          ]
+        },
+        "73": {
+          "file": "resources/images/pairs/squintless_russo_pair_73~144w~168h.png",
+          "width": 119,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            124,
+            78
+          ]
+        },
+        "74": {
+          "file": "resources/images/pairs/squintless_russo_pair_74~144w~168h.png",
+          "width": 126,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            131,
+            78
+          ]
+        },
+        "75": {
+          "file": "resources/images/pairs/squintless_russo_pair_75~144w~168h.png",
+          "width": 119,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            124,
+            78
+          ]
+        },
+        "76": {
+          "file": "resources/images/pairs/squintless_russo_pair_76~144w~168h.png",
+          "width": 120,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            5,
+            125,
+            79
+          ]
+        },
+        "77": {
+          "file": "resources/images/pairs/squintless_russo_pair_77~144w~168h.png",
+          "width": 116,
+          "height": 74,
+          "font_size_px": 106,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            4,
+            121,
+            77
+          ]
+        },
+        "78": {
+          "file": "resources/images/pairs/squintless_russo_pair_78~144w~168h.png",
+          "width": 123,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            5,
+            128,
+            79
+          ]
+        },
+        "79": {
+          "file": "resources/images/pairs/squintless_russo_pair_79~144w~168h.png",
+          "width": 118,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            5,
+            5,
+            123,
+            79
+          ]
+        },
+        "80": {
+          "file": "resources/images/pairs/squintless_russo_pair_80~144w~168h.png",
+          "width": 132,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            5,
+            139,
+            79
+          ]
+        },
+        "81": {
+          "file": "resources/images/pairs/squintless_russo_pair_81~144w~168h.png",
+          "width": 103,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            5,
+            110,
+            79
+          ]
+        },
+        "82": {
+          "file": "resources/images/pairs/squintless_russo_pair_82~144w~168h.png",
+          "width": 125,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            5,
+            132,
+            79
+          ]
+        },
+        "83": {
+          "file": "resources/images/pairs/squintless_russo_pair_83~144w~168h.png",
+          "width": 127,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            5,
+            134,
+            79
+          ]
+        },
+        "84": {
+          "file": "resources/images/pairs/squintless_russo_pair_84~144w~168h.png",
+          "width": 133,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            5,
+            140,
+            79
+          ]
+        },
+        "85": {
+          "file": "resources/images/pairs/squintless_russo_pair_85~144w~168h.png",
+          "width": 127,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            5,
+            134,
+            79
+          ]
+        },
+        "86": {
+          "file": "resources/images/pairs/squintless_russo_pair_86~144w~168h.png",
+          "width": 130,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            5,
+            137,
+            79
+          ]
+        },
+        "87": {
+          "file": "resources/images/pairs/squintless_russo_pair_87~144w~168h.png",
+          "width": 124,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            5,
+            131,
+            79
+          ]
+        },
+        "88": {
+          "file": "resources/images/pairs/squintless_russo_pair_88~144w~168h.png",
+          "width": 132,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": -1,
+          "ink_bbox": [
+            7,
+            5,
+            139,
+            79
+          ]
+        },
+        "89": {
+          "file": "resources/images/pairs/squintless_russo_pair_89~144w~168h.png",
+          "width": 128,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            7,
+            5,
+            135,
+            79
+          ]
+        },
+        "90": {
+          "file": "resources/images/pairs/squintless_russo_pair_90~144w~168h.png",
+          "width": 129,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            135,
+            79
+          ]
+        },
+        "91": {
+          "file": "resources/images/pairs/squintless_russo_pair_91~144w~168h.png",
+          "width": 100,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            106,
+            79
+          ]
+        },
+        "92": {
+          "file": "resources/images/pairs/squintless_russo_pair_92~144w~168h.png",
+          "width": 122,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            128,
+            79
+          ]
+        },
+        "93": {
+          "file": "resources/images/pairs/squintless_russo_pair_93~144w~168h.png",
+          "width": 124,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            130,
+            79
+          ]
+        },
+        "94": {
+          "file": "resources/images/pairs/squintless_russo_pair_94~144w~168h.png",
+          "width": 130,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            136,
+            79
+          ]
+        },
+        "95": {
+          "file": "resources/images/pairs/squintless_russo_pair_95~144w~168h.png",
+          "width": 124,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            130,
+            79
+          ]
+        },
+        "96": {
+          "file": "resources/images/pairs/squintless_russo_pair_96~144w~168h.png",
+          "width": 127,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            133,
+            79
+          ]
+        },
+        "97": {
+          "file": "resources/images/pairs/squintless_russo_pair_97~144w~168h.png",
+          "width": 121,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            127,
+            79
+          ]
+        },
+        "98": {
+          "file": "resources/images/pairs/squintless_russo_pair_98~144w~168h.png",
+          "width": 130,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            136,
+            79
+          ]
+        },
+        "99": {
+          "file": "resources/images/pairs/squintless_russo_pair_99~144w~168h.png",
+          "width": 125,
+          "height": 74,
+          "font_size_px": 104,
+          "spacing": 0,
+          "ink_bbox": [
+            6,
+            5,
+            131,
+            79
+          ]
+        }
+      }
+    }
+  },
+  "asset_height": 100,
+  "row_width": 196,
   "singles": {
     "0": {
       "file": "resources/images/singles/squintless_russo_single_0.png",
@@ -162,7 +3026,7 @@
       "ink_bbox": [
         10,
         4,
-        184,
+        183,
         103
       ]
     },
@@ -175,7 +3039,7 @@
       "ink_bbox": [
         10,
         4,
-        148,
+        147,
         103
       ]
     },
@@ -188,7 +3052,7 @@
       "ink_bbox": [
         10,
         4,
-        175,
+        174,
         103
       ]
     },
@@ -201,7 +3065,7 @@
       "ink_bbox": [
         10,
         4,
-        177,
+        176,
         103
       ]
     },
@@ -214,7 +3078,7 @@
       "ink_bbox": [
         10,
         4,
-        186,
+        185,
         103
       ]
     },
@@ -227,7 +3091,7 @@
       "ink_bbox": [
         10,
         4,
-        177,
+        176,
         103
       ]
     },
@@ -240,7 +3104,7 @@
       "ink_bbox": [
         10,
         4,
-        181,
+        180,
         103
       ]
     },
@@ -253,7 +3117,7 @@
       "ink_bbox": [
         10,
         4,
-        173,
+        172,
         103
       ]
     },
@@ -266,7 +3130,7 @@
       "ink_bbox": [
         10,
         4,
-        184,
+        183,
         103
       ]
     },
@@ -279,7 +3143,7 @@
       "ink_bbox": [
         10,
         4,
-        179,
+        178,
         103
       ]
     },
@@ -305,7 +3169,7 @@
       "ink_bbox": [
         5,
         4,
-        126,
+        125,
         104
       ]
     },
@@ -318,7 +3182,7 @@
       "ink_bbox": [
         5,
         4,
-        146,
+        145,
         104
       ]
     },
@@ -422,7 +3286,7 @@
       "ink_bbox": [
         7,
         4,
-        173,
+        172,
         103
       ]
     },
@@ -500,7 +3364,7 @@
       "ink_bbox": [
         7,
         4,
-        171,
+        170,
         103
       ]
     },
@@ -526,7 +3390,7 @@
       "ink_bbox": [
         7,
         4,
-        174,
+        173,
         103
       ]
     },
@@ -539,7 +3403,7 @@
       "ink_bbox": [
         7,
         4,
-        168,
+        167,
         103
       ]
     },
@@ -942,7 +3806,7 @@
       "ink_bbox": [
         10,
         4,
-        179,
+        178,
         103
       ]
     },
@@ -955,7 +3819,7 @@
       "ink_bbox": [
         10,
         4,
-        140,
+        139,
         103
       ]
     },
@@ -968,7 +3832,7 @@
       "ink_bbox": [
         10,
         4,
-        170,
+        169,
         103
       ]
     },
@@ -981,7 +3845,7 @@
       "ink_bbox": [
         10,
         4,
-        172,
+        171,
         103
       ]
     },
@@ -994,7 +3858,7 @@
       "ink_bbox": [
         10,
         4,
-        181,
+        180,
         103
       ]
     },
@@ -1007,7 +3871,7 @@
       "ink_bbox": [
         10,
         4,
-        172,
+        171,
         103
       ]
     },
@@ -1020,7 +3884,7 @@
       "ink_bbox": [
         10,
         4,
-        177,
+        176,
         103
       ]
     },
@@ -1033,7 +3897,7 @@
       "ink_bbox": [
         10,
         4,
-        168,
+        167,
         103
       ]
     },
@@ -1046,7 +3910,7 @@
       "ink_bbox": [
         10,
         4,
-        180,
+        179,
         103
       ]
     },
@@ -1059,7 +3923,7 @@
       "ink_bbox": [
         10,
         4,
-        173,
+        172,
         103
       ]
     },
@@ -1085,7 +3949,7 @@
       "ink_bbox": [
         5,
         4,
-        133,
+        134,
         103
       ]
     },
@@ -1098,7 +3962,7 @@
       "ink_bbox": [
         5,
         4,
-        163,
+        164,
         103
       ]
     },
@@ -1111,7 +3975,7 @@
       "ink_bbox": [
         5,
         4,
-        166,
+        167,
         104
       ]
     },
@@ -1124,7 +3988,7 @@
       "ink_bbox": [
         5,
         4,
-        174,
+        175,
         103
       ]
     },
@@ -1137,7 +4001,7 @@
       "ink_bbox": [
         5,
         4,
-        165,
+        166,
         104
       ]
     },
@@ -1163,7 +4027,7 @@
       "ink_bbox": [
         5,
         4,
-        161,
+        162,
         103
       ]
     },
@@ -1332,7 +4196,7 @@
       "ink_bbox": [
         7,
         4,
-        179,
+        178,
         103
       ]
     },
@@ -1345,7 +4209,7 @@
       "ink_bbox": [
         7,
         4,
-        140,
+        139,
         103
       ]
     },
@@ -1358,7 +4222,7 @@
       "ink_bbox": [
         7,
         4,
-        170,
+        169,
         103
       ]
     },
@@ -1371,7 +4235,7 @@
       "ink_bbox": [
         7,
         4,
-        172,
+        171,
         103
       ]
     },
@@ -1384,7 +4248,7 @@
       "ink_bbox": [
         7,
         4,
-        181,
+        180,
         103
       ]
     },
@@ -1397,7 +4261,7 @@
       "ink_bbox": [
         7,
         4,
-        172,
+        171,
         103
       ]
     },
@@ -1410,7 +4274,7 @@
       "ink_bbox": [
         7,
         4,
-        177,
+        176,
         103
       ]
     },
@@ -1423,7 +4287,7 @@
       "ink_bbox": [
         7,
         4,
-        168,
+        167,
         103
       ]
     },
@@ -1436,7 +4300,7 @@
       "ink_bbox": [
         7,
         4,
-        180,
+        179,
         103
       ]
     },
@@ -1449,7 +4313,7 @@
       "ink_bbox": [
         7,
         4,
-        174,
+        173,
         103
       ]
     }

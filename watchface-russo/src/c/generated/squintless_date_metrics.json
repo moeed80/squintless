@@ -1,10 +1,1066 @@
 {
   "source_font": "typeface/fonts/russo-one/RussoOne-Regular.ttf",
   "license": "SIL Open Font License 1.1",
-  "asset_height": 100,
-  "row_width": 196,
   "month_tracking": -2,
   "day_tracking": -6,
+  "profiles": {
+    "emery_200x228": {
+      "display_width": 200,
+      "display_height": 228,
+      "asset_height": 100,
+      "row_width": 196,
+      "file_suffix": "",
+      "months": {
+        "JAN": {
+          "file": "resources/images/date/months/squintless_date_month_jan.png",
+          "width": 186,
+          "height": 100,
+          "font_size_px": 102,
+          "ink_bbox": [
+            5,
+            4,
+            191,
+            76
+          ]
+        },
+        "FEB": {
+          "file": "resources/images/date/months/squintless_date_month_feb.png",
+          "width": 186,
+          "height": 100,
+          "font_size_px": 101,
+          "ink_bbox": [
+            10,
+            4,
+            196,
+            75
+          ]
+        },
+        "MAR": {
+          "file": "resources/images/date/months/squintless_date_month_mar.png",
+          "width": 187,
+          "height": 100,
+          "font_size_px": 84,
+          "ink_bbox": [
+            9,
+            4,
+            196,
+            64
+          ]
+        },
+        "APR": {
+          "file": "resources/images/date/months/squintless_date_month_apr.png",
+          "width": 192,
+          "height": 100,
+          "font_size_px": 92,
+          "ink_bbox": [
+            4,
+            4,
+            196,
+            69
+          ]
+        },
+        "MAY": {
+          "file": "resources/images/date/months/squintless_date_month_may.png",
+          "width": 189,
+          "height": 100,
+          "font_size_px": 84,
+          "ink_bbox": [
+            9,
+            4,
+            198,
+            64
+          ]
+        },
+        "JUN": {
+          "file": "resources/images/date/months/squintless_date_month_jun.png",
+          "width": 188,
+          "height": 100,
+          "font_size_px": 103,
+          "ink_bbox": [
+            5,
+            4,
+            193,
+            77
+          ]
+        },
+        "JUL": {
+          "file": "resources/images/date/months/squintless_date_month_jul.png",
+          "width": 194,
+          "height": 100,
+          "font_size_px": 109,
+          "ink_bbox": [
+            5,
+            4,
+            199,
+            82
+          ]
+        },
+        "AUG": {
+          "file": "resources/images/date/months/squintless_date_month_aug.png",
+          "width": 191,
+          "height": 100,
+          "font_size_px": 91,
+          "ink_bbox": [
+            4,
+            4,
+            195,
+            68
+          ]
+        },
+        "SEP": {
+          "file": "resources/images/date/months/squintless_date_month_sep.png",
+          "width": 189,
+          "height": 100,
+          "font_size_px": 99,
+          "ink_bbox": [
+            7,
+            4,
+            196,
+            74
+          ]
+        },
+        "OCT": {
+          "file": "resources/images/date/months/squintless_date_month_oct.png",
+          "width": 191,
+          "height": 100,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            199,
+            77
+          ]
+        },
+        "NOV": {
+          "file": "resources/images/date/months/squintless_date_month_nov.png",
+          "width": 189,
+          "height": 100,
+          "font_size_px": 91,
+          "ink_bbox": [
+            9,
+            4,
+            198,
+            69
+          ]
+        },
+        "DEC": {
+          "file": "resources/images/date/months/squintless_date_month_dec.png",
+          "width": 188,
+          "height": 100,
+          "font_size_px": 101,
+          "ink_bbox": [
+            10,
+            4,
+            198,
+            76
+          ]
+        }
+      },
+      "days": {
+        "01": {
+          "file": "resources/images/date/days/squintless_date_day_01.png",
+          "width": 128,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            138,
+            103
+          ]
+        },
+        "02": {
+          "file": "resources/images/date/days/squintless_date_day_02.png",
+          "width": 158,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            168,
+            103
+          ]
+        },
+        "03": {
+          "file": "resources/images/date/days/squintless_date_day_03.png",
+          "width": 160,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            170,
+            103
+          ]
+        },
+        "04": {
+          "file": "resources/images/date/days/squintless_date_day_04.png",
+          "width": 169,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            179,
+            103
+          ]
+        },
+        "05": {
+          "file": "resources/images/date/days/squintless_date_day_05.png",
+          "width": 160,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            170,
+            103
+          ]
+        },
+        "06": {
+          "file": "resources/images/date/days/squintless_date_day_06.png",
+          "width": 165,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            175,
+            103
+          ]
+        },
+        "07": {
+          "file": "resources/images/date/days/squintless_date_day_07.png",
+          "width": 156,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            166,
+            103
+          ]
+        },
+        "08": {
+          "file": "resources/images/date/days/squintless_date_day_08.png",
+          "width": 168,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            178,
+            103
+          ]
+        },
+        "09": {
+          "file": "resources/images/date/days/squintless_date_day_09.png",
+          "width": 162,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            10,
+            4,
+            172,
+            103
+          ]
+        },
+        "10": {
+          "file": "resources/images/date/days/squintless_date_day_10.png",
+          "width": 137,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            4,
+            4,
+            141,
+            103
+          ]
+        },
+        "11": {
+          "file": "resources/images/date/days/squintless_date_day_11.png",
+          "width": 101,
+          "height": 100,
+          "font_size_px": 144,
+          "ink_bbox": [
+            5,
+            4,
+            106,
+            104
+          ]
+        },
+        "12": {
+          "file": "resources/images/date/days/squintless_date_day_12.png",
+          "width": 132,
+          "height": 100,
+          "font_size_px": 144,
+          "ink_bbox": [
+            5,
+            4,
+            137,
+            104
+          ]
+        },
+        "13": {
+          "file": "resources/images/date/days/squintless_date_day_13.png",
+          "width": 132,
+          "height": 100,
+          "font_size_px": 140,
+          "ink_bbox": [
+            5,
+            4,
+            137,
+            103
+          ]
+        },
+        "14": {
+          "file": "resources/images/date/days/squintless_date_day_14.png",
+          "width": 143,
+          "height": 100,
+          "font_size_px": 142,
+          "ink_bbox": [
+            5,
+            4,
+            148,
+            103
+          ]
+        },
+        "15": {
+          "file": "resources/images/date/days/squintless_date_day_15.png",
+          "width": 132,
+          "height": 100,
+          "font_size_px": 140,
+          "ink_bbox": [
+            5,
+            4,
+            137,
+            103
+          ]
+        },
+        "16": {
+          "file": "resources/images/date/days/squintless_date_day_16.png",
+          "width": 135,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            4,
+            4,
+            139,
+            103
+          ]
+        },
+        "17": {
+          "file": "resources/images/date/days/squintless_date_day_17.png",
+          "width": 130,
+          "height": 100,
+          "font_size_px": 142,
+          "ink_bbox": [
+            5,
+            4,
+            135,
+            103
+          ]
+        },
+        "18": {
+          "file": "resources/images/date/days/squintless_date_day_18.png",
+          "width": 138,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            4,
+            4,
+            142,
+            103
+          ]
+        },
+        "19": {
+          "file": "resources/images/date/days/squintless_date_day_19.png",
+          "width": 132,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            4,
+            4,
+            136,
+            103
+          ]
+        },
+        "20": {
+          "file": "resources/images/date/days/squintless_date_day_20.png",
+          "width": 159,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            7,
+            4,
+            166,
+            103
+          ]
+        },
+        "21": {
+          "file": "resources/images/date/days/squintless_date_day_21.png",
+          "width": 126,
+          "height": 100,
+          "font_size_px": 144,
+          "ink_bbox": [
+            7,
+            4,
+            133,
+            104
+          ]
+        },
+        "22": {
+          "file": "resources/images/date/days/squintless_date_day_22.png",
+          "width": 157,
+          "height": 100,
+          "font_size_px": 144,
+          "ink_bbox": [
+            7,
+            4,
+            164,
+            104
+          ]
+        },
+        "23": {
+          "file": "resources/images/date/days/squintless_date_day_23.png",
+          "width": 155,
+          "height": 100,
+          "font_size_px": 140,
+          "ink_bbox": [
+            7,
+            4,
+            162,
+            103
+          ]
+        },
+        "24": {
+          "file": "resources/images/date/days/squintless_date_day_24.png",
+          "width": 166,
+          "height": 100,
+          "font_size_px": 142,
+          "ink_bbox": [
+            7,
+            4,
+            173,
+            103
+          ]
+        },
+        "25": {
+          "file": "resources/images/date/days/squintless_date_day_25.png",
+          "width": 155,
+          "height": 100,
+          "font_size_px": 140,
+          "ink_bbox": [
+            7,
+            4,
+            162,
+            103
+          ]
+        },
+        "26": {
+          "file": "resources/images/date/days/squintless_date_day_26.png",
+          "width": 157,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            7,
+            4,
+            164,
+            103
+          ]
+        },
+        "27": {
+          "file": "resources/images/date/days/squintless_date_day_27.png",
+          "width": 153,
+          "height": 100,
+          "font_size_px": 142,
+          "ink_bbox": [
+            7,
+            4,
+            160,
+            103
+          ]
+        },
+        "28": {
+          "file": "resources/images/date/days/squintless_date_day_28.png",
+          "width": 160,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            7,
+            4,
+            167,
+            103
+          ]
+        },
+        "29": {
+          "file": "resources/images/date/days/squintless_date_day_29.png",
+          "width": 154,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            7,
+            4,
+            161,
+            103
+          ]
+        },
+        "30": {
+          "file": "resources/images/date/days/squintless_date_day_30.png",
+          "width": 163,
+          "height": 100,
+          "font_size_px": 138,
+          "ink_bbox": [
+            6,
+            4,
+            169,
+            103
+          ]
+        },
+        "31": {
+          "file": "resources/images/date/days/squintless_date_day_31.png",
+          "width": 126,
+          "height": 100,
+          "font_size_px": 140,
+          "ink_bbox": [
+            6,
+            4,
+            132,
+            103
+          ]
+        }
+      }
+    },
+    "rect_144x168": {
+      "display_width": 144,
+      "display_height": 168,
+      "asset_height": 74,
+      "row_width": 140,
+      "file_suffix": "~144w~168h",
+      "months": {
+        "JAN": {
+          "file": "resources/images/date/months/squintless_date_month_jan~144w~168h.png",
+          "width": 134,
+          "height": 74,
+          "font_size_px": 74,
+          "ink_bbox": [
+            4,
+            4,
+            138,
+            56
+          ]
+        },
+        "FEB": {
+          "file": "resources/images/date/months/squintless_date_month_feb~144w~168h.png",
+          "width": 133,
+          "height": 74,
+          "font_size_px": 73,
+          "ink_bbox": [
+            8,
+            4,
+            141,
+            56
+          ]
+        },
+        "MAR": {
+          "file": "resources/images/date/months/squintless_date_month_mar~144w~168h.png",
+          "width": 132,
+          "height": 74,
+          "font_size_px": 60,
+          "ink_bbox": [
+            8,
+            4,
+            140,
+            46
+          ]
+        },
+        "APR": {
+          "file": "resources/images/date/months/squintless_date_month_apr~144w~168h.png",
+          "width": 133,
+          "height": 74,
+          "font_size_px": 65,
+          "ink_bbox": [
+            5,
+            4,
+            138,
+            50
+          ]
+        },
+        "MAY": {
+          "file": "resources/images/date/months/squintless_date_month_may~144w~168h.png",
+          "width": 133,
+          "height": 74,
+          "font_size_px": 60,
+          "ink_bbox": [
+            8,
+            4,
+            141,
+            46
+          ]
+        },
+        "JUN": {
+          "file": "resources/images/date/months/squintless_date_month_jun~144w~168h.png",
+          "width": 135,
+          "height": 74,
+          "font_size_px": 74,
+          "ink_bbox": [
+            4,
+            4,
+            139,
+            56
+          ]
+        },
+        "JUL": {
+          "file": "resources/images/date/months/squintless_date_month_jul~144w~168h.png",
+          "width": 139,
+          "height": 74,
+          "font_size_px": 79,
+          "ink_bbox": [
+            4,
+            4,
+            143,
+            60
+          ]
+        },
+        "AUG": {
+          "file": "resources/images/date/months/squintless_date_month_aug~144w~168h.png",
+          "width": 135,
+          "height": 74,
+          "font_size_px": 65,
+          "ink_bbox": [
+            5,
+            4,
+            140,
+            51
+          ]
+        },
+        "SEP": {
+          "file": "resources/images/date/months/squintless_date_month_sep~144w~168h.png",
+          "width": 135,
+          "height": 74,
+          "font_size_px": 71,
+          "ink_bbox": [
+            6,
+            4,
+            141,
+            54
+          ]
+        },
+        "OCT": {
+          "file": "resources/images/date/months/squintless_date_month_oct~144w~168h.png",
+          "width": 136,
+          "height": 74,
+          "font_size_px": 73,
+          "ink_bbox": [
+            7,
+            4,
+            143,
+            57
+          ]
+        },
+        "NOV": {
+          "file": "resources/images/date/months/squintless_date_month_nov~144w~168h.png",
+          "width": 134,
+          "height": 74,
+          "font_size_px": 65,
+          "ink_bbox": [
+            8,
+            4,
+            142,
+            51
+          ]
+        },
+        "DEC": {
+          "file": "resources/images/date/months/squintless_date_month_dec~144w~168h.png",
+          "width": 135,
+          "height": 74,
+          "font_size_px": 73,
+          "ink_bbox": [
+            8,
+            4,
+            143,
+            56
+          ]
+        }
+      },
+      "days": {
+        "01": {
+          "file": "resources/images/date/days/squintless_date_day_01~144w~168h.png",
+          "width": 93,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            101,
+            77
+          ]
+        },
+        "02": {
+          "file": "resources/images/date/days/squintless_date_day_02~144w~168h.png",
+          "width": 115,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            123,
+            77
+          ]
+        },
+        "03": {
+          "file": "resources/images/date/days/squintless_date_day_03~144w~168h.png",
+          "width": 117,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            125,
+            77
+          ]
+        },
+        "04": {
+          "file": "resources/images/date/days/squintless_date_day_04~144w~168h.png",
+          "width": 123,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            131,
+            77
+          ]
+        },
+        "05": {
+          "file": "resources/images/date/days/squintless_date_day_05~144w~168h.png",
+          "width": 117,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            125,
+            77
+          ]
+        },
+        "06": {
+          "file": "resources/images/date/days/squintless_date_day_06~144w~168h.png",
+          "width": 120,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            128,
+            77
+          ]
+        },
+        "07": {
+          "file": "resources/images/date/days/squintless_date_day_07~144w~168h.png",
+          "width": 114,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            122,
+            77
+          ]
+        },
+        "08": {
+          "file": "resources/images/date/days/squintless_date_day_08~144w~168h.png",
+          "width": 123,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            131,
+            77
+          ]
+        },
+        "09": {
+          "file": "resources/images/date/days/squintless_date_day_09~144w~168h.png",
+          "width": 118,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            8,
+            4,
+            126,
+            77
+          ]
+        },
+        "10": {
+          "file": "resources/images/date/days/squintless_date_day_10~144w~168h.png",
+          "width": 99,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            4,
+            4,
+            103,
+            77
+          ]
+        },
+        "11": {
+          "file": "resources/images/date/days/squintless_date_day_11~144w~168h.png",
+          "width": 74,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            5,
+            4,
+            79,
+            78
+          ]
+        },
+        "12": {
+          "file": "resources/images/date/days/squintless_date_day_12~144w~168h.png",
+          "width": 96,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            5,
+            4,
+            101,
+            78
+          ]
+        },
+        "13": {
+          "file": "resources/images/date/days/squintless_date_day_13~144w~168h.png",
+          "width": 96,
+          "height": 74,
+          "font_size_px": 104,
+          "ink_bbox": [
+            5,
+            4,
+            101,
+            77
+          ]
+        },
+        "14": {
+          "file": "resources/images/date/days/squintless_date_day_14~144w~168h.png",
+          "width": 105,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            5,
+            4,
+            110,
+            78
+          ]
+        },
+        "15": {
+          "file": "resources/images/date/days/squintless_date_day_15~144w~168h.png",
+          "width": 96,
+          "height": 74,
+          "font_size_px": 104,
+          "ink_bbox": [
+            5,
+            4,
+            101,
+            77
+          ]
+        },
+        "16": {
+          "file": "resources/images/date/days/squintless_date_day_16~144w~168h.png",
+          "width": 97,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            4,
+            4,
+            101,
+            77
+          ]
+        },
+        "17": {
+          "file": "resources/images/date/days/squintless_date_day_17~144w~168h.png",
+          "width": 95,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            5,
+            4,
+            100,
+            78
+          ]
+        },
+        "18": {
+          "file": "resources/images/date/days/squintless_date_day_18~144w~168h.png",
+          "width": 100,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            4,
+            4,
+            104,
+            77
+          ]
+        },
+        "19": {
+          "file": "resources/images/date/days/squintless_date_day_19~144w~168h.png",
+          "width": 95,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            4,
+            4,
+            99,
+            77
+          ]
+        },
+        "20": {
+          "file": "resources/images/date/days/squintless_date_day_20~144w~168h.png",
+          "width": 116,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            6,
+            4,
+            122,
+            77
+          ]
+        },
+        "21": {
+          "file": "resources/images/date/days/squintless_date_day_21~144w~168h.png",
+          "width": 92,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            6,
+            4,
+            98,
+            78
+          ]
+        },
+        "22": {
+          "file": "resources/images/date/days/squintless_date_day_22~144w~168h.png",
+          "width": 114,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            6,
+            4,
+            120,
+            77
+          ]
+        },
+        "23": {
+          "file": "resources/images/date/days/squintless_date_day_23~144w~168h.png",
+          "width": 113,
+          "height": 74,
+          "font_size_px": 104,
+          "ink_bbox": [
+            6,
+            4,
+            119,
+            77
+          ]
+        },
+        "24": {
+          "file": "resources/images/date/days/squintless_date_day_24~144w~168h.png",
+          "width": 123,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            6,
+            4,
+            129,
+            78
+          ]
+        },
+        "25": {
+          "file": "resources/images/date/days/squintless_date_day_25~144w~168h.png",
+          "width": 113,
+          "height": 74,
+          "font_size_px": 104,
+          "ink_bbox": [
+            6,
+            4,
+            119,
+            77
+          ]
+        },
+        "26": {
+          "file": "resources/images/date/days/squintless_date_day_26~144w~168h.png",
+          "width": 114,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            6,
+            4,
+            120,
+            77
+          ]
+        },
+        "27": {
+          "file": "resources/images/date/days/squintless_date_day_27~144w~168h.png",
+          "width": 113,
+          "height": 74,
+          "font_size_px": 106,
+          "ink_bbox": [
+            6,
+            4,
+            119,
+            77
+          ]
+        },
+        "28": {
+          "file": "resources/images/date/days/squintless_date_day_28~144w~168h.png",
+          "width": 117,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            6,
+            4,
+            123,
+            77
+          ]
+        },
+        "29": {
+          "file": "resources/images/date/days/squintless_date_day_29~144w~168h.png",
+          "width": 112,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            6,
+            4,
+            118,
+            77
+          ]
+        },
+        "30": {
+          "file": "resources/images/date/days/squintless_date_day_30~144w~168h.png",
+          "width": 118,
+          "height": 74,
+          "font_size_px": 102,
+          "ink_bbox": [
+            6,
+            4,
+            124,
+            77
+          ]
+        },
+        "31": {
+          "file": "resources/images/date/days/squintless_date_day_31~144w~168h.png",
+          "width": 91,
+          "height": 74,
+          "font_size_px": 104,
+          "ink_bbox": [
+            6,
+            4,
+            97,
+            77
+          ]
+        }
+      }
+    }
+  },
+  "asset_height": 100,
+  "row_width": 196,
   "months": {
     "JAN": {
       "file": "resources/images/date/months/squintless_date_month_jan.png",

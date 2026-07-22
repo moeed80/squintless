@@ -11,12 +11,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[2]
 
-ROW_WIDTH = 196
-RESOURCE_GLYPH_HEIGHT = 100
 MAX_FONT_SIZE = 260
 
 PACKAGE_DESCRIPTION = (
-    "Experimental Squintless variant for Pebble Time 2 readability testing."
+    "Experimental Squintless variant for rectangular Pebble readability testing."
 )
 PACKAGE_KEYWORDS = [
     "pebble-watchface",
@@ -24,7 +22,7 @@ PACKAGE_KEYWORDS = [
     "large-digits",
     "readability",
     "low-vision",
-    "emery",
+    "rectangular-pebble",
     "pebble-time-2",
     "experiment",
 ]
@@ -83,6 +81,37 @@ RUSSO_PAIR_SPACING = {
 
 
 @dataclass(frozen=True)
+class DisplayProfile:
+    key: str
+    display_width: int
+    display_height: int
+    row_width: int
+    asset_height: int
+    file_suffix: str
+
+
+DISPLAY_PROFILES = [
+    DisplayProfile(
+        key="emery_200x228",
+        display_width=200,
+        display_height=228,
+        row_width=196,
+        asset_height=100,
+        file_suffix="",
+    ),
+    DisplayProfile(
+        key="rect_144x168",
+        display_width=144,
+        display_height=168,
+        row_width=140,
+        asset_height=74,
+        file_suffix="~144w~168h",
+    ),
+]
+DEFAULT_PROFILE_KEY = "emery_200x228"
+
+
+@dataclass(frozen=True)
 class FontVariant:
     key: str
     edition_name: str
@@ -95,6 +124,7 @@ class FontVariant:
     output_pbw_name: str
     default_pair_spacing: int
     pair_spacing: dict[str, int]
+    target_platforms: list[str]
     font_weight_axis: int | None = None
 
 
@@ -111,6 +141,7 @@ VARIANTS = {
         output_pbw_name="watchface-redhat.pbw",
         default_pair_spacing=2,
         pair_spacing=RED_HAT_PAIR_SPACING,
+        target_platforms=["emery"],
         font_weight_axis=900,
     ),
     "russo": FontVariant(
@@ -125,6 +156,7 @@ VARIANTS = {
         output_pbw_name="watchface-russo.pbw",
         default_pair_spacing=0,
         pair_spacing=RUSSO_PAIR_SPACING,
+        target_platforms=["aplite", "basalt", "diorite", "emery", "flint"],
     ),
 }
 
@@ -157,7 +189,8 @@ def digit_bbox(font: ImageFont.FreeTypeFont, digit: str) -> tuple[int, int, int,
     return draw.textbbox((0, 0), digit, font=font)
 
 
-def render_text_at_size(variant: FontVariant, text: str, size: int) -> tuple[Image.Image, tuple[int, int, int, int]]:
+def render_text_at_size(variant: FontVariant, profile: DisplayProfile,
+                        text: str, size: int) -> tuple[Image.Image, tuple[int, int, int, int]]:
     font = load_font(variant, size)
     bboxes = [digit_bbox(font, digit) for digit in text]
     top = min(bbox[1] for bbox in bboxes)
@@ -183,18 +216,18 @@ def render_text_at_size(variant: FontVariant, text: str, size: int) -> tuple[Ima
     return ink.crop(bbox), bbox
 
 
-def fits(variant: FontVariant, text: str, size: int) -> bool:
-    cropped, _bbox = render_text_at_size(variant, text, size)
-    return cropped.width <= ROW_WIDTH and cropped.height <= RESOURCE_GLYPH_HEIGHT
+def fits(variant: FontVariant, profile: DisplayProfile, text: str, size: int) -> bool:
+    cropped, _bbox = render_text_at_size(variant, profile, text, size)
+    return cropped.width <= profile.row_width and cropped.height <= profile.asset_height
 
 
-def choose_font_size(variant: FontVariant, text: str) -> int:
+def choose_font_size(variant: FontVariant, profile: DisplayProfile, text: str) -> int:
     lo = 1
     hi = MAX_FONT_SIZE
     best = 1
     while lo <= hi:
         mid = (lo + hi) // 2
-        if fits(variant, text, mid):
+        if fits(variant, profile, text, mid):
             best = mid
             lo = mid + 1
         else:
@@ -202,11 +235,11 @@ def choose_font_size(variant: FontVariant, text: str) -> int:
     return best
 
 
-def render_asset(variant: FontVariant, text: str) -> RenderedAsset:
-    font_size = choose_font_size(variant, text)
-    cropped, bbox = render_text_at_size(variant, text, font_size)
-    output = Image.new("1", (cropped.width, RESOURCE_GLYPH_HEIGHT), 1)
-    y = (RESOURCE_GLYPH_HEIGHT - cropped.height) // 2
+def render_asset(variant: FontVariant, profile: DisplayProfile, text: str) -> RenderedAsset:
+    font_size = choose_font_size(variant, profile, text)
+    cropped, bbox = render_text_at_size(variant, profile, text, font_size)
+    output = Image.new("1", (cropped.width, profile.asset_height), 1)
+    y = (profile.asset_height - cropped.height) // 2
     one_bit = cropped.point(lambda value: 0 if value < 128 else 255, mode="1")
     output.paste(one_bit, (0, y))
     return RenderedAsset(
@@ -225,9 +258,9 @@ def clean_generated_outputs(variant: FontVariant) -> None:
         variant.watchface_dir / "resources" / "images" / "singles",
         variant.watchface_dir / "resources" / "images" / "pairs",
     ]:
-        if path.exists():
-            shutil.rmtree(path)
         path.mkdir(parents=True, exist_ok=True)
+        for tagged_asset in path.glob("*~*.png"):
+            tagged_asset.unlink()
     (variant.watchface_dir / "src" / "c" / "generated").mkdir(parents=True, exist_ok=True)
 
 
@@ -239,43 +272,81 @@ def resource_name_for_pair(pair: str) -> str:
     return f"IMAGE_PAIR_{pair}"
 
 
-def save_assets(variant: FontVariant, singles: list[RenderedAsset], pairs: list[RenderedAsset]) -> dict:
+def file_stem_with_suffix(stem: str, profile: DisplayProfile) -> str:
+    return f"{stem}{profile.file_suffix}.png"
+
+
+def save_or_preserve_asset(path: Path, profile: DisplayProfile,
+                           asset: RenderedAsset) -> tuple[int, int]:
+    if profile.key == DEFAULT_PROFILE_KEY and path.exists():
+        existing = Image.open(path)
+        return existing.width, existing.height
+
+    asset.image.save(path)
+    return asset.width, asset.height
+
+
+def save_assets(variant: FontVariant,
+                profile_assets: dict[str, tuple[list[RenderedAsset], list[RenderedAsset]]]) -> dict:
     single_dir = variant.watchface_dir / "resources" / "images" / "singles"
     pair_dir = variant.watchface_dir / "resources" / "images" / "pairs"
     metrics = {
         "edition": variant.edition_name,
         "source_font": str(variant.font_path.relative_to(ROOT)),
         "font_weight_axis": variant.font_weight_axis,
-        "asset_height": RESOURCE_GLYPH_HEIGHT,
-        "row_width": ROW_WIDTH,
         "default_pair_spacing": variant.default_pair_spacing,
         "pair_spacing": dict(sorted(variant.pair_spacing.items())),
-        "singles": {},
-        "pairs": {},
+        "profiles": {},
     }
 
-    for asset in singles:
-        path = single_dir / f"{variant.resource_prefix}_single_{asset.text}.png"
-        asset.image.save(path)
-        metrics["singles"][asset.text] = {
-            "file": str(path.relative_to(variant.watchface_dir)),
-            "width": asset.width,
-            "height": asset.height,
-            "font_size_px": asset.font_size,
-            "ink_bbox": asset.ink_bbox,
+    for profile in DISPLAY_PROFILES:
+        singles, pairs = profile_assets[profile.key]
+        profile_metrics = {
+            "display_width": profile.display_width,
+            "display_height": profile.display_height,
+            "asset_height": profile.asset_height,
+            "row_width": profile.row_width,
+            "file_suffix": profile.file_suffix,
+            "singles": {},
+            "pairs": {},
         }
 
-    for asset in pairs:
-        path = pair_dir / f"{variant.resource_prefix}_pair_{asset.text}.png"
-        asset.image.save(path)
-        metrics["pairs"][asset.text] = {
-            "file": str(path.relative_to(variant.watchface_dir)),
-            "width": asset.width,
-            "height": asset.height,
-            "font_size_px": asset.font_size,
-            "spacing": asset.spacing,
-            "ink_bbox": asset.ink_bbox,
-        }
+        for asset in singles:
+            path = single_dir / file_stem_with_suffix(
+                f"{variant.resource_prefix}_single_{asset.text}",
+                profile,
+            )
+            width, height = save_or_preserve_asset(path, profile, asset)
+            profile_metrics["singles"][asset.text] = {
+                "file": str(path.relative_to(variant.watchface_dir)),
+                "width": width,
+                "height": height,
+                "font_size_px": asset.font_size,
+                "ink_bbox": asset.ink_bbox,
+            }
+
+        for asset in pairs:
+            path = pair_dir / file_stem_with_suffix(
+                f"{variant.resource_prefix}_pair_{asset.text}",
+                profile,
+            )
+            width, height = save_or_preserve_asset(path, profile, asset)
+            profile_metrics["pairs"][asset.text] = {
+                "file": str(path.relative_to(variant.watchface_dir)),
+                "width": width,
+                "height": height,
+                "font_size_px": asset.font_size,
+                "spacing": asset.spacing,
+                "ink_bbox": asset.ink_bbox,
+            }
+
+        metrics["profiles"][profile.key] = profile_metrics
+
+    default_metrics = metrics["profiles"][DEFAULT_PROFILE_KEY]
+    metrics["asset_height"] = default_metrics["asset_height"]
+    metrics["row_width"] = default_metrics["row_width"]
+    metrics["singles"] = default_metrics["singles"]
+    metrics["pairs"] = default_metrics["pairs"]
 
     metrics_path = variant.watchface_dir / "src" / "c" / "generated" / "squintless_typeface_metrics.json"
     metrics_path.write_text(json.dumps(metrics, indent=2) + "\n")
@@ -286,6 +357,11 @@ def write_header(variant: FontVariant, metrics: dict) -> None:
     header_path = variant.watchface_dir / "src" / "c" / "generated" / "squintless_typeface_assets.h"
     single_widths = [metrics["singles"][str(digit)]["width"] for digit in range(10)]
     pair_widths = [metrics["pairs"][f"{left}{right}"]["width"] for left in range(10) for right in range(10)]
+    pair_spacings = [
+        spacing_for(variant, f"{left}{right}")
+        for left in range(10)
+        for right in range(10)
+    ]
     pair_resources = [
         f"RESOURCE_ID_{resource_name_for_pair(f'{left}{right}')}"
         for left in range(10)
@@ -297,7 +373,7 @@ def write_header(variant: FontVariant, metrics: dict) -> None:
         "",
         "#include <pebble.h>",
         "",
-        f"#define SQUINTLESS_ASSET_HEIGHT {RESOURCE_GLYPH_HEIGHT}",
+        f"#define SQUINTLESS_ASSET_HEIGHT {metrics['asset_height']}",
         "#define SQUINTLESS_PAIR_COUNT 100",
         "",
         "static const uint32_t SQUINTLESS_SINGLE_RESOURCE_IDS[10] = {",
@@ -310,6 +386,15 @@ def write_header(variant: FontVariant, metrics: dict) -> None:
         "  " + ", ".join(str(width) for width in single_widths),
         "};",
         "",
+        "static const int8_t SQUINTLESS_PAIR_SPACINGS[SQUINTLESS_PAIR_COUNT] = {",
+    ])
+    for row in range(10):
+        values = pair_spacings[row * 10:(row + 1) * 10]
+        lines.append("  " + ", ".join(str(value) for value in values) + ",")
+    lines.extend([
+        "};",
+        "",
+        "#if !defined(PBL_PLATFORM_APLITE)",
         "static const uint32_t SQUINTLESS_PAIR_RESOURCE_IDS[SQUINTLESS_PAIR_COUNT] = {",
     ])
     lines.extend(f"  {resource_id}," for resource_id in pair_resources)
@@ -323,9 +408,14 @@ def write_header(variant: FontVariant, metrics: dict) -> None:
         lines.append("  " + ", ".join(str(value) for value in values) + ",")
     lines.extend([
         "};",
+        "#endif",
         "",
         "static inline uint8_t squintless_pair_index(char tens, char ones) {",
         "  return ((uint8_t)(tens - '0') * 10) + (uint8_t)(ones - '0');",
+        "}",
+        "",
+        "static inline int8_t squintless_pair_spacing(char tens, char ones) {",
+        "  return SQUINTLESS_PAIR_SPACINGS[squintless_pair_index(tens, ones)];",
         "}",
         "",
     ])
@@ -347,11 +437,16 @@ def update_package_json(variant: FontVariant, metrics: dict) -> None:
     package["pebble"]["uuid"] = variant.uuid
     package["pebble"]["sdkVersion"] = "3"
     package["pebble"]["enableMultiJS"] = True
-    package["pebble"]["targetPlatforms"] = ["emery"]
+    package["pebble"]["targetPlatforms"] = variant.target_platforms
     package["pebble"]["watchapp"] = {"watchface": True}
     package["pebble"]["messageKeys"] = []
 
-    media = []
+    media = [
+        item
+        for item in package["pebble"]["resources"].get("media", [])
+        if not item.get("name", "").startswith("IMAGE_SINGLE_")
+        and not item.get("name", "").startswith("IMAGE_PAIR_")
+    ]
     for digit in range(10):
         resource_file = str(Path(metrics["singles"][str(digit)]["file"]).relative_to("resources"))
         media.append({
@@ -361,31 +456,55 @@ def update_package_json(variant: FontVariant, metrics: dict) -> None:
         })
     for pair in sorted(metrics["pairs"]):
         resource_file = str(Path(metrics["pairs"][pair]["file"]).relative_to("resources"))
-        media.append({
+        item = {
             "type": "bitmap",
             "name": resource_name_for_pair(pair),
             "file": resource_file,
-        })
+        }
+        pair_targets = [platform for platform in variant.target_platforms if platform != "aplite"]
+        if pair_targets != variant.target_platforms:
+            item["targetPlatforms"] = pair_targets
+        media.append(item)
     package["pebble"]["resources"]["media"] = media
     package_path.write_text(json.dumps(package, indent=2) + "\n")
 
 
 def assert_assets(metrics: dict) -> None:
-    too_wide = [
-        (pair, data["width"])
-        for pair, data in metrics["pairs"].items()
-        if data["width"] > ROW_WIDTH
-    ]
+    too_wide = []
+    too_tall = []
+    for profile_key, profile in metrics["profiles"].items():
+        row_width = profile["row_width"]
+        asset_height = profile["asset_height"]
+        too_wide.extend(
+            (profile_key, pair, data["width"])
+            for pair, data in profile["pairs"].items()
+            if data["width"] > row_width
+        )
+        too_tall.extend(
+            (profile_key, pair, data["height"])
+            for pair, data in profile["pairs"].items()
+            if data["height"] > asset_height
+        )
     if too_wide:
-        formatted = ", ".join(f"{pair}:{width}" for pair, width in too_wide)
+        formatted = ", ".join(f"{profile}:{pair}:{width}" for profile, pair, width in too_wide)
         raise ValueError(f"Generated pair resources exceed row width: {formatted}")
+    if too_tall:
+        formatted = ", ".join(f"{profile}:{pair}:{height}" for profile, pair, height in too_tall)
+        raise ValueError(f"Generated pair resources exceed asset height: {formatted}")
 
 
 def generate_variant(variant: FontVariant) -> None:
     clean_generated_outputs(variant)
-    singles = [render_asset(variant, str(digit)) for digit in range(10)]
-    pairs = [render_asset(variant, f"{left}{right}") for left in range(10) for right in range(10)]
-    metrics = save_assets(variant, singles, pairs)
+    profile_assets = {}
+    for profile in DISPLAY_PROFILES:
+        singles = [render_asset(variant, profile, str(digit)) for digit in range(10)]
+        pairs = [
+            render_asset(variant, profile, f"{left}{right}")
+            for left in range(10)
+            for right in range(10)
+        ]
+        profile_assets[profile.key] = (singles, pairs)
+    metrics = save_assets(variant, profile_assets)
     assert_assets(metrics)
     write_header(variant, metrics)
     update_package_json(variant, metrics)

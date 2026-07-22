@@ -11,16 +11,43 @@ METRICS_PATH = WATCHFACE_DIR / "src" / "c" / "generated" / "squintless_typeface_
 DATE_METRICS_PATH = WATCHFACE_DIR / "src" / "c" / "generated" / "squintless_date_metrics.json"
 OUT_DIR = WATCHFACE_DIR / "previews"
 
-WIDTH = 200
-HEIGHT = 228
-OUTER_MARGIN = 2
-CENTRAL_GAP_H = 16
-BATTERY_BAR_H = 9
-BATTERY_BAR_INSET = 5
-BATTERY_BAR_RADIUS = 2
-BATTERY_BAR_BORDER = 1
-BATTERY_VALIDATION_DIR = OUT_DIR / "battery-validation"
-DATE_GLANCE_DIR = OUT_DIR / "date-glance"
+PROFILES = {
+    "emery_200x228": {
+        "output_dir": OUT_DIR,
+        "width": 200,
+        "height": 228,
+        "outer_margin": 2,
+        "central_gap_h": 16,
+        "battery_bar_h": 9,
+        "battery_bar_inset": 5,
+        "battery_bar_radius": 2,
+        "battery_bar_border": 1,
+    },
+    "rect_144x168": {
+        "output_dir": OUT_DIR / "rect-144x168",
+        "width": 144,
+        "height": 168,
+        "outer_margin": 2,
+        "central_gap_h": 14,
+        "battery_bar_h": 7,
+        "battery_bar_inset": 4,
+        "battery_bar_radius": 2,
+        "battery_bar_border": 1,
+    },
+    "aplite_144x168": {
+        "asset_profile_key": "rect_144x168",
+        "output_dir": OUT_DIR / "aplite-144x168",
+        "width": 144,
+        "height": 168,
+        "outer_margin": 2,
+        "central_gap_h": 14,
+        "battery_bar_h": 7,
+        "battery_bar_inset": 4,
+        "battery_bar_radius": 2,
+        "battery_bar_border": 1,
+        "use_single_composition": True,
+    },
+}
 
 STATES = [
     ("08", "36", 75, "08-36"),
@@ -43,28 +70,38 @@ DATE_GLANCE_STATES = [
 ]
 
 
-def layout():
-    half_h = (HEIGHT - CENTRAL_GAP_H) // 2
+def layout(profile):
+    half_h = (profile["height"] - profile["central_gap_h"]) // 2
     gap_y = half_h
-    bar_y = gap_y + (CENTRAL_GAP_H - BATTERY_BAR_H) // 2
+    bar_y = gap_y + (profile["central_gap_h"] - profile["battery_bar_h"]) // 2
     return {
-        "hour": (OUTER_MARGIN, 0, WIDTH - OUTER_MARGIN * 2, half_h),
+        "hour": (
+            profile["outer_margin"],
+            0,
+            profile["width"] - profile["outer_margin"] * 2,
+            half_h,
+        ),
         "minute": (
-            OUTER_MARGIN,
-            gap_y + CENTRAL_GAP_H,
-            WIDTH - OUTER_MARGIN * 2,
-            HEIGHT - half_h - CENTRAL_GAP_H,
+            profile["outer_margin"],
+            gap_y + profile["central_gap_h"],
+            profile["width"] - profile["outer_margin"] * 2,
+            profile["height"] - half_h - profile["central_gap_h"],
         ),
         "battery": (
-            BATTERY_BAR_INSET,
+            profile["battery_bar_inset"],
             bar_y,
-            WIDTH - BATTERY_BAR_INSET * 2,
-            BATTERY_BAR_H,
+            profile["width"] - profile["battery_bar_inset"] * 2,
+            profile["battery_bar_h"],
         ),
     }
 
 
-def load_asset(metrics, text):
+def profile_metrics(metrics, profile_key):
+    return metrics.get("profiles", {}).get(profile_key, metrics)
+
+
+def load_asset(metrics, profile_key, text):
+    metrics = profile_metrics(metrics, profile_key)
     if len(text) == 1:
         path = WATCHFACE_DIR / metrics["singles"][text]["file"]
     else:
@@ -72,11 +109,13 @@ def load_asset(metrics, text):
     return Image.open(path).convert("L")
 
 
-def load_date_month_asset(metrics, month):
+def load_date_month_asset(metrics, profile_key, month):
+    metrics = profile_metrics(metrics, profile_key)
     return Image.open(WATCHFACE_DIR / metrics["months"][month]["file"]).convert("L")
 
 
-def load_date_day_asset(metrics, day):
+def load_date_day_asset(metrics, profile_key, day):
+    metrics = profile_metrics(metrics, profile_key)
     return Image.open(WATCHFACE_DIR / metrics["days"][day]["file"]).convert("L")
 
 
@@ -87,21 +126,43 @@ def draw_centered_asset(canvas, asset, bounds):
     canvas.paste(asset, (ax, ay))
 
 
-def draw_battery(canvas, bounds, percent):
+def pair_spacing(metrics, text):
+    return metrics["pair_spacing"].get(text, metrics["default_pair_spacing"])
+
+
+def draw_time_asset(canvas, metrics, profile_key, profile, text, bounds):
+    if not profile.get("use_single_composition") or len(text) == 1:
+        draw_centered_asset(canvas, load_asset(metrics, profile_key, text), bounds)
+        return
+
+    left = load_asset(metrics, profile_key, text[0])
+    right = load_asset(metrics, profile_key, text[1])
+    spacing = max(0, pair_spacing(metrics, text))
+    row_h = max(left.height, right.height)
+    total_w = left.width + spacing + right.width
+    x, y, w, h = bounds
+    ax = x + (w - total_w) // 2
+    ay = y + (h - row_h) // 2
+
+    canvas.paste(left, (ax, ay + (row_h - left.height) // 2))
+    canvas.paste(right, (ax + left.width + spacing, ay + (row_h - right.height) // 2))
+
+
+def draw_battery(canvas, profile, bounds, percent):
     x, y, w, h = bounds
     draw = ImageDraw.Draw(canvas)
     draw.rounded_rectangle(
         (x, y, x + w - 1, y + h - 1),
-        radius=BATTERY_BAR_RADIUS,
+        radius=profile["battery_bar_radius"],
         fill=0,
     )
 
-    border = BATTERY_BAR_BORDER
+    border = profile["battery_bar_border"]
     inner_x = x + border
     inner_y = y + border
     inner_w = w - border * 2
     inner_h = h - border * 2
-    inner_radius = max(0, BATTERY_BAR_RADIUS - border)
+    inner_radius = max(0, profile["battery_bar_radius"] - border)
     draw.rounded_rectangle(
         (inner_x, inner_y, inner_x + inner_w - 1, inner_y + inner_h - 1),
         radius=inner_radius,
@@ -126,59 +187,82 @@ def draw_battery(canvas, bounds, percent):
     canvas.paste(0, (inner_x, inner_y), ImageChops.multiply(inner_mask, fill_mask))
 
 
-def draw_date_separator(canvas, bounds):
+def draw_date_separator(canvas, profile, bounds):
     x, y, w, h = bounds
     center_x = x + w // 2
+    stroke_w = 2 if profile["battery_bar_h"] <= 7 else 3
+    x_offset = 4 if profile["battery_bar_h"] <= 7 else 5
     draw = ImageDraw.Draw(canvas)
     draw.line(
-        (center_x + 5, y - 1, center_x - 5, y + h),
+        (center_x + x_offset, y - 1, center_x - x_offset, y + h),
         fill=0,
-        width=3,
+        width=stroke_w,
     )
 
 
-def render(metrics, hour, minute, battery):
-    bounds = layout()
-    canvas = Image.new("L", (WIDTH, HEIGHT), 255)
+def render(metrics, profile_key, profile, hour, minute, battery):
+    bounds = layout(profile)
+    canvas = Image.new("L", (profile["width"], profile["height"]), 255)
 
-    draw_centered_asset(canvas, load_asset(metrics, hour), bounds["hour"])
-    draw_battery(canvas, bounds["battery"], battery)
-    draw_centered_asset(canvas, load_asset(metrics, minute), bounds["minute"])
+    draw_time_asset(canvas, metrics, profile_key, profile, hour, bounds["hour"])
+    draw_battery(canvas, profile, bounds["battery"], battery)
+    draw_time_asset(canvas, metrics, profile_key, profile, minute, bounds["minute"])
     return canvas
 
 
-def render_date_glance(date_metrics, month, day):
-    bounds = layout()
-    canvas = Image.new("L", (WIDTH, HEIGHT), 255)
+def render_date_glance(date_metrics, profile_key, profile, month, day):
+    bounds = layout(profile)
+    canvas = Image.new("L", (profile["width"], profile["height"]), 255)
 
-    draw_centered_asset(canvas, load_date_month_asset(date_metrics, month), bounds["hour"])
-    draw_date_separator(canvas, bounds["battery"])
-    draw_centered_asset(canvas, load_date_day_asset(date_metrics, day), bounds["minute"])
+    draw_centered_asset(
+        canvas,
+        load_date_month_asset(date_metrics, profile_key, month),
+        bounds["hour"],
+    )
+    draw_date_separator(canvas, profile, bounds["battery"])
+    draw_centered_asset(
+        canvas,
+        load_date_day_asset(date_metrics, profile_key, day),
+        bounds["minute"],
+    )
     return canvas
 
 
 def main():
     metrics = json.loads(METRICS_PATH.read_text())
     date_metrics = json.loads(DATE_METRICS_PATH.read_text())
-    OUT_DIR.mkdir(exist_ok=True)
-    BATTERY_VALIDATION_DIR.mkdir(exist_ok=True)
-    DATE_GLANCE_DIR.mkdir(exist_ok=True)
-    for hour, minute, battery, slug in STATES:
-        render(metrics, hour, minute, battery).save(
-            OUT_DIR / f"squintless-{slug}-battery-{battery}.png"
-        )
 
-    for month, day, slug in DATE_GLANCE_STATES:
-        render_date_glance(date_metrics, month, day).save(
-            DATE_GLANCE_DIR / f"squintless-date-{slug}.png"
-        )
+    for profile_key, profile in PROFILES.items():
+        asset_profile_key = profile.get("asset_profile_key", profile_key)
+        output_dir = profile["output_dir"]
+        battery_validation_dir = output_dir / "battery-validation"
+        date_glance_dir = output_dir / "date-glance"
+        output_dir.mkdir(parents=True, exist_ok=True)
+        battery_validation_dir.mkdir(parents=True, exist_ok=True)
+        date_glance_dir.mkdir(parents=True, exist_ok=True)
 
-    validation_strip = Image.new("L", (WIDTH * len(BATTERY_VALIDATION_LEVELS), HEIGHT), 255)
-    for index, battery in enumerate(BATTERY_VALIDATION_LEVELS):
-        preview = render(metrics, "08", "36", battery)
-        preview.save(BATTERY_VALIDATION_DIR / f"squintless-08-36-battery-{battery:03d}.png")
-        validation_strip.paste(preview, (WIDTH * index, 0))
-    validation_strip.save(BATTERY_VALIDATION_DIR / "squintless-battery-validation-strip.png")
+        for hour, minute, battery, slug in STATES:
+            render(metrics, asset_profile_key, profile, hour, minute, battery).save(
+                output_dir / f"squintless-{slug}-battery-{battery}.png"
+            )
+
+        for month, day, slug in DATE_GLANCE_STATES:
+            render_date_glance(date_metrics, asset_profile_key, profile, month, day).save(
+                date_glance_dir / f"squintless-date-{slug}.png"
+            )
+
+        validation_strip = Image.new(
+            "L",
+            (profile["width"] * len(BATTERY_VALIDATION_LEVELS), profile["height"]),
+            255,
+        )
+        for index, battery in enumerate(BATTERY_VALIDATION_LEVELS):
+            preview = render(metrics, asset_profile_key, profile, "08", "36", battery)
+            preview.save(
+                battery_validation_dir / f"squintless-08-36-battery-{battery:03d}.png"
+            )
+            validation_strip.paste(preview, (profile["width"] * index, 0))
+        validation_strip.save(battery_validation_dir / "squintless-battery-validation-strip.png")
 
 
 if __name__ == "__main__":

@@ -13,7 +13,7 @@ PRODUCTION_UUID = "c68b0184-aad6-4bdc-9c72-d18a13fc1f06"
 
 PACKAGE_DESCRIPTION = (
     "Designed for your aging eyes, not your ego. Squintless is an accessibility-first "
-    "Pebble Time 2 watch face with a large temporary date glance."
+    "Pebble watch face with large digits and a temporary date glance."
 )
 
 PACKAGE_KEYWORDS = [
@@ -22,9 +22,11 @@ PACKAGE_KEYWORDS = [
     "large-digits",
     "readability",
     "low-vision",
-    "emery",
+    "rectangular-pebble",
     "pebble-time-2",
 ]
+
+TARGET_PLATFORMS = ["aplite", "basalt", "diorite", "emery", "flint"]
 
 
 def copy_source_project(destination: Path) -> None:
@@ -53,6 +55,7 @@ def patch_package_json(destination: Path, version: str) -> None:
     pebble = package["pebble"]
     pebble["displayName"] = "Squintless"
     pebble["uuid"] = PRODUCTION_UUID
+    pebble["targetPlatforms"] = TARGET_PLATFORMS
 
     media = [
         item
@@ -76,15 +79,15 @@ def patch_package_json(destination: Path, version: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--version", default="1.1.0")
+    parser.add_argument("--version", default="1.2.0")
     parser.add_argument(
         "--destination",
         type=Path,
-        default=Path("/private/tmp/squintless-app-store-1.1.0"),
+        default=None,
     )
     args = parser.parse_args()
 
-    destination = args.destination
+    destination = args.destination or Path(f"/private/tmp/squintless-app-store-{args.version}")
     copy_source_project(destination)
     patch_package_json(destination, args.version)
     print(destination)

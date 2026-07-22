@@ -4,7 +4,7 @@ Designed for your aging eyes, not your ego.
 
 ![Squintless feature graphic](store/feature/squintless-feature-1600x900.png)
 
-Squintless is an accessibility-first watch face for Pebble Time 2. It exists for one job: let you tell the time instantly.
+Squintless is an accessibility-first watch face for rectangular Pebble watches. It exists for one job: let you tell the time instantly.
 
 By default: no visible date, no weather, no step count, no seconds, no icons, and no decorative complications.
 
@@ -32,7 +32,7 @@ It is not a retro watch face. It is not a minimalist art project. It is a purpos
 
 ## Layout
 
-Squintless uses the full 200 x 228 Pebble Time 2 display:
+Squintless uses the full rectangular Pebble display:
 
 - Hours fill the upper half.
 - Minutes fill the lower half.
@@ -60,7 +60,7 @@ It reads as a quiet progress indicator without pulling attention away from the n
 
 ## Typography
 
-Squintless 1.1 uses generated Russo One bitmap numerals selected after real-device readability testing on Pebble Time 2. The watch face does not render live fonts at runtime and does not draw digits procedurally; it uses hard monochrome Pebble bitmap resources.
+Squintless 1.2 uses generated Russo One bitmap numerals selected after real-device readability testing on Pebble Time 2. The watch face does not render live fonts at runtime and does not draw digits procedurally; it uses hard monochrome Pebble bitmap resources.
 
 The reusable typeface layer still owns the canonical Squintless SVG source artwork for every digit. Those assets remain available for design iteration and comparison.
 
@@ -72,7 +72,7 @@ That separation keeps the product clean:
 
 - `typeface/` defines reusable numeral and font assets.
 - `watchface/` renders the canonical development build.
-- `watchface-russo/` renders the real-device-tested 1.1 App Store build source.
+- `watchface-russo/` renders the real-device-tested App Store build source.
 
 Future numeral changes should happen in the typeface layer first.
 
@@ -81,23 +81,25 @@ Future numeral changes should happen in the typeface layer first.
 The repository also keeps installable variants for readability testing:
 
 - `watchface-redhat/`: Squintless Red Hat Edition, using Red Hat Display Black numerals.
-- `watchface-russo/`: Squintless Russo Edition, using official Russo One numerals. This is the source for the 1.1 App Store PBW after production metadata is applied by the release builder.
+- `watchface-russo/`: Squintless Russo Edition, using official Russo One numerals. This is the source for the App Store PBW after production metadata is applied by the release builder.
 
 Both experimental editions use separate UUIDs so they can be installed alongside the production Squintless watchface.
 
 ## Compatibility
 
-Squintless 1.1 is built specifically for Pebble Time 2.
+Squintless 1.2 supports rectangular Pebble watches.
 
-- Platform: `emery`
-- Resolution: `200 x 228`
-- Display: rectangular
+- Platforms: `aplite`, `basalt`, `diorite`, `emery`, `flint`
+- Resolutions: `144 x 168` rectangular and `200 x 228` rectangular
+- Primary tested watch: Pebble Time 2 / `emery`
 
-Version 1.1 does not compromise the layout for older 144 x 168 Pebble watches.
+Pebble Time Round / `chalk` is intentionally not included in version 1.2.
+
+On original Pebble / `aplite`, Squintless composes two-digit times from single digit bitmap resources to stay below the platform's 128 KB resource limit. Newer rectangular platforms use pair-specific bitmap resources for tighter optical spacing.
 
 ## Installation
 
-Build the Pebble package:
+Build the canonical development package:
 
 ```sh
 cd watchface
@@ -115,6 +117,13 @@ Install on the Pebble Time 2 emulator:
 ```sh
 cd watchface
 pebble install --emulator emery
+```
+
+Install on a 144 x 168 rectangular emulator:
+
+```sh
+cd watchface-russo
+pebble install --emulator basalt
 ```
 
 Install on a physical watch through the Pebble mobile app Developer Connection:
@@ -149,6 +158,12 @@ python3 watchface/tools/generate_date_glance_assets.py
 
 Use `python3 watchface/tools/generate_date_glance_assets.py all` when updating both the production and Russo watchface packages.
 
+Regenerate the Russo One time assets used by the App Store build:
+
+```sh
+python3 typeface/tools/generate_font_variant_assets.py russo
+```
+
 Generate store artwork and the Pebble menu icon:
 
 ```sh
@@ -158,23 +173,23 @@ python3 tools/generate_store_assets.py
 Generate developer previews:
 
 ```sh
-python3 watchface/tools/render_previews.py
+python3 watchface-russo/tools/render_previews.py
 ```
 
 App Store metadata lives in `store/metadata.md` and `store/metadata.json`.
 
-Prepare the App Store 1.1 release project:
+Prepare the App Store 1.2 release project:
 
 ```sh
-python3 tools/prepare_app_store_release.py --version 1.1.0
+python3 tools/prepare_app_store_release.py --version 1.2.0
 ```
 
 Then build the temporary release project and copy the PBW into `dist/`:
 
 ```sh
-cd /private/tmp/squintless-app-store-1.1.0
+cd /private/tmp/squintless-app-store-1.2.0
 pebble build
-cp build/squintless-app-store-1.1.0.pbw /Users/moeedahmad/Projects/Squintless/dist/Squintless-1.1.0.pbw
+cp build/squintless-app-store-1.2.0.pbw /Users/moeedahmad/Projects/Squintless/dist/Squintless-1.2.0.pbw
 ```
 
 ## Licensing
@@ -232,5 +247,6 @@ Squintless/
 - App icon and feature graphic are in `store/`.
 - Pebble menu icon is bundled as a watchface resource.
 - MIT and OFL license files are included.
-- The watchface targets only `emery`.
-- The App Store build output is `dist/Squintless-1.1.0.pbw`.
+- The App Store watchface targets rectangular platforms: `aplite`, `basalt`, `diorite`, `emery`, and `flint`.
+- Pebble Time Round / `chalk` is intentionally excluded.
+- The App Store build output is `dist/Squintless-1.2.0.pbw`.

@@ -9,7 +9,7 @@
     "large-digits",
     "readability",
     "low-vision",
-    "emery",
+    "rectangular-pebble",
     "pebble-time-2",
     "experiment"
   ],
@@ -21,7 +21,11 @@
     "sdkVersion": "3",
     "enableMultiJS": true,
     "targetPlatforms": [
-      "emery"
+      "aplite",
+      "basalt",
+      "diorite",
+      "emery",
+      "flint"
     ],
     "watchapp": {
       "watchface": true
@@ -82,502 +86,1102 @@
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_00",
-          "file": "images/pairs/squintless_russo_pair_00.png"
+          "file": "images/pairs/squintless_russo_pair_00.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_01",
-          "file": "images/pairs/squintless_russo_pair_01.png"
+          "file": "images/pairs/squintless_russo_pair_01.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_02",
-          "file": "images/pairs/squintless_russo_pair_02.png"
+          "file": "images/pairs/squintless_russo_pair_02.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_03",
-          "file": "images/pairs/squintless_russo_pair_03.png"
+          "file": "images/pairs/squintless_russo_pair_03.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_04",
-          "file": "images/pairs/squintless_russo_pair_04.png"
+          "file": "images/pairs/squintless_russo_pair_04.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_05",
-          "file": "images/pairs/squintless_russo_pair_05.png"
+          "file": "images/pairs/squintless_russo_pair_05.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_06",
-          "file": "images/pairs/squintless_russo_pair_06.png"
+          "file": "images/pairs/squintless_russo_pair_06.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_07",
-          "file": "images/pairs/squintless_russo_pair_07.png"
+          "file": "images/pairs/squintless_russo_pair_07.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_08",
-          "file": "images/pairs/squintless_russo_pair_08.png"
+          "file": "images/pairs/squintless_russo_pair_08.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_09",
-          "file": "images/pairs/squintless_russo_pair_09.png"
+          "file": "images/pairs/squintless_russo_pair_09.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_10",
-          "file": "images/pairs/squintless_russo_pair_10.png"
+          "file": "images/pairs/squintless_russo_pair_10.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_11",
-          "file": "images/pairs/squintless_russo_pair_11.png"
+          "file": "images/pairs/squintless_russo_pair_11.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_12",
-          "file": "images/pairs/squintless_russo_pair_12.png"
+          "file": "images/pairs/squintless_russo_pair_12.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_13",
-          "file": "images/pairs/squintless_russo_pair_13.png"
+          "file": "images/pairs/squintless_russo_pair_13.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_14",
-          "file": "images/pairs/squintless_russo_pair_14.png"
+          "file": "images/pairs/squintless_russo_pair_14.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_15",
-          "file": "images/pairs/squintless_russo_pair_15.png"
+          "file": "images/pairs/squintless_russo_pair_15.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_16",
-          "file": "images/pairs/squintless_russo_pair_16.png"
+          "file": "images/pairs/squintless_russo_pair_16.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_17",
-          "file": "images/pairs/squintless_russo_pair_17.png"
+          "file": "images/pairs/squintless_russo_pair_17.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_18",
-          "file": "images/pairs/squintless_russo_pair_18.png"
+          "file": "images/pairs/squintless_russo_pair_18.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_19",
-          "file": "images/pairs/squintless_russo_pair_19.png"
+          "file": "images/pairs/squintless_russo_pair_19.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_20",
-          "file": "images/pairs/squintless_russo_pair_20.png"
+          "file": "images/pairs/squintless_russo_pair_20.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_21",
-          "file": "images/pairs/squintless_russo_pair_21.png"
+          "file": "images/pairs/squintless_russo_pair_21.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_22",
-          "file": "images/pairs/squintless_russo_pair_22.png"
+          "file": "images/pairs/squintless_russo_pair_22.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_23",
-          "file": "images/pairs/squintless_russo_pair_23.png"
+          "file": "images/pairs/squintless_russo_pair_23.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_24",
-          "file": "images/pairs/squintless_russo_pair_24.png"
+          "file": "images/pairs/squintless_russo_pair_24.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_25",
-          "file": "images/pairs/squintless_russo_pair_25.png"
+          "file": "images/pairs/squintless_russo_pair_25.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_26",
-          "file": "images/pairs/squintless_russo_pair_26.png"
+          "file": "images/pairs/squintless_russo_pair_26.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_27",
-          "file": "images/pairs/squintless_russo_pair_27.png"
+          "file": "images/pairs/squintless_russo_pair_27.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_28",
-          "file": "images/pairs/squintless_russo_pair_28.png"
+          "file": "images/pairs/squintless_russo_pair_28.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_29",
-          "file": "images/pairs/squintless_russo_pair_29.png"
+          "file": "images/pairs/squintless_russo_pair_29.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_30",
-          "file": "images/pairs/squintless_russo_pair_30.png"
+          "file": "images/pairs/squintless_russo_pair_30.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_31",
-          "file": "images/pairs/squintless_russo_pair_31.png"
+          "file": "images/pairs/squintless_russo_pair_31.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_32",
-          "file": "images/pairs/squintless_russo_pair_32.png"
+          "file": "images/pairs/squintless_russo_pair_32.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_33",
-          "file": "images/pairs/squintless_russo_pair_33.png"
+          "file": "images/pairs/squintless_russo_pair_33.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_34",
-          "file": "images/pairs/squintless_russo_pair_34.png"
+          "file": "images/pairs/squintless_russo_pair_34.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_35",
-          "file": "images/pairs/squintless_russo_pair_35.png"
+          "file": "images/pairs/squintless_russo_pair_35.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_36",
-          "file": "images/pairs/squintless_russo_pair_36.png"
+          "file": "images/pairs/squintless_russo_pair_36.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_37",
-          "file": "images/pairs/squintless_russo_pair_37.png"
+          "file": "images/pairs/squintless_russo_pair_37.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_38",
-          "file": "images/pairs/squintless_russo_pair_38.png"
+          "file": "images/pairs/squintless_russo_pair_38.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_39",
-          "file": "images/pairs/squintless_russo_pair_39.png"
+          "file": "images/pairs/squintless_russo_pair_39.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_40",
-          "file": "images/pairs/squintless_russo_pair_40.png"
+          "file": "images/pairs/squintless_russo_pair_40.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_41",
-          "file": "images/pairs/squintless_russo_pair_41.png"
+          "file": "images/pairs/squintless_russo_pair_41.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_42",
-          "file": "images/pairs/squintless_russo_pair_42.png"
+          "file": "images/pairs/squintless_russo_pair_42.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_43",
-          "file": "images/pairs/squintless_russo_pair_43.png"
+          "file": "images/pairs/squintless_russo_pair_43.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_44",
-          "file": "images/pairs/squintless_russo_pair_44.png"
+          "file": "images/pairs/squintless_russo_pair_44.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_45",
-          "file": "images/pairs/squintless_russo_pair_45.png"
+          "file": "images/pairs/squintless_russo_pair_45.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_46",
-          "file": "images/pairs/squintless_russo_pair_46.png"
+          "file": "images/pairs/squintless_russo_pair_46.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_47",
-          "file": "images/pairs/squintless_russo_pair_47.png"
+          "file": "images/pairs/squintless_russo_pair_47.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_48",
-          "file": "images/pairs/squintless_russo_pair_48.png"
+          "file": "images/pairs/squintless_russo_pair_48.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_49",
-          "file": "images/pairs/squintless_russo_pair_49.png"
+          "file": "images/pairs/squintless_russo_pair_49.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_50",
-          "file": "images/pairs/squintless_russo_pair_50.png"
+          "file": "images/pairs/squintless_russo_pair_50.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_51",
-          "file": "images/pairs/squintless_russo_pair_51.png"
+          "file": "images/pairs/squintless_russo_pair_51.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_52",
-          "file": "images/pairs/squintless_russo_pair_52.png"
+          "file": "images/pairs/squintless_russo_pair_52.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_53",
-          "file": "images/pairs/squintless_russo_pair_53.png"
+          "file": "images/pairs/squintless_russo_pair_53.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_54",
-          "file": "images/pairs/squintless_russo_pair_54.png"
+          "file": "images/pairs/squintless_russo_pair_54.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_55",
-          "file": "images/pairs/squintless_russo_pair_55.png"
+          "file": "images/pairs/squintless_russo_pair_55.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_56",
-          "file": "images/pairs/squintless_russo_pair_56.png"
+          "file": "images/pairs/squintless_russo_pair_56.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_57",
-          "file": "images/pairs/squintless_russo_pair_57.png"
+          "file": "images/pairs/squintless_russo_pair_57.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_58",
-          "file": "images/pairs/squintless_russo_pair_58.png"
+          "file": "images/pairs/squintless_russo_pair_58.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_59",
-          "file": "images/pairs/squintless_russo_pair_59.png"
+          "file": "images/pairs/squintless_russo_pair_59.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_60",
-          "file": "images/pairs/squintless_russo_pair_60.png"
+          "file": "images/pairs/squintless_russo_pair_60.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_61",
-          "file": "images/pairs/squintless_russo_pair_61.png"
+          "file": "images/pairs/squintless_russo_pair_61.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_62",
-          "file": "images/pairs/squintless_russo_pair_62.png"
+          "file": "images/pairs/squintless_russo_pair_62.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_63",
-          "file": "images/pairs/squintless_russo_pair_63.png"
+          "file": "images/pairs/squintless_russo_pair_63.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_64",
-          "file": "images/pairs/squintless_russo_pair_64.png"
+          "file": "images/pairs/squintless_russo_pair_64.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_65",
-          "file": "images/pairs/squintless_russo_pair_65.png"
+          "file": "images/pairs/squintless_russo_pair_65.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_66",
-          "file": "images/pairs/squintless_russo_pair_66.png"
+          "file": "images/pairs/squintless_russo_pair_66.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_67",
-          "file": "images/pairs/squintless_russo_pair_67.png"
+          "file": "images/pairs/squintless_russo_pair_67.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_68",
-          "file": "images/pairs/squintless_russo_pair_68.png"
+          "file": "images/pairs/squintless_russo_pair_68.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_69",
-          "file": "images/pairs/squintless_russo_pair_69.png"
+          "file": "images/pairs/squintless_russo_pair_69.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_70",
-          "file": "images/pairs/squintless_russo_pair_70.png"
+          "file": "images/pairs/squintless_russo_pair_70.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_71",
-          "file": "images/pairs/squintless_russo_pair_71.png"
+          "file": "images/pairs/squintless_russo_pair_71.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_72",
-          "file": "images/pairs/squintless_russo_pair_72.png"
+          "file": "images/pairs/squintless_russo_pair_72.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_73",
-          "file": "images/pairs/squintless_russo_pair_73.png"
+          "file": "images/pairs/squintless_russo_pair_73.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_74",
-          "file": "images/pairs/squintless_russo_pair_74.png"
+          "file": "images/pairs/squintless_russo_pair_74.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_75",
-          "file": "images/pairs/squintless_russo_pair_75.png"
+          "file": "images/pairs/squintless_russo_pair_75.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_76",
-          "file": "images/pairs/squintless_russo_pair_76.png"
+          "file": "images/pairs/squintless_russo_pair_76.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_77",
-          "file": "images/pairs/squintless_russo_pair_77.png"
+          "file": "images/pairs/squintless_russo_pair_77.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_78",
-          "file": "images/pairs/squintless_russo_pair_78.png"
+          "file": "images/pairs/squintless_russo_pair_78.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_79",
-          "file": "images/pairs/squintless_russo_pair_79.png"
+          "file": "images/pairs/squintless_russo_pair_79.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_80",
-          "file": "images/pairs/squintless_russo_pair_80.png"
+          "file": "images/pairs/squintless_russo_pair_80.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_81",
-          "file": "images/pairs/squintless_russo_pair_81.png"
+          "file": "images/pairs/squintless_russo_pair_81.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_82",
-          "file": "images/pairs/squintless_russo_pair_82.png"
+          "file": "images/pairs/squintless_russo_pair_82.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_83",
-          "file": "images/pairs/squintless_russo_pair_83.png"
+          "file": "images/pairs/squintless_russo_pair_83.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_84",
-          "file": "images/pairs/squintless_russo_pair_84.png"
+          "file": "images/pairs/squintless_russo_pair_84.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_85",
-          "file": "images/pairs/squintless_russo_pair_85.png"
+          "file": "images/pairs/squintless_russo_pair_85.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_86",
-          "file": "images/pairs/squintless_russo_pair_86.png"
+          "file": "images/pairs/squintless_russo_pair_86.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_87",
-          "file": "images/pairs/squintless_russo_pair_87.png"
+          "file": "images/pairs/squintless_russo_pair_87.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_88",
-          "file": "images/pairs/squintless_russo_pair_88.png"
+          "file": "images/pairs/squintless_russo_pair_88.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_89",
-          "file": "images/pairs/squintless_russo_pair_89.png"
+          "file": "images/pairs/squintless_russo_pair_89.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_90",
-          "file": "images/pairs/squintless_russo_pair_90.png"
+          "file": "images/pairs/squintless_russo_pair_90.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_91",
-          "file": "images/pairs/squintless_russo_pair_91.png"
+          "file": "images/pairs/squintless_russo_pair_91.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_92",
-          "file": "images/pairs/squintless_russo_pair_92.png"
+          "file": "images/pairs/squintless_russo_pair_92.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_93",
-          "file": "images/pairs/squintless_russo_pair_93.png"
+          "file": "images/pairs/squintless_russo_pair_93.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_94",
-          "file": "images/pairs/squintless_russo_pair_94.png"
+          "file": "images/pairs/squintless_russo_pair_94.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_95",
-          "file": "images/pairs/squintless_russo_pair_95.png"
+          "file": "images/pairs/squintless_russo_pair_95.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_96",
-          "file": "images/pairs/squintless_russo_pair_96.png"
+          "file": "images/pairs/squintless_russo_pair_96.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_97",
-          "file": "images/pairs/squintless_russo_pair_97.png"
+          "file": "images/pairs/squintless_russo_pair_97.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_98",
-          "file": "images/pairs/squintless_russo_pair_98.png"
+          "file": "images/pairs/squintless_russo_pair_98.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
           "name": "IMAGE_PAIR_99",
-          "file": "images/pairs/squintless_russo_pair_99.png"
+          "file": "images/pairs/squintless_russo_pair_99.png",
+          "targetPlatforms": [
+            "basalt",
+            "diorite",
+            "emery",
+            "flint"
+          ]
         },
         {
           "type": "bitmap",
@@ -797,5 +1401,5 @@
       ]
     }
   },
-  "description": "Experimental Squintless variant for Pebble Time 2 readability testing."
+  "description": "Experimental Squintless variant for rectangular Pebble readability testing."
 }

@@ -21,6 +21,10 @@ static Window *s_window;
 static Layer *s_face_layer;
 static GBitmap *s_hour_bitmap;
 static GBitmap *s_minute_bitmap;
+#if defined(PBL_PLATFORM_APLITE)
+static GBitmap *s_hour_second_bitmap;
+static GBitmap *s_minute_second_bitmap;
+#endif
 static GBitmap *s_date_month_bitmap;
 static GBitmap *s_date_day_bitmap;
 static AppTimer *s_date_timer;
@@ -32,10 +36,11 @@ static int s_battery_percent = 100;
 static bool s_showing_date;
 
 static SquintlessLayout prv_layout_for_bounds(GRect bounds) {
+  const bool is_144_rect = bounds.size.w == 144 && bounds.size.h == 168;
   const int outer_margin = 2;
-  const int central_gap_h = 16;
-  const int battery_bar_h = 9;
-  const int battery_bar_inset = 5;
+  const int central_gap_h = is_144_rect ? 14 : 16;
+  const int battery_bar_h = is_144_rect ? 7 : 9;
+  const int battery_bar_inset = is_144_rect ? 4 : 5;
   const int battery_bar_radius = 2;
   const int battery_bar_border = 1;
   const int half_h = (bounds.size.h - central_gap_h) / 2;
@@ -104,6 +109,7 @@ static void prv_get_date_indices(int *month_index, int *day_index) {
   *day_index = day - 1;
 }
 
+#if !defined(PBL_PLATFORM_APLITE)
 static uint32_t prv_resource_id_for_text(const char *text) {
   const size_t len = strlen(text);
   if (len == 1) {
@@ -128,6 +134,37 @@ static void prv_replace_bitmap_if_needed(GBitmap **bitmap, char *cached_text,
   strncpy(cached_text, new_text, 3);
   cached_text[3] = '\0';
 }
+#endif
+
+#if defined(PBL_PLATFORM_APLITE)
+static void prv_replace_digit_bitmaps_if_needed(GBitmap **first_bitmap,
+                                                GBitmap **second_bitmap,
+                                                char *cached_text,
+                                                const char *new_text) {
+  if (strcmp(cached_text, new_text) == 0 && *first_bitmap) {
+    return;
+  }
+
+  if (*first_bitmap) {
+    gbitmap_destroy(*first_bitmap);
+  }
+  if (*second_bitmap) {
+    gbitmap_destroy(*second_bitmap);
+    *second_bitmap = NULL;
+  }
+
+  *first_bitmap = gbitmap_create_with_resource(
+      SQUINTLESS_SINGLE_RESOURCE_IDS[new_text[0] - '0']);
+
+  if (strlen(new_text) == 2) {
+    *second_bitmap = gbitmap_create_with_resource(
+        SQUINTLESS_SINGLE_RESOURCE_IDS[new_text[1] - '0']);
+  }
+
+  strncpy(cached_text, new_text, 3);
+  cached_text[3] = '\0';
+}
+#endif
 
 static void prv_replace_resource_bitmap_if_needed(GBitmap **bitmap, int *cached_index,
                                                   int new_index, uint32_t resource_id) {
@@ -148,8 +185,21 @@ static void prv_update_time_assets(void) {
   char minute_text[4];
 
   prv_get_time_text(hour_text, sizeof(hour_text), minute_text, sizeof(minute_text));
+#if defined(PBL_PLATFORM_APLITE)
+  prv_replace_digit_bitmaps_if_needed(
+      &s_hour_bitmap,
+      &s_hour_second_bitmap,
+      s_hour_text,
+      hour_text);
+  prv_replace_digit_bitmaps_if_needed(
+      &s_minute_bitmap,
+      &s_minute_second_bitmap,
+      s_minute_text,
+      minute_text);
+#else
   prv_replace_bitmap_if_needed(&s_hour_bitmap, s_hour_text, hour_text);
   prv_replace_bitmap_if_needed(&s_minute_bitmap, s_minute_text, minute_text);
+#endif
 }
 
 static void prv_update_date_assets(void) {
@@ -180,6 +230,47 @@ static void prv_draw_bitmap_centered(GContext *ctx, GBitmap *bitmap, GRect bound
   graphics_draw_bitmap_in_rect(ctx, bitmap,
                                GRect(x, y, bitmap_bounds.size.w, bitmap_bounds.size.h));
 }
+
+#if defined(PBL_PLATFORM_APLITE)
+static void prv_draw_digit_bitmaps_centered(GContext *ctx, const char *text,
+                                            GBitmap *first_bitmap,
+                                            GBitmap *second_bitmap,
+                                            GRect bounds) {
+  if (!first_bitmap) {
+    return;
+  }
+
+  if (strlen(text) == 1 || !second_bitmap) {
+    prv_draw_bitmap_centered(ctx, first_bitmap, bounds);
+    return;
+  }
+
+  const GRect first_bounds = gbitmap_get_bounds(first_bitmap);
+  const GRect second_bounds = gbitmap_get_bounds(second_bitmap);
+  int spacing = squintless_pair_spacing(text[0], text[1]);
+  if (spacing < 0) {
+    spacing = 0;
+  }
+  const int total_w = first_bounds.size.w + spacing + second_bounds.size.w;
+  const int row_h = first_bounds.size.h > second_bounds.size.h ?
+                    first_bounds.size.h : second_bounds.size.h;
+  const int x = bounds.origin.x + ((bounds.size.w - total_w) / 2);
+  const int y = bounds.origin.y + ((bounds.size.h - row_h) / 2);
+
+  graphics_draw_bitmap_in_rect(ctx,
+                               first_bitmap,
+                               GRect(x,
+                                     y + ((row_h - first_bounds.size.h) / 2),
+                                     first_bounds.size.w,
+                                     first_bounds.size.h));
+  graphics_draw_bitmap_in_rect(ctx,
+                               second_bitmap,
+                               GRect(x + first_bounds.size.w + spacing,
+                                     y + ((row_h - second_bounds.size.h) / 2),
+                                     second_bounds.size.w,
+                                     second_bounds.size.h));
+}
+#endif
 
 static void prv_draw_battery(GContext *ctx, const SquintlessLayout *layout) {
   const GRect outer = layout->battery_bounds;
@@ -218,10 +309,13 @@ static void prv_draw_date_separator(GContext *ctx, const SquintlessLayout *layou
   const int center_x = bounds.origin.x + (bounds.size.w / 2);
   const int top_y = bounds.origin.y - 1;
   const int bottom_y = bounds.origin.y + bounds.size.h;
+  const int stroke_w = layout->battery_bar_h <= 7 ? 2 : 3;
+  const int x_offset = layout->battery_bar_h <= 7 ? 4 : 5;
 
   graphics_context_set_stroke_color(ctx, GColorBlack);
-  graphics_context_set_stroke_width(ctx, 3);
-  graphics_draw_line(ctx, GPoint(center_x + 5, top_y), GPoint(center_x - 5, bottom_y));
+  graphics_context_set_stroke_width(ctx, stroke_w);
+  graphics_draw_line(ctx, GPoint(center_x + x_offset, top_y),
+                     GPoint(center_x - x_offset, bottom_y));
   graphics_context_set_stroke_width(ctx, 1);
 }
 
@@ -237,9 +331,23 @@ static void prv_face_update_proc(Layer *layer, GContext *ctx) {
     prv_draw_date_separator(ctx, &layout);
     prv_draw_bitmap_centered(ctx, s_date_day_bitmap, layout.minute_bounds);
   } else {
+#if defined(PBL_PLATFORM_APLITE)
+    prv_draw_digit_bitmaps_centered(ctx,
+                                    s_hour_text,
+                                    s_hour_bitmap,
+                                    s_hour_second_bitmap,
+                                    layout.hour_bounds);
+    prv_draw_battery(ctx, &layout);
+    prv_draw_digit_bitmaps_centered(ctx,
+                                    s_minute_text,
+                                    s_minute_bitmap,
+                                    s_minute_second_bitmap,
+                                    layout.minute_bounds);
+#else
     prv_draw_bitmap_centered(ctx, s_hour_bitmap, layout.hour_bounds);
     prv_draw_battery(ctx, &layout);
     prv_draw_bitmap_centered(ctx, s_minute_bitmap, layout.minute_bounds);
+#endif
   }
 }
 
@@ -336,6 +444,14 @@ static void prv_deinit(void) {
   if (s_minute_bitmap) {
     gbitmap_destroy(s_minute_bitmap);
   }
+#if defined(PBL_PLATFORM_APLITE)
+  if (s_hour_second_bitmap) {
+    gbitmap_destroy(s_hour_second_bitmap);
+  }
+  if (s_minute_second_bitmap) {
+    gbitmap_destroy(s_minute_second_bitmap);
+  }
+#endif
   if (s_date_month_bitmap) {
     gbitmap_destroy(s_date_month_bitmap);
   }

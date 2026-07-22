@@ -22,6 +22,20 @@ static const uint8_t SQUINTLESS_SINGLE_WIDTHS[10] = {
   81, 49, 78, 80, 88, 79, 79, 77, 84, 79
 };
 
+static const int8_t SQUINTLESS_PAIR_SPACINGS[SQUINTLESS_PAIR_COUNT] = {
+  0, 3, 0, 0, 0, 0, -1, 0, -1, 0,
+  3, 13, 2, 0, 0, 0, 0, 0, 2, 0,
+  0, 0, -1, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, -1, 0, -1, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, -1, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, -1,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, -1, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+};
+
+#if !defined(PBL_PLATFORM_APLITE)
 static const uint32_t SQUINTLESS_PAIR_RESOURCE_IDS[SQUINTLESS_PAIR_COUNT] = {
   RESOURCE_ID_IMAGE_PAIR_00,
   RESOURCE_ID_IMAGE_PAIR_01,
@@ -137,7 +151,12 @@ static const uint8_t SQUINTLESS_PAIR_WIDTHS[SQUINTLESS_PAIR_COUNT] = {
   175, 136, 166, 168, 177, 168, 173, 164, 175, 170,
   172, 133, 163, 165, 174, 165, 170, 161, 173, 167,
 };
+#endif
 
 static inline uint8_t squintless_pair_index(char tens, char ones) {
   return ((uint8_t)(tens - '0') * 10) + (uint8_t)(ones - '0');
+}
+
+static inline int8_t squintless_pair_spacing(char tens, char ones) {
+  return SQUINTLESS_PAIR_SPACINGS[squintless_pair_index(tens, ones)];
 }
