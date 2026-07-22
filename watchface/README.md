@@ -2,11 +2,13 @@
 
 This is the production Pebble Time 2 watchface project for Squintless.
 
-The watchface renders only:
+The default watchface renders only:
 
 - Hours
 - Outlined battery progress indicator
 - Minutes
+
+Pressing the middle button temporarily replaces the time with a large numeric date for three seconds, then returns to the default face.
 
 All numeral artwork is generated from `../typeface/artifacts/`. Do not edit `resources/images/` or `src/c/generated/` by hand.
 

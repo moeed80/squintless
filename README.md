@@ -6,7 +6,7 @@ Designed for your aging eyes, not your ego.
 
 Squintless is an accessibility-first watch face for Pebble Time 2. It exists for one job: let you tell the time instantly.
 
-No date. No weather. No step count. No seconds. No icons. No decorative complications.
+By default: no visible date, no weather, no step count, no seconds, no icons, and no decorative complications.
 
 Every pixel is there to improve readability.
 
@@ -15,6 +15,8 @@ Every pixel is there to improve readability.
 Most watch faces try to prove how much information they can fit on a tiny screen. Squintless goes the other way.
 
 The top half is hours. The bottom half is minutes. The middle is a quiet battery indicator. The result is a watch face you can read with a quick glance, even when your near vision is not cooperating.
+
+When you want the date, press the middle button. Squintless temporarily replaces the time with a large numeric date for three seconds, then returns to the default face.
 
 Squintless is built for people over 40, people whose close-up vision has changed, and anyone who values function over decoration.
 
@@ -36,7 +38,13 @@ Squintless uses the full 200 x 228 Pebble Time 2 display:
 - Minutes fill the lower half.
 - The battery indicator sits between them.
 
-The layout is deliberately stable. There are no animations, secondary modes, or information layers competing with the time.
+The default layout is deliberately stable. The date is hidden until requested, uses the same large numerals, and dismisses itself automatically.
+
+## Date Glance
+
+Press the middle button to show the date in large Squintless numerals for three seconds.
+
+On US-style watches, the date is shown as `MM/DD`. For example, July 22 appears as `07/22`.
 
 ## Battery Indicator
 

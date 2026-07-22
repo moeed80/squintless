@@ -18,11 +18,13 @@ Squintless is a purpose-built watch face for people who want the time instantly,
 
 Designed for your aging eyes, not your ego.
 
-The layout is intentionally simple: hours on top, a full-width battery indicator in the middle, and minutes on the bottom. There is no date, no weather, no step count, no seconds, no icons, and no status clutter. Every pixel is used to improve readability.
+The default layout is intentionally simple: hours on top, a full-width battery indicator in the middle, and minutes on the bottom. There is no always-on date, no weather, no step count, no seconds, no icons, and no status clutter. Every pixel is used to improve readability.
 
 The numerals are custom Squintless glyphs, generated from canonical SVG source artwork into hard monochrome Pebble bitmap resources. They are oversized, high-contrast, and tuned for the 200 x 228 Pebble Time 2 display.
 
 The battery indicator reads like a quiet outlined progress bar: black for charge remaining and white for charge used. It is visible without competing with the time.
+
+When the date matters, press the middle button. Squintless shows a large numeric date for three seconds, then returns automatically to the default time face.
 
 Squintless is for people over 40, anyone whose near vision is not what it used to be, and anyone who values function over decoration.
 
@@ -33,7 +35,8 @@ Initial production release.
 - Purpose-built Pebble Time 2 layout for instant time recognition.
 - Custom Squintless numeral set optimized for large, high-contrast readability.
 - Full-width outlined battery progress indicator with proportional black fill.
-- No secondary complications, icons, seconds, or decorative information.
+- Middle-button date glance with automatic three-second return to the time.
+- No always-on secondary complications, icons, seconds, weather, or decorative information.
 - Built exclusively for `emery`, the Pebble Time 2 platform.
 
 ## Version Notes

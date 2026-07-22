@@ -21,3 +21,5 @@ screenshots/preview-*.png
 watchface/previews/*
 !watchface/previews/battery-validation/
 !watchface/previews/battery-validation/*.png
+!watchface/previews/date-glance/
+!watchface/previews/date-glance/*.png
