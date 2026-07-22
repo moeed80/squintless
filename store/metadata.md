@@ -20,7 +20,7 @@ Designed for your aging eyes, not your ego.
 
 The default layout is intentionally simple: hours on top, a full-width battery indicator in the middle, and minutes on the bottom. There is no always-on date, no weather, no step count, no seconds, no icons, and no status clutter. Every pixel is used to improve readability.
 
-The numerals are custom Squintless glyphs, generated from canonical SVG source artwork into hard monochrome Pebble bitmap resources. They are oversized, high-contrast, and tuned for the 200 x 228 Pebble Time 2 display.
+The numerals use the Russo One readability treatment selected through real-device testing, generated into hard monochrome Pebble bitmap resources. They are oversized, high-contrast, and tuned for the 200 x 228 Pebble Time 2 display.
 
 The battery indicator reads like a quiet outlined progress bar: black for charge remaining and white for charge used. It is visible without competing with the time.
 
@@ -30,10 +30,10 @@ Squintless is for people over 40, anyone whose near vision is not what it used t
 
 ## Release Notes
 
-Initial production release.
+Version 1.1.0.
 
 - Purpose-built Pebble Time 2 layout for instant time recognition.
-- Custom Squintless numeral set optimized for large, high-contrast readability.
+- Russo One numeral treatment selected after real-device readability testing.
 - Full-width outlined battery progress indicator with proportional black fill.
 - Tap-triggered month/day date glance with automatic three-second return to the time.
 - No always-on secondary complications, icons, seconds, weather, or decorative information.
@@ -41,7 +41,7 @@ Initial production release.
 
 ## Version Notes
 
-Version 1.0.0 is the first App Store-ready Squintless release for Pebble Time 2.
+Version 1.1.0 adds a tap-triggered date glance and uses the real-device-tested Russo One readability treatment.
 
 ## Category
 

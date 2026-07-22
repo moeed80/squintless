@@ -18,12 +18,12 @@
     "simple",
     "glanceable"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "copyright": "Copyright (c) 2026 Mangla & Co LLC",
-  "versionNotes": "Version 1.0.0 is the first App Store-ready Squintless release for Pebble Time 2.",
+  "versionNotes": "Version 1.1.0 adds a tap-triggered date glance and uses the real-device-tested Russo One readability treatment.",
   "releaseNotes": [
     "Purpose-built Pebble Time 2 layout for instant time recognition.",
-    "Custom Squintless numeral set optimized for large, high-contrast readability.",
+    "Russo One numeral treatment selected after real-device readability testing.",
     "Full-width outlined battery progress indicator with proportional black fill.",
     "Tap-triggered month/day date glance with automatic three-second return to the time.",
     "No always-on secondary complications, icons, seconds, weather, or decorative information.",
