@@ -2,20 +2,14 @@
 from __future__ import annotations
 
 import json
+import argparse
 from dataclasses import dataclass
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[2]
-WATCHFACE_DIR = ROOT / "watchface"
 FONT_PATH = ROOT / "typeface" / "fonts" / "russo-one" / "RussoOne-Regular.ttf"
-MONTH_DIR = WATCHFACE_DIR / "resources" / "images" / "date" / "months"
-DAY_DIR = WATCHFACE_DIR / "resources" / "images" / "date" / "days"
-GENERATED_DIR = WATCHFACE_DIR / "src" / "c" / "generated"
-PACKAGE_PATH = WATCHFACE_DIR / "package.json"
-METRICS_PATH = GENERATED_DIR / "squintless_date_metrics.json"
-HEADER_PATH = GENERATED_DIR / "squintless_date_assets.h"
 
 ROW_WIDTH = 196
 RESOURCE_HEIGHT = 100
@@ -125,17 +119,22 @@ def day_resource_name(day: str) -> str:
 
 
 def month_file(month: str) -> Path:
-    return MONTH_DIR / f"squintless_date_month_{month.lower()}.png"
+    return Path("resources") / "images" / "date" / "months" / f"squintless_date_month_{month.lower()}.png"
 
 
 def day_file(day: str) -> Path:
-    return DAY_DIR / f"squintless_date_day_{day}.png"
+    return Path("resources") / "images" / "date" / "days" / f"squintless_date_day_{day}.png"
 
 
-def write_assets(month_assets: list[RenderedAsset], day_assets: list[RenderedAsset]) -> dict:
-    MONTH_DIR.mkdir(parents=True, exist_ok=True)
-    DAY_DIR.mkdir(parents=True, exist_ok=True)
-    GENERATED_DIR.mkdir(parents=True, exist_ok=True)
+def write_assets(watchface_dir: Path, month_assets: list[RenderedAsset],
+                 day_assets: list[RenderedAsset]) -> dict:
+    month_dir = watchface_dir / month_file("jan").parent
+    day_dir = watchface_dir / day_file("01").parent
+    generated_dir = watchface_dir / "src" / "c" / "generated"
+
+    month_dir.mkdir(parents=True, exist_ok=True)
+    day_dir.mkdir(parents=True, exist_ok=True)
+    generated_dir.mkdir(parents=True, exist_ok=True)
 
     metrics = {
         "source_font": str(FONT_PATH.relative_to(ROOT)),
@@ -149,10 +148,10 @@ def write_assets(month_assets: list[RenderedAsset], day_assets: list[RenderedAss
     }
 
     for asset in month_assets:
-        path = month_file(asset.text)
+        path = watchface_dir / month_file(asset.text)
         asset.image.save(path)
         metrics["months"][asset.text] = {
-            "file": str(path.relative_to(WATCHFACE_DIR)),
+            "file": str(path.relative_to(watchface_dir)),
             "width": asset.width,
             "height": asset.height,
             "font_size_px": asset.font_size,
@@ -160,21 +159,23 @@ def write_assets(month_assets: list[RenderedAsset], day_assets: list[RenderedAss
         }
 
     for asset in day_assets:
-        path = day_file(asset.text)
+        path = watchface_dir / day_file(asset.text)
         asset.image.save(path)
         metrics["days"][asset.text] = {
-            "file": str(path.relative_to(WATCHFACE_DIR)),
+            "file": str(path.relative_to(watchface_dir)),
             "width": asset.width,
             "height": asset.height,
             "font_size_px": asset.font_size,
             "ink_bbox": asset.ink_bbox,
         }
 
-    METRICS_PATH.write_text(json.dumps(metrics, indent=2) + "\n")
+    (generated_dir / "squintless_date_metrics.json").write_text(
+        json.dumps(metrics, indent=2) + "\n"
+    )
     return metrics
 
 
-def write_header() -> None:
+def write_header(watchface_dir: Path) -> None:
     lines = [
         "#pragma once",
         "",
@@ -196,11 +197,14 @@ def write_header() -> None:
         "};",
         "",
     ])
-    HEADER_PATH.write_text("\n".join(lines))
+    (watchface_dir / "src" / "c" / "generated" / "squintless_date_assets.h").write_text(
+        "\n".join(lines)
+    )
 
 
-def update_package_json(metrics: dict) -> None:
-    package = json.loads(PACKAGE_PATH.read_text())
+def update_package_json(watchface_dir: Path, metrics: dict) -> None:
+    package_path = watchface_dir / "package.json"
+    package = json.loads(package_path.read_text())
     media = package["pebble"]["resources"]["media"]
     media = [
         item
@@ -224,18 +228,33 @@ def update_package_json(metrics: dict) -> None:
         })
 
     package["pebble"]["resources"]["media"] = media
-    PACKAGE_PATH.write_text(json.dumps(package, indent=2) + "\n")
+    package_path.write_text(json.dumps(package, indent=2) + "\n")
 
 
-def main() -> None:
+def generate_for_watchface(watchface_dir: Path) -> None:
     if not FONT_PATH.exists():
         raise FileNotFoundError(f"Russo One font is missing: {FONT_PATH}")
 
     month_assets = [render_label_at_max_size(month, MONTH_TRACKING) for month in MONTHS]
     day_assets = [render_label_at_max_size(day, DAY_TRACKING) for day in DAYS]
-    metrics = write_assets(month_assets, day_assets)
-    write_header()
-    update_package_json(metrics)
+    metrics = write_assets(watchface_dir, month_assets, day_assets)
+    write_header(watchface_dir)
+    update_package_json(watchface_dir, metrics)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "target",
+        nargs="?",
+        default="watchface",
+        choices=["watchface", "watchface-russo", "all"],
+    )
+    args = parser.parse_args()
+
+    targets = ["watchface", "watchface-russo"] if args.target == "all" else [args.target]
+    for target in targets:
+        generate_for_watchface(ROOT / target)
 
 
 if __name__ == "__main__":

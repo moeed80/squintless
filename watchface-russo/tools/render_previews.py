@@ -8,6 +8,7 @@ from PIL import Image, ImageChops, ImageDraw
 
 WATCHFACE_DIR = Path(__file__).resolve().parents[1]
 METRICS_PATH = WATCHFACE_DIR / "src" / "c" / "generated" / "squintless_typeface_metrics.json"
+DATE_METRICS_PATH = WATCHFACE_DIR / "src" / "c" / "generated" / "squintless_date_metrics.json"
 OUT_DIR = WATCHFACE_DIR / "previews"
 
 WIDTH = 200
@@ -19,6 +20,7 @@ BATTERY_BAR_INSET = 5
 BATTERY_BAR_RADIUS = 2
 BATTERY_BAR_BORDER = 1
 BATTERY_VALIDATION_DIR = OUT_DIR / "battery-validation"
+DATE_GLANCE_DIR = OUT_DIR / "date-glance"
 
 STATES = [
     ("08", "36", 75, "08-36"),
@@ -34,6 +36,11 @@ STATES = [
 ]
 
 BATTERY_VALIDATION_LEVELS = [100, 75, 50, 25, 10, 0]
+
+DATE_GLANCE_STATES = [
+    ("JUL", "22", "jul-22"),
+    ("DEC", "31", "dec-31"),
+]
 
 
 def layout():
@@ -63,6 +70,14 @@ def load_asset(metrics, text):
     else:
         path = WATCHFACE_DIR / metrics["pairs"][text]["file"]
     return Image.open(path).convert("L")
+
+
+def load_date_month_asset(metrics, month):
+    return Image.open(WATCHFACE_DIR / metrics["months"][month]["file"]).convert("L")
+
+
+def load_date_day_asset(metrics, day):
+    return Image.open(WATCHFACE_DIR / metrics["days"][day]["file"]).convert("L")
 
 
 def draw_centered_asset(canvas, asset, bounds):
@@ -111,6 +126,17 @@ def draw_battery(canvas, bounds, percent):
     canvas.paste(0, (inner_x, inner_y), ImageChops.multiply(inner_mask, fill_mask))
 
 
+def draw_date_separator(canvas, bounds):
+    x, y, w, h = bounds
+    center_x = x + w // 2
+    draw = ImageDraw.Draw(canvas)
+    draw.line(
+        (center_x + 5, y - 1, center_x - 5, y + h),
+        fill=0,
+        width=3,
+    )
+
+
 def render(metrics, hour, minute, battery):
     bounds = layout()
     canvas = Image.new("L", (WIDTH, HEIGHT), 255)
@@ -121,13 +147,30 @@ def render(metrics, hour, minute, battery):
     return canvas
 
 
+def render_date_glance(date_metrics, month, day):
+    bounds = layout()
+    canvas = Image.new("L", (WIDTH, HEIGHT), 255)
+
+    draw_centered_asset(canvas, load_date_month_asset(date_metrics, month), bounds["hour"])
+    draw_date_separator(canvas, bounds["battery"])
+    draw_centered_asset(canvas, load_date_day_asset(date_metrics, day), bounds["minute"])
+    return canvas
+
+
 def main():
     metrics = json.loads(METRICS_PATH.read_text())
+    date_metrics = json.loads(DATE_METRICS_PATH.read_text())
     OUT_DIR.mkdir(exist_ok=True)
     BATTERY_VALIDATION_DIR.mkdir(exist_ok=True)
+    DATE_GLANCE_DIR.mkdir(exist_ok=True)
     for hour, minute, battery, slug in STATES:
         render(metrics, hour, minute, battery).save(
             OUT_DIR / f"squintless-{slug}-battery-{battery}.png"
+        )
+
+    for month, day, slug in DATE_GLANCE_STATES:
+        render_date_glance(date_metrics, month, day).save(
+            DATE_GLANCE_DIR / f"squintless-date-{slug}.png"
         )
 
     validation_strip = Image.new("L", (WIDTH * len(BATTERY_VALIDATION_LEVELS), HEIGHT), 255)

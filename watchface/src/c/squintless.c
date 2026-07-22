@@ -265,12 +265,8 @@ static void prv_show_date_glance(void) {
   }
 }
 
-static void prv_select_click_handler(ClickRecognizerRef recognizer, void *context) {
+static void prv_accel_tap_handler(AccelAxisType axis, int32_t direction) {
   prv_show_date_glance();
-}
-
-static void prv_click_config_provider(void *context) {
-  window_single_click_subscribe(BUTTON_ID_SELECT, prv_select_click_handler);
 }
 
 static void prv_tick_handler(struct tm *tick_time, TimeUnits units_changed) {
@@ -311,7 +307,6 @@ static void prv_window_unload(Window *window) {
 static void prv_init(void) {
   s_window = window_create();
   window_set_background_color(s_window, GColorWhite);
-  window_set_click_config_provider(s_window, prv_click_config_provider);
   window_set_window_handlers(s_window, (WindowHandlers) {
     .load = prv_window_load,
     .unload = prv_window_unload,
@@ -320,6 +315,7 @@ static void prv_init(void) {
   BatteryChargeState initial_battery = battery_state_service_peek();
   s_battery_percent = initial_battery.charge_percent;
   prv_update_time_assets();
+  accel_tap_service_subscribe(prv_accel_tap_handler);
   battery_state_service_subscribe(prv_battery_handler);
   tick_timer_service_subscribe(MINUTE_UNIT, prv_tick_handler);
 
@@ -329,6 +325,7 @@ static void prv_init(void) {
 static void prv_deinit(void) {
   tick_timer_service_unsubscribe();
   battery_state_service_unsubscribe();
+  accel_tap_service_unsubscribe();
   if (s_date_timer) {
     app_timer_cancel(s_date_timer);
     s_date_timer = NULL;

@@ -7,7 +7,7 @@ Squintless is an accessibility-first Pebble Time 2 watch face. Contributions sho
 ## Priorities
 
 - Preserve the simple hours, battery, minutes layout.
-- Keep secondary information out of the default face; the date belongs in the temporary middle-button glance.
+- Keep secondary information out of the default face; the date belongs in the temporary tap-triggered glance.
 - Prefer readability over decoration.
 - Keep Pebble Time 2 support focused on `emery`.
 - Keep numeral design changes in `typeface/`.

@@ -16,7 +16,7 @@ Most watch faces try to prove how much information they can fit on a tiny screen
 
 The top half is hours. The bottom half is minutes. The middle is a quiet battery indicator. The result is a watch face you can read with a quick glance, even when your near vision is not cooperating.
 
-When you want the date, press the middle button. Squintless temporarily replaces the time with a large month/day date for three seconds, then returns to the default face.
+When you want the date, tap or shake the watch. Squintless temporarily replaces the time with a large month/day date for three seconds, then returns to the default face.
 
 Squintless is built for people over 40, people whose close-up vision has changed, and anyone who values function over decoration.
 
@@ -42,9 +42,11 @@ The default layout is deliberately stable. The date is hidden until requested, u
 
 ## Date Glance
 
-Press the middle button to show the date in large type for three seconds.
+Tap or shake the watch to show the date in large type for three seconds.
 
 The month is shown as a three-letter Russo One label, with the day below it. For example, July 22 appears as `JUL/22`.
+
+Pebble watchfaces cannot reserve the physical buttons for custom behavior; the tap gesture keeps Squintless as a true watchface while still allowing an on-demand date glance.
 
 ## Battery Indicator
 
@@ -143,6 +145,8 @@ Regenerate date-glance month and day assets after changing the Russo One treatme
 ```sh
 python3 watchface/tools/generate_date_glance_assets.py
 ```
+
+Use `python3 watchface/tools/generate_date_glance_assets.py all` when updating both the production and Russo watchface packages.
 
 Generate store artwork and the Pebble menu icon:
 

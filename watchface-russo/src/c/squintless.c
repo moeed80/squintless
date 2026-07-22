@@ -1,6 +1,9 @@
 #include <pebble.h>
 
+#include "generated/squintless_date_assets.h"
 #include "generated/squintless_typeface_assets.h"
+
+#define DATE_GLANCE_MS 3000
 
 typedef struct {
   int outer_margin;
@@ -18,9 +21,15 @@ static Window *s_window;
 static Layer *s_face_layer;
 static GBitmap *s_hour_bitmap;
 static GBitmap *s_minute_bitmap;
+static GBitmap *s_date_month_bitmap;
+static GBitmap *s_date_day_bitmap;
+static AppTimer *s_date_timer;
 static char s_hour_text[4];
 static char s_minute_text[4];
+static int s_date_month_index;
+static int s_date_day_index;
 static int s_battery_percent = 100;
+static bool s_showing_date;
 
 static SquintlessLayout prv_layout_for_bounds(GRect bounds) {
   const int outer_margin = 2;
@@ -73,6 +82,28 @@ static void prv_get_time_text(char *hour_text, size_t hour_text_size,
   snprintf(minute_text, minute_text_size, "%02d", tick_time->tm_min);
 }
 
+static void prv_get_date_indices(int *month_index, int *day_index) {
+  time_t now = time(NULL);
+  struct tm *tick_time = localtime(&now);
+  int month = tick_time->tm_mon + 1;
+  int day = tick_time->tm_mday;
+
+  if (month < 1) {
+    month = 1;
+  } else if (month > 12) {
+    month = 12;
+  }
+
+  if (day < 1) {
+    day = 1;
+  } else if (day > 31) {
+    day = 31;
+  }
+
+  *month_index = month - 1;
+  *day_index = day - 1;
+}
+
 static uint32_t prv_resource_id_for_text(const char *text) {
   const size_t len = strlen(text);
   if (len == 1) {
@@ -98,6 +129,20 @@ static void prv_replace_bitmap_if_needed(GBitmap **bitmap, char *cached_text,
   cached_text[3] = '\0';
 }
 
+static void prv_replace_resource_bitmap_if_needed(GBitmap **bitmap, int *cached_index,
+                                                  int new_index, uint32_t resource_id) {
+  if (*cached_index == new_index && *bitmap) {
+    return;
+  }
+
+  if (*bitmap) {
+    gbitmap_destroy(*bitmap);
+  }
+
+  *bitmap = gbitmap_create_with_resource(resource_id);
+  *cached_index = new_index;
+}
+
 static void prv_update_time_assets(void) {
   char hour_text[4];
   char minute_text[4];
@@ -105,6 +150,23 @@ static void prv_update_time_assets(void) {
   prv_get_time_text(hour_text, sizeof(hour_text), minute_text, sizeof(minute_text));
   prv_replace_bitmap_if_needed(&s_hour_bitmap, s_hour_text, hour_text);
   prv_replace_bitmap_if_needed(&s_minute_bitmap, s_minute_text, minute_text);
+}
+
+static void prv_update_date_assets(void) {
+  int month_index;
+  int day_index;
+
+  prv_get_date_indices(&month_index, &day_index);
+  prv_replace_resource_bitmap_if_needed(
+      &s_date_month_bitmap,
+      &s_date_month_index,
+      month_index,
+      SQUINTLESS_DATE_MONTH_RESOURCE_IDS[month_index]);
+  prv_replace_resource_bitmap_if_needed(
+      &s_date_day_bitmap,
+      &s_date_day_index,
+      day_index,
+      SQUINTLESS_DATE_DAY_RESOURCE_IDS[day_index]);
 }
 
 static void prv_draw_bitmap_centered(GContext *ctx, GBitmap *bitmap, GRect bounds) {
@@ -151,6 +213,18 @@ static void prv_draw_battery(GContext *ctx, const SquintlessLayout *layout) {
   }
 }
 
+static void prv_draw_date_separator(GContext *ctx, const SquintlessLayout *layout) {
+  const GRect bounds = layout->battery_bounds;
+  const int center_x = bounds.origin.x + (bounds.size.w / 2);
+  const int top_y = bounds.origin.y - 1;
+  const int bottom_y = bounds.origin.y + bounds.size.h;
+
+  graphics_context_set_stroke_color(ctx, GColorBlack);
+  graphics_context_set_stroke_width(ctx, 3);
+  graphics_draw_line(ctx, GPoint(center_x + 5, top_y), GPoint(center_x - 5, bottom_y));
+  graphics_context_set_stroke_width(ctx, 1);
+}
+
 static void prv_face_update_proc(Layer *layer, GContext *ctx) {
   GRect bounds = layer_get_bounds(layer);
   SquintlessLayout layout = prv_layout_for_bounds(bounds);
@@ -158,13 +232,48 @@ static void prv_face_update_proc(Layer *layer, GContext *ctx) {
   graphics_context_set_fill_color(ctx, GColorWhite);
   graphics_fill_rect(ctx, bounds, 0, GCornersAll);
 
-  prv_draw_bitmap_centered(ctx, s_hour_bitmap, layout.hour_bounds);
-  prv_draw_battery(ctx, &layout);
-  prv_draw_bitmap_centered(ctx, s_minute_bitmap, layout.minute_bounds);
+  if (s_showing_date) {
+    prv_draw_bitmap_centered(ctx, s_date_month_bitmap, layout.hour_bounds);
+    prv_draw_date_separator(ctx, &layout);
+    prv_draw_bitmap_centered(ctx, s_date_day_bitmap, layout.minute_bounds);
+  } else {
+    prv_draw_bitmap_centered(ctx, s_hour_bitmap, layout.hour_bounds);
+    prv_draw_battery(ctx, &layout);
+    prv_draw_bitmap_centered(ctx, s_minute_bitmap, layout.minute_bounds);
+  }
+}
+
+static void prv_hide_date_timer_callback(void *context) {
+  s_date_timer = NULL;
+  s_showing_date = false;
+  if (s_face_layer) {
+    layer_mark_dirty(s_face_layer);
+  }
+}
+
+static void prv_show_date_glance(void) {
+  prv_update_date_assets();
+  s_showing_date = true;
+
+  if (s_date_timer) {
+    app_timer_cancel(s_date_timer);
+  }
+  s_date_timer = app_timer_register(DATE_GLANCE_MS, prv_hide_date_timer_callback, NULL);
+
+  if (s_face_layer) {
+    layer_mark_dirty(s_face_layer);
+  }
+}
+
+static void prv_accel_tap_handler(AccelAxisType axis, int32_t direction) {
+  prv_show_date_glance();
 }
 
 static void prv_tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   prv_update_time_assets();
+  if (s_showing_date) {
+    prv_update_date_assets();
+  }
   if (s_face_layer) {
     layer_mark_dirty(s_face_layer);
   }
@@ -206,6 +315,7 @@ static void prv_init(void) {
   BatteryChargeState initial_battery = battery_state_service_peek();
   s_battery_percent = initial_battery.charge_percent;
   prv_update_time_assets();
+  accel_tap_service_subscribe(prv_accel_tap_handler);
   battery_state_service_subscribe(prv_battery_handler);
   tick_timer_service_subscribe(MINUTE_UNIT, prv_tick_handler);
 
@@ -215,11 +325,22 @@ static void prv_init(void) {
 static void prv_deinit(void) {
   tick_timer_service_unsubscribe();
   battery_state_service_unsubscribe();
+  accel_tap_service_unsubscribe();
+  if (s_date_timer) {
+    app_timer_cancel(s_date_timer);
+    s_date_timer = NULL;
+  }
   if (s_hour_bitmap) {
     gbitmap_destroy(s_hour_bitmap);
   }
   if (s_minute_bitmap) {
     gbitmap_destroy(s_minute_bitmap);
+  }
+  if (s_date_month_bitmap) {
+    gbitmap_destroy(s_date_month_bitmap);
+  }
+  if (s_date_day_bitmap) {
+    gbitmap_destroy(s_date_day_bitmap);
   }
   window_destroy(s_window);
 }

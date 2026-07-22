@@ -8,11 +8,12 @@ The default watchface renders only:
 - Outlined battery progress indicator
 - Minutes
 
-Pressing the middle button temporarily replaces the time with a large Russo One month/day date for three seconds, then returns to the default face.
+Tapping or shaking the watch temporarily replaces the time with a large Russo One month/day date for three seconds, then returns to the default face.
 
 All numeral artwork is generated from `../typeface/artifacts/`. Do not edit `resources/images/` or `src/c/generated/` by hand.
 
 Date-glance month and day artwork is generated from the official Russo One font in `../typeface/fonts/russo-one/`.
+Pebble watchfaces cannot reserve the physical buttons for custom behavior, so the date glance uses `AccelTapService`.
 
 ## Build
 
@@ -21,6 +22,8 @@ Regenerate date-glance month and day assets:
 ```sh
 python3 tools/generate_date_glance_assets.py
 ```
+
+From the repository root, `python3 watchface/tools/generate_date_glance_assets.py all` updates both this package and the Russo variant.
 
 ```sh
 pebble build
